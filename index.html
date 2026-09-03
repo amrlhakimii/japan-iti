@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A relaxed, baby-friendly Japan family itinerary for Tokyo, Mount Fuji and Kyoto.">
+  <title>Japan, Slowly — Family Itinerary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Gloock&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Japan, Slowly home">
+      <span class="brand-mark">日</span>
+      <span>Japan, Slowly</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#itinerary">Itinerary</a>
+      <a href="#places">Places</a>
+      <a href="#essentials">Baby kit</a>
+      <a href="#travel-guide">Travel guide</a>
+      <button class="print-button" type="button" data-print>Print plan</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> 26 Nov — 6 Dec 2026</p>
+        <h1>Big Japan dreams,<br><em>tiny footsteps.</em></h1>
+        <p class="hero-intro">Eleven unhurried days through Tokyo, Fuji and Kyoto—paced for feeds, naps, prayer breaks and plenty of breathing room.</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#itinerary">Explore the days <span aria-hidden="true">↓</span></a>
+          <button class="text-button" type="button" data-expand-all>Expand all days</button>
+        </div>
+        <dl class="trip-stats">
+          <div><dt>11</dt><dd>days</dd></div>
+          <div><dt>3</dt><dd>places</dd></div>
+          <div><dt>Low</dt><dd>walking pace</dd></div>
+        </dl>
+      </div>
+      <div class="hero-visual">
+        <img src="https://unsplash.com/photos/J_7o0_1S-PM/download?force=true&w=1500" alt="Mount Fuji reflected in Lake Kawaguchi" fetchpriority="high">
+        <div class="stamp" aria-hidden="true"><span>家族旅行</span><small>Family trip</small></div>
+        <div class="photo-label"><span>35.499° N</span><strong>Kawaguchiko</strong></div>
+      </div>
+    </section>
+
+    <section class="notice" aria-label="Important route correction">
+      <span class="notice-icon" aria-hidden="true">i</span>
+      <div><strong>A smoother Fuji route</strong><p>There is no direct Shinkansen to Kawaguchiko. For the fewest transfers with a baby, take the reserved-seat Fuji Excursion directly from Shinjuku.</p></div>
+      <span class="notice-meta">1h 58m · no change</span>
+    </section>
+
+    <section class="itinerary-section" id="itinerary">
+      <div class="section-heading">
+        <div><p class="eyebrow"><span></span> Your day-by-day</p><h2>Room to wander.<br>Time to rest.</h2></div>
+        <p>Tap a day to see the full plan. Timings are intentionally generous, with one main area at a time and built-in reset windows.</p>
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="Filter itinerary by location">
+        <button class="filter active" type="button" data-filter="all">All days</button>
+        <button class="filter" type="button" data-filter="transit">Travel</button>
+        <button class="filter" type="button" data-filter="tokyo">Tokyo</button>
+        <button class="filter" type="button" data-filter="fuji">Fuji</button>
+        <button class="filter" type="button" data-filter="kyoto">Kyoto</button>
+      </div>
+
+      <div class="days-list" data-days></div>
+    </section>
+
+    <section class="places-section" id="places">
+      <div class="section-heading">
+        <div><p class="eyebrow"><span></span> Choose your own adventure</p><h2>Save now.<br>Decide later.</h2></div>
+        <p>Browse every main stop plus optional ideas for free time. Save favourites on this device, then choose only what suits the weather, energy and baby’s rhythm that day.</p>
+      </div>
+
+      <div class="place-controls">
+        <div class="control-group" role="group" aria-label="Filter places by destination">
+          <span>Destination</span>
+          <button class="place-filter active" type="button" data-place-region="all">All</button>
+          <button class="place-filter" type="button" data-place-region="tokyo">Tokyo</button>
+          <button class="place-filter" type="button" data-place-region="fuji">Fuji</button>
+          <button class="place-filter" type="button" data-place-region="kyoto">Kyoto</button>
+          <button class="place-filter" type="button" data-place-region="osaka">Osaka</button>
+          <button class="place-filter" type="button" data-place-region="nara">Nara</button>
+        </div>
+        <div class="control-group" role="group" aria-label="Filter places by trip fit">
+          <span>Show me</span>
+          <button class="place-filter active" type="button" data-place-kind="all">Everything</button>
+          <button class="place-filter" type="button" data-place-kind="planned">In the plan</button>
+          <button class="place-filter" type="button" data-place-kind="spare">If there’s time</button>
+          <button class="place-filter" type="button" data-place-kind="rain">Rainy day</button>
+          <button class="place-filter" type="button" data-place-kind="saved">Saved</button>
+        </div>
+        <p class="saved-total" aria-live="polite"><strong data-saved-count>0</strong> places saved</p>
+      </div>
+
+      <div class="decision-strip">
+        <article><span>Good energy</span><p>Choose one major sight plus one nearby café, park or shopping stop.</p></article>
+        <article><span>Rainy day</span><p>Filter “Rainy day” and favour stations, museums, malls and department-store baby rooms.</p></article>
+        <article><span>Tired day</span><p>Pick the closest saved place—or skip sightseeing. The buffer days are allowed to stay empty.</p></article>
+      </div>
+
+      <div class="places-grid" data-places></div>
+      <p class="places-empty" data-places-empty hidden>No places match these filters yet. Try another destination or view everything.</p>
+    </section>
+
+    <section class="slow-travel" id="essentials">
+      <div class="slow-image">
+        <img src="https://unsplash.com/photos/K56tCmPIZnI/download?force=true&w=1200" alt="Sensoji Temple illuminated at dusk" loading="lazy">
+        <p>Asakusa after the crowds</p>
+      </div>
+      <div class="slow-copy">
+        <p class="eyebrow light"><span></span> The family rhythm</p>
+        <h2>Slow is the<br>secret ingredient.</h2>
+        <p>A comfortable day with a baby is a successful day. These are the guardrails built into your plan.</p>
+        <div class="principles">
+          <article><span>01</span><div><h3>One neighbourhood</h3><p>Keep each half-day in one area. Use a taxi for the last kilometre when everyone is tired.</p></div></article>
+          <article><span>02</span><div><h3>Reset after lunch</h3><p>Plan a 45–90 minute pause for feeding, prayer, nappy changes or a proper nap.</p></div></article>
+          <article><span>03</span><div><h3>Carrier + stroller</h3><p>Bring both: stations and malls suit a stroller; shrines, stairs and crowds are easier with a carrier.</p></div></article>
+          <article><span>04</span><div><h3>Warm, not bulky</h3><p>Late November is cool. Pack layers, a rain cover and a warm pram blanket for Fuji mornings.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-section" id="travel-guide">
+      <div class="section-heading">
+        <div><p class="eyebrow"><span></span> Pocket travel guide</p><h2>Useful before.<br>Easy while there.</h2></div>
+        <p>Keep these apps, phrases and practical notes close. Opening hours, prices and service availability can change, so reconfirm the time-sensitive details shortly before the trip.</p>
+      </div>
+
+      <div class="guide-layout">
+        <article class="guide-panel">
+          <p class="panel-kicker">Apps &amp; services</p>
+          <div class="resource-list">
+            <div><strong>Tabelog</strong><p>Japan-focused restaurant ratings and reviews; a useful companion to map apps.</p></div>
+            <div><strong>Papago</strong><p>Translation app to keep alongside an offline Japanese language pack.</p></div>
+            <div><strong>Japan Wi-Fi Auto-connect</strong><p>Connects to participating free public Wi-Fi hotspots.</p></div>
+            <div><strong>SoftBank Wi-Fi</strong><p>Another public hotspot option; check visitor eligibility and current coverage.</p></div>
+            <div><strong>Suica</strong><p>Reloadable IC transit card. Add it to Apple Wallet when the traveller’s device and payment card support it.</p></div>
+            <div><strong>Visit Japan Web</strong><p>Register immigration and customs details before flying, save the QR code and keep an offline screenshot.</p><a href="https://services.digital.go.jp/en/visit-japan-web/" target="_blank" rel="noreferrer">Open official service ↗</a></div>
+          </div>
+        </article>
+
+        <article class="guide-panel">
+          <p class="panel-kicker">Japanese phrases</p>
+          <div class="phrase-list">
+            <div><span>Yes</span><strong>はい</strong><small>Hai</small></div>
+            <div><span>Yes, please</span><strong>はい、お願いします</strong><small>Hai, onegaishimasu</small></div>
+            <div><span>No, thank you</span><strong>いいえ、大丈夫です</strong><small>Iie, daijōbu desu</small></div>
+            <div><span>Two people</span><strong>二人です</strong><small>Futari desu</small></div>
+            <div><span>Before eating</span><strong>いただきます</strong><small>Itadakimasu</small></div>
+            <div><span>Thank you</span><strong>ありがとうございます</strong><small>Arigatō gozaimasu</small></div>
+            <div><span>It’s delicious</span><strong>とてもおいしいです</strong><small>Totemo oishii desu</small></div>
+            <div><span>Excuse me / sorry</span><strong>すみません</strong><small>Sumimasen</small></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="tips-grid">
+        <article><span>01</span><h3>Transport</h3><ul><li>Tokyo trains generally stop around midnight.</li><li>Weekday rush hours are roughly 7–9 AM and 5–7 PM; avoid them with luggage and a stroller.</li><li>Use Yamato luggage forwarding between stays. Delivery timing and cutoff vary, so confirm at the counter rather than relying on a universal 4 PM rule.</li><li>If a future route arrives at KIX, reserve the airport express before travelling; this itinerary currently arrives at Narita.</li></ul></article>
+        <article><span>02</span><h3>Etiquette</h3><ul><li>Avoid walking while eating and keep voices low on public transport.</li><li>Do not tip.</li><li>Gesture with an open hand rather than pointing at people.</li><li>At many restaurants, take the bill to the front counter and place cash or a card in the payment tray.</li></ul></article>
+        <article><span>03</span><h3>Money &amp; data</h3><ul><li>Carry a small coin pouch. Cards are common, but some businesses remain cash-only.</li><li>Keep a sensible arrival cash buffer rather than carrying the whole trip budget.</li><li>Set up an eSIM before departure and download offline maps.</li><li>Lunch sets can make higher-end meals more affordable.</li></ul></article>
+        <article><span>04</span><h3>Practical</h3><ul><li>Carry your passport when planning tax-free purchases.</li><li>From 1 November 2026, eligible purchases are paid tax-inclusive and refunded after departure checks; the old sealed-consumables rule is abolished.</li><li>Carry pocket tissues, hand towels and a small soap or sanitiser.</li><li>Tokyo Disney pricing varies by date—check the official calendar rather than budgeting from an old US$50 estimate.</li></ul></article>
+      </div>
+
+      <div class="restaurant-guide">
+        <div class="subheading"><p class="panel-kicker">Food shortlist</p><h3>Saved halal-friendly stops</h3></div>
+        <div class="restaurant-grid">
+          <article><span>Tokyo · Kanda/Akihabara</span><h4>Halal Wagyu Karemen King</h4><p>Wagyu ramen and yakiniku sets. The saved Ginza location note was incorrect; use the current Kanda/Akihabara listing and reconfirm Friday hours and accepted payments.</p></article>
+          <article><span>Tokyo · Ginza</span><h4>Tendon Itsuki Ginza</h4><p>Tempura tendon bowls at Ginza INZ 1, 2F. Saved hours are 11:00 AM–9:30 PM daily; reconfirm before visiting.</p></article>
+          <article><span>Tokyo · Ginza</span><h4>Halal Gyumon Ginza</h4><p>Halal wagyu yakiniku rather than ramen. Saved hours are noon–11:00 PM daily; reserve and reconfirm access and payment options.</p></article>
+          <article><span>Kyoto · Arashiyama</span><h4>Yoshiya Arashiyama</h4><p>Existing itinerary choice with halal-certified options, prayer space and wudu facilities. Reserve and reconfirm.</p></article>
+        </div>
+        <p class="shortlist-note"><strong>Still to shortlist:</strong> Osaka, Nara, Fuji and Nagano. Nagano is not part of the current route.</p>
+      </div>
+
+      <div class="helpful-links">
+        <div><p class="panel-kicker">Helpful references</p><h3>Open before the trip</h3></div>
+        <ul>
+          <li><a href="https://www.kuronekoyamato.co.jp/ytc/en/send/services/airport/" target="_blank" rel="noreferrer">Yamato luggage transport ↗</a></li>
+          <li><a href="https://services.digital.go.jp/en/visit-japan-web/" target="_blank" rel="noreferrer">What to prepare for arrival ↗</a></li>
+          <li><a href="https://www.mlit.go.jp/kankocho/tax-free/content/001990233.pdf" target="_blank" rel="noreferrer">November 2026 tax-free process ↗</a></li>
+          <li><a href="https://www.stussy.com/blogs/chapters/stussy-shibuya" target="_blank" rel="noreferrer">Stüssy Shibuya official store ↗</a></li>
+          <li><a href="https://kith.com/pages/kith-tokyo" target="_blank" rel="noreferrer">Kith Tokyo official store ↗</a></li>
+          <li><a href="https://palaceskateboards.com/palace-tokyo" target="_blank" rel="noreferrer">Palace Tokyo official store ↗</a></li>
+          <li><a href="https://ginza.doverstreetmarket.com/pages/locations" target="_blank" rel="noreferrer">Dover Street Market Ginza ↗</a></li>
+        </ul>
+        <div class="watch-list"><strong>Video watch list</strong><span>Things I Regret from Trip to Japan — Parts 1, 2 &amp; 3</span><span>Relaxed Japan travel vlog series</span><small>The pasted notes did not include the original video URLs.</small></div>
+      </div>
+    </section>
+
+    <section class="checklist-section">
+      <div class="section-heading compact">
+        <div><p class="eyebrow"><span></span> Before you fly</p><h2>The small things<br>that save the day.</h2></div>
+        <p>Your progress is saved on this device. Tick things off as bookings and packing come together.</p>
+      </div>
+      <div class="checklist" data-checklist></div>
+    </section>
+
+    <section class="sources">
+      <details>
+        <summary>Planning notes &amp; sources <span>+</span></summary>
+        <div class="source-grid">
+          <p><strong>Timings can change.</strong> Reconfirm restaurants, prayer rooms, transport and the weather shortly before travel. Prayer times shown are planning windows, not calculated salah times.</p>
+          <ul>
+            <li><a href="https://www.jreast.co.jp/en/multi/nex/" target="_blank" rel="noreferrer">JR East · Narita Express</a></li>
+            <li><a href="https://www.fujikyu-railway.jp/en/fujikaiyuu/" target="_blank" rel="noreferrer">Fujikyu · Fuji Excursion</a></li>
+            <li><a href="https://gyumon-group.com/en/shop/" target="_blank" rel="noreferrer">Gyumon · official locations</a></li>
+            <li><a href="https://www.ginza-inz.co.jp/en/shopinfo/itsuki/" target="_blank" rel="noreferrer">Ginza Itsuki · store details</a></li>
+            <li><a href="https://www.avisrentacarjapan.com/en/guide/service/childseat" target="_blank" rel="noreferrer">Japan child-seat guidance</a></li>
+          </ul>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div><span class="brand-mark">日</span><p><strong>Japan, Slowly</strong><br>A family plan for 2026</p></div>
+    <button type="button" data-print>Save as PDF</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
