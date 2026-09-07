@@ -21,8 +21,8 @@ const days = [
       ["1:55–7:05 AM", "Flight KUL → Shanghai", "Keep a fresh nappy and one feed ready for descent.", "Flight"],
       ["7:05–9:50 AM", "Shanghai transit", "Change, feed and let the baby stretch near the gate. Do not plan shopping during this connection.", "Reset"],
       ["9:50 AM–12:50 PM", "Flight Shanghai → Narita", "Arrival at Narita Terminal 1.", "Flight"],
-      ["12:50–2:20 PM", "Immigration, luggage & Suica", "Open the Visit Japan Web QR code prepared before departure, then collect bags. Use digital Suica if your phone supports it; otherwise buy a physical IC card. Allow 90 minutes.", "Airport"],
-      ["2:40–4:10 PM", "Transfer to Shinjuku", "Recommended: reserved-seat Narita Express. Door-to-door transfer is easiest if luggage is heavy; confirm a child seat with any private car.", "Reserved seats"],
+      ["12:50–2:20 PM", "Immigration, luggage & Suica", "Open the Visit Japan Web QR code prepared before departure, then collect bags. Use digital Suica if your phone supports it; otherwise buy a physical IC card. Allow 90 minutes.", "Airport", [{ label: "Prepare arrival QR", url: "https://services.digital.go.jp/en/visit-japan-web/" }]],
+      ["2:40–4:10 PM", "Transfer to Shinjuku", "Recommended: reserved-seat Narita Express. Door-to-door transfer is easiest if luggage is heavy; confirm a child seat with any private car.", "Reserved seats", [{ label: "Book on JR East", url: "https://www.eki-net.com/en/jreast-train-reservation/top/index" }]],
       ["4:10–5:00 PM", "Shinjuku → Airbnb", "Use a taxi for the last leg rather than navigating a busy station with bags and stroller.", "Low walking"],
       ["5:00–6:30 PM", "Check in, feed & rest", "Unpack only the first-night essentials and let the baby settle.", "Rest"],
       ["6:45–8:00 PM", "Dinner at Halal Karemen King", "The restaurant is in Kanda/Akihabara—not Ginza. If everyone is tired, switch to a closer halal dinner or delivery.", "Halal"],
@@ -81,7 +81,7 @@ const days = [
       ["1:10–2:00 PM", "Lunch at Master Chicken", "Halal-certified casual lunch at 33-10 Udagawacho, B1F. Access may be awkward with a stroller.", "Halal"],
       ["2:00–3:00 PM", "Prayer, feed & indoor rest", "Use a booked private room, suitable prayer space or a nearby family facility. Keep this block protected.", "Reset"],
       ["3:00–3:20 PM", "Shibuya Crossing & Hachiko", "View once from street level; there is no need to repeat the crossing with a stroller.", "Icon"],
-      ["3:30–5:00 PM", "Shibuya Sky", "Book a timed entry around sunset. Outdoor areas can close in bad weather; strollers must be stored, so bring the carrier.", "Book ahead"],
+      ["3:30–5:00 PM", "Shibuya Sky", "Book a timed entry around sunset. Outdoor areas can close in bad weather; strollers must be stored, so bring the carrier.", "Book ahead", [{ label: "Book official ticket", url: "https://www.shibuya-scramble-square.com/sky/ticket/" }]],
       ["5:00–6:00 PM", "Early dinner or return home", "Choose the option with the shortest queue. Buy breakfast on the way back.", "Flexible"],
       ["7:00 PM", "Pack for Fuji", "Prepare one overnight bag and keep warm layers accessible for the next morning.", "Prep"]
     ],
@@ -95,9 +95,9 @@ const days = [
     lede: "Move to Kawaguchiko without changing trains, collect the car after lunch, then keep the first afternoon light and local.",
     events: [
       ["7:45 AM", "Check out & taxi to Shinjuku", "Leave enough time for lifts, the correct platform and breakfast supplies.", "Travel"],
-      ["9:30–11:28 AM", "Fuji Excursion to Kawaguchiko", "Recommended direct reserved-seat train. Current 2026 timetable shows this service; reconfirm before booking.", "Reserve 1 month ahead"],
+      ["9:30–11:28 AM", "Fuji Excursion to Kawaguchiko", "Recommended direct reserved-seat train. Current 2026 timetable shows this service; reconfirm before booking.", "Reserve 1 month ahead", [{ label: "Book on JR East", url: "https://www.eki-net.com/en/jreast-train-reservation/top/index" }, { label: "Check train details", url: "https://www.fujikyu-railway.jp/en/fujikaiyuu/" }]],
       ["11:30 AM–12:15 PM", "Luggage drop & early lunch", "Ask the accommodation about bag storage before check-in.", "Reset"],
-      ["12:30–1:15 PM", "Collect rental car", "Toyota is the clearest direct-booking option. Reserve an infant seat, ETC card and winter tyres if conditions require them.", "Child seat required"],
+      ["12:30–1:15 PM", "Collect rental car", "Toyota is the clearest direct-booking option. Reserve an infant seat, ETC card and winter tyres if conditions require them.", "Child seat required", [{ label: "Reserve Toyota car", url: "https://rent.toyota.co.jp/eng/reservation/index01.aspx" }, { label: "First-time rental guide", url: "https://rent.toyota.co.jp/eng/guide/" }]],
       ["1:30–2:15 PM", "Lawson Kawaguchiko photo stop", "Use the official viewing area and respect barriers. If crowded, skip it—there are better lake views ahead.", "Quick stop"],
       ["2:30–4:00 PM", "Lake Kawaguchi & Oishi Park", "Flat lakeside paths, café, toilets and an easy Fuji view make this ideal for the first afternoon.", "Stroller-friendly"],
       ["4:00–4:45 PM", "The Park Café / warm drink", "Feed the baby and warm up before sunset temperatures drop.", "Warm-up"],
@@ -117,8 +117,8 @@ const days = [
       ["10:15–11:15 AM", "Arakura Shrine base", "Enjoy the lower shrine area. The famous pagoda viewpoint has roughly 400 steps—carrier only and optional.", "Optional climb"],
       ["11:30 AM–12:15 PM", "Early lunch near Kawaguchiko", "Choose a confirmed halal or seafood/vegetarian option and avoid a tight connection.", "Lunch"],
       ["12:30 PM", "Fuel up & return rental car", "Allow time for inspection and luggage repacking.", "Car return"],
-      ["1:20–2:50 PM", "Reserved bus to Mishima", "Book the Kawaguchiko–Mishima highway bus and keep one feed in the seat bag.", "Reserve"],
-      ["3:45–5:45 PM", "Shinkansen Mishima → Kyoto", "Target a Hikari/Kodama connection with reserved seats; exact December times must be confirmed.", "Reserved seats"],
+      ["1:20–2:50 PM", "Reserved bus to Mishima", "Book the Kawaguchiko–Mishima highway bus and keep one feed in the seat bag.", "Reserve", [{ label: "Book Fujikyu bus", url: "https://bus.fujikyu.co.jp/en/highway/mishima/" }]],
+      ["3:45–5:45 PM", "Shinkansen Mishima → Kyoto", "Target a Hikari/Kodama connection with reserved seats; exact December times must be confirmed.", "Reserved seats", [{ label: "Book with SmartEX", url: "https://smart-ex.jp/en/" }]],
       ["6:15 PM", "Kyoto check-in", "Taxi from Kyoto Station to avoid another luggage-heavy transfer.", "Low walking"],
       ["7:00 PM", "Simple dinner & early night", "Use a nearby halal restaurant or takeaway. Save Kyoto sightseeing for tomorrow.", "Rest"]
     ],
@@ -495,10 +495,17 @@ daysRoot.innerHTML = days.map((day, index) => `
         </figure>
         <p class="day-lede">${day.lede}</p>
         <div class="timeline">
-          ${day.events.map(([time, title, detail, tag]) => `
+          ${day.events.map(([time, title, detail, tag, links = []]) => `
             <div class="event">
               <time class="event-time">${time}</time>
-              <div class="event-info"><h4>${title}</h4><p>${detail}</p><span class="event-tag">${tag}</span></div>
+              <div class="event-info">
+                <h4>${title}</h4>
+                <p>${detail}</p>
+                <div class="event-meta">
+                  <span class="event-tag">${tag}</span>
+                  ${links.map(link => `<a class="event-link" href="${link.url}" target="_blank" rel="noreferrer">${link.label} ↗</a>`).join("")}
+                </div>
+              </div>
             </div>
           `).join("")}
         </div>
