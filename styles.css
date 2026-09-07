@@ -228,6 +228,11 @@ footer p { margin: 0; color: rgba(255,255,255,.55); font-size: 11px; }
 footer p strong { color: white; font-size: 13px; }
 footer button { color: white; border: 0; border-bottom: 1px solid rgba(255,255,255,.4); background: none; cursor: pointer; font-size: 12px; }
 
+@media screen and (max-width: 900px) {
+  .brand, .print-button, .filter, .place-filter, .save-place, footer button { min-width: 44px; min-height: 44px; }
+  .event-link, .resource-list a, .helpful-links a, .source-grid a, .day-photo figcaption a, .place-image a { display: inline-flex; align-items: center; min-width: 44px; min-height: 44px; }
+}
+
 @media (max-width: 900px) {
   .site-header nav a { display: none; }
   .hero { min-height: auto; grid-template-columns: 1fr; }
