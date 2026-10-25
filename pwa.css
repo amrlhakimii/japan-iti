@@ -1,0 +1,17 @@
+.pwa-banner, .pwa-toast, .pwa-ios {
+  position: fixed; left: 50%; transform: translateX(-50%);
+  z-index: 9999; max-width: calc(100vw - 24px);
+  font: 500 14px/1.4 "DM Sans", system-ui, sans-serif;
+  color: #f6f3ed; background: #143b31; border-radius: 999px;
+  padding: 10px 16px; box-shadow: 0 6px 24px rgba(0,0,0,.25);
+}
+.pwa-banner { top: 10px; background: #df5b36; pointer-events: none; }
+.pwa-toast { bottom: 16px; display: flex; gap: 12px; align-items: center; }
+.pwa-ios { bottom: 16px; display: flex; gap: 12px; align-items: center; border-radius: 16px; }
+.pwa-toast button, .pwa-ios button {
+  font: inherit; cursor: pointer; border: 0; border-radius: 999px;
+  padding: 6px 12px; color: #143b31; background: #f6f3ed;
+}
+.pwa-ios button.pwa-dismiss { background: transparent; color: #f6f3ed; padding: 4px 8px; }
+[hidden].pwa-banner, [hidden].pwa-toast, [hidden].pwa-ios { display: none; }
+@media print { .pwa-banner, .pwa-toast, .pwa-ios { display: none !important; } }
