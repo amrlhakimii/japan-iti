@@ -157,6 +157,7 @@
       jump.href = "#day-" + st.index;
       jump.addEventListener("click", function (ev2) {
         ev2.preventDefault();
+        if (window.showPage) window.showPage("plan");
         var content = document.getElementById("day-" + st.index);
         var dayCard = content && content.closest(".day-card");
         if (!dayCard) return;

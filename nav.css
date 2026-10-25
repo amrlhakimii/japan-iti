@@ -1,0 +1,76 @@
+/* Page switching + floating bottom nav (pattern borrowed from Dewasa 101) */
+.page[hidden] { display: none; }
+.page { outline: none; }
+.page-enter { animation: page-in .32s cubic-bezier(.2, .7, .2, 1) both; }
+@keyframes page-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .page-enter { animation: none; } }
+
+body { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
+
+/* Header only sits over the hero on Home; elsewhere it needs a readable background. */
+body:not([data-page="home"]) .site-header {
+  position: sticky;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+body:not([data-page="home"]) .print-button { color: var(--ink); border-color: var(--line); background: transparent; }
+body:not([data-page="home"]) .site-header { padding-top: calc(14px + env(safe-area-inset-top)); padding-bottom: 14px; }
+
+.app-nav {
+  position: fixed;
+  z-index: 50;
+  left: 50%;
+  bottom: calc(14px + env(safe-area-inset-bottom));
+  display: flex;
+  gap: 4px;
+  max-width: calc(100vw - 16px);
+  padding: 6px;
+  overflow-x: auto;
+  transform: translateX(-50%);
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 100px;
+  background: rgba(20, 59, 49, .86);
+  box-shadow: 0 10px 30px rgba(10, 30, 24, .35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  scrollbar-width: none;
+}
+.app-nav::-webkit-scrollbar { display: none; }
+.app-nav a {
+  display: grid;
+  flex: 0 0 auto;
+  min-width: 56px;
+  min-height: 48px;
+  place-items: center;
+  align-content: center;
+  gap: 1px;
+  padding: 4px 10px;
+  color: rgba(255, 255, 255, .62);
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .01em;
+  transition: background .2s, color .2s;
+}
+.app-nav a svg { width: 20px; height: 20px; }
+.app-nav a:hover { color: white; }
+.app-nav a:focus-visible { outline: 2px solid #e9b69f; outline-offset: 2px; }
+.app-nav a[aria-current="page"] { color: white; background: var(--orange); }
+
+@media (min-width: 720px) {
+  .app-nav a { flex-direction: row; min-width: 0; padding: 4px 16px; gap: 7px; font-size: 13px; }
+  .app-nav a svg { width: 18px; height: 18px; }
+}
+
+/* Lift install/update toasts above the nav */
+.pwa-toast, .pwa-ios { bottom: calc(86px + env(safe-area-inset-bottom)); }
+
+@media print {
+  .app-nav { display: none !important; }
+  .page[hidden] { display: block !important; }
+  body { padding-bottom: 0; }
+}
