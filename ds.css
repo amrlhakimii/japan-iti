@@ -273,3 +273,46 @@ footer { background: transparent; border-top: 0; }
 @media (prefers-reduced-motion: reduce) { .rail-next, .hint-hand { animation: none; } }
 @media (min-width: 961px) { .rail-hint { display: none; } }
 @media print { .rail-arrow, .rail-hint { display: none !important; } }
+
+/* ---------- wide screens: one fluid container, aligned header/footer, grids that add columns ---------- */
+:root { --container: 1600px; --gutter: clamp(16px, 4vw, 48px); --edge: max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter))); }
+.page { max-width: var(--container); }
+.site-header { padding-left: var(--edge); padding-right: var(--edge); }
+footer { padding-left: var(--edge); padding-right: var(--edge); }
+
+/* Home: no white slab behind the hero, banners share one width */
+.hero { background: transparent; }
+.today-section { max-width: none; padding: 0 var(--gutter); }
+.today-card { max-width: none; }
+.notice { margin-left: var(--gutter); margin-right: var(--gutter); }
+@media (min-width: 1100px) {
+  .today-card:not(.today-before):not(.today-after) { display: grid; gap: 4px 40px; grid-template-columns: minmax(260px, 1fr) minmax(0, 2fr); align-items: start; }
+  .today-card:not(.today-before):not(.today-after) > .today-eyebrow, .today-card:not(.today-before):not(.today-after) > .today-heading, .today-card:not(.today-before):not(.today-after) > .today-sub, .today-card:not(.today-before):not(.today-after) > .today-next { grid-column: 1; }
+  .today-card:not(.today-before):not(.today-after) > .today-list { grid-column: 2; grid-row: 1 / span 5; margin-top: 0; }
+  .today-card:not(.today-before):not(.today-after) > .today-jump { grid-column: 1; }
+}
+@media (min-width: 1400px) {
+  .hero { gap: 64px; padding-top: 40px; }
+  .hero h1 { font-size: clamp(60px, 4.4vw, 84px); max-width: 760px; }
+  .hero-intro { max-width: 600px; font-size: 19px; }
+  .hero-visual { min-height: 580px; border-radius: 32px; }
+}
+
+/* Plan: photo keeps a cinematic ratio instead of stretching taller than it is wide */
+.day-photo { height: auto; aspect-ratio: 21 / 8; min-height: 220px; max-height: 480px; }
+@media (max-width: 700px) { .day-photo { aspect-ratio: 16 / 10; max-height: none; } }
+.day-guide { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 1500px) { .day-split { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); } .map-box { height: min(640px, calc(100dvh - 280px)); } .flip { flex-basis: 240px; } }
+
+/* Grids add columns as the screen grows */
+.places-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.ticket-grid { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+.tips-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.restaurant-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+.checklist { grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); }
+.sc-grid { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+.exp-wrap { max-width: var(--container); }
+.ticket-wide { grid-column: 1 / -1; }
+@media (max-width: 700px) { .places-grid, .ticket-grid, .restaurant-grid, .checklist, .sc-grid { grid-template-columns: 1fr; } .tips-grid { grid-template-columns: 1fr; } }
+@media (min-width: 701px) and (max-width: 900px) { .tips-grid { grid-template-columns: repeat(2, 1fr); } }
+.sources { max-width: var(--container); }
