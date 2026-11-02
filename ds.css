@@ -238,3 +238,6 @@ footer { background: transparent; border-top: 0; }
 .ticket-badge.buy, .ticket-badge.day { color: #047857; background: #d1fae5; }
 @media (max-width: 700px) { .ticket-grid { grid-template-columns: 1fr; } }
 @media print { .tickets-section { display: block; } }
+
+/* Hide the host's "Powered by Netlify" badge iframe; it overlaps the bottom nav. */
+#nl-badge-frame { display: none !important; }
