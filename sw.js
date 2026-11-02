@@ -1,4 +1,4 @@
-const VERSION = 'v20';
+const VERSION = 'v21';
 const SHELL_CACHE = `japan-shell-${VERSION}`;
 const RUNTIME_CACHE = `japan-runtime-${VERSION}`;
 const MAX_RUNTIME = 80;
@@ -72,7 +72,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  const runtimeHost = ['fonts.googleapis.com', 'fonts.gstatic.com', 'images.unsplash.com', 'unpkg.com'].includes(url.hostname)
+  const runtimeHost = ['fonts.googleapis.com', 'fonts.gstatic.com', 'images.unsplash.com', 'unpkg.com', 'tiles.openfreemap.org'].includes(url.hostname)
     || req.destination === 'image';
   if (runtimeHost) event.respondWith(staleWhileRevalidate(req, RUNTIME_CACHE));
 });

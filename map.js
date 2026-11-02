@@ -90,10 +90,16 @@
     if (stay && (!stops.length || stops.some(function (p) { return hav(p, stay) < 12; }))) all.push(stay);
     var map = L.map(el, { zoomControl: false, attributionControl: true, scrollWheelZoom: false, tap: true });
     L.control.zoom({ position: "topright" }).addTo(map);
-    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+    var vector = false;
+    if (L.maplibreGL && typeof maplibregl !== "undefined") {
+      try {
+        L.maplibreGL({ style: "https://tiles.openfreemap.org/styles/positron", attribution: '<a href="https://openfreemap.org" target="_blank" rel="noreferrer">OpenFreeMap</a> &copy; <a href="https://www.openmaptiles.org/" target="_blank" rel="noreferrer">OpenMapTiles</a> data from <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a>' }).addTo(map);
+        vector = true;
+      } catch (e) { vector = false; }
+    }
+    if (!vector) {
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }).addTo(map);
+    }
 
     var state = { map: map, stopMarkers: [], layers: {}, active: {}, stops: stops, stay: stay, index: index };
 
