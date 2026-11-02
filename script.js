@@ -120,7 +120,7 @@ const days = [
       ["9:45–10:45 AM", "Lake Yamanakako", "The farthest stop, so it comes after the nearby ones. Short lakeside stop; keep the warm pram cover handy, as this is likely the coldest part of the trip.", "Scenic"],
       ["11:30 AM–12:15 PM", "Early lunch near Kawaguchiko", "Choose a confirmed halal or seafood/vegetarian option and avoid a tight connection.", "Lunch"],
       ["12:30 PM", "Fuel up & return rental car", "Allow time for inspection and luggage repacking.", "Car return"],
-      ["1:20–2:50 PM", "Reserved bus to Mishima", "Book the Kawaguchiko–Mishima highway bus and keep one feed in the seat bag.", "Reserve", [{ label: "Book Fujikyu bus", url: "https://bus.fujikyu.co.jp/en/highway/mishima/" }]],
+      ["1:20–2:50 PM", "Reserved bus to Mishima", "Fujikyu highway bus from Kawaguchiko Station, about 1 hr 30 min, ¥2,500 on the web. All seats are reserved and sales open one month ahead (2 Nov). Check the timetable when booking. One bag per person goes under the floor, so keep the feed bag with you and reserve a seat for the baby.", "Book now", [{ label: "Fujikyu bus page", url: "https://bus.fujikyu.co.jp/en/highway/mishima/" }]],
       ["3:45–5:45 PM", "Shinkansen Mishima → Kyoto", "Target a Hikari/Kodama connection with reserved seats; exact December times must be confirmed.", "Reserved seats", [{ label: "Book with SmartEX", url: "https://smart-ex.jp/en/" }]],
       ["6:15 PM", "Kyoto check-in", "Taxi from Kyoto Station to avoid another luggage-heavy transfer.", "Low walking"],
       ["7:00 PM", "Simple dinner & early night", "Use a nearby halal restaurant or takeaway. Save Kyoto sightseeing for tomorrow.", "Rest"]
@@ -167,12 +167,12 @@ const days = [
     date: "Sat · 5 Dec",
     title: "An easy Osaka day",
     category: "osaka",
-    lede: "One main Osaka sight, a halal-checked lunch and a long reset. Pick the second stop only if everyone is still happy.",
+    lede: "One main Osaka sight, a halal-checked lunch, a long reset, then the Shinsaibashi shopping street and Dotonbori at dusk.",
     events: [
       ["9:00 AM", "Slow breakfast at the Airbnb", "Review energy and weather before choosing the plan.", "Flexible"],
       ["10:30 AM–12:30 PM", "Osaka Castle Park", "Park and exterior views are easier with a baby than queueing inside. Paths are long but stroller-friendly.", "Main sight"],
       ["12:30–2:30 PM", "Lunch, prayer & baby reset", "No Osaka restaurant has been shortlisted yet, so confirm a halal-friendly option the night before.", "Plan ahead"],
-      ["3:00–5:00 PM", "Optional: Dotonbori & Namba", "Go around dusk before the evening crowd builds, and use the carrier. Skip it if anyone is tired.", "Optional"],
+      ["2:45–5:30 PM", "Shinsaibashi-suji shopping, then Dotonbori", "The family wants to shop here, so this is a planned stop. Go to Shinsaibashi Station and walk the covered arcade south (about 600 m), taking breaks in the shops. Finish at the canal and neon signs of Dotonbori around dusk. Saturday is packed, so use the carrier, agree a meeting point in case you get separated, and split into two groups if needed.", "Planned"],
       ["6:30 PM", "Easy dinner", "Choose takeaway or a reservable place near the Airbnb rather than queueing in a crowd.", "Low pressure"]
     ],
     tip: "Do not add Nara or Kyoto on top of this. Osaka is the final base, so keep the trip's pace gentle."
@@ -185,7 +185,7 @@ const days = [
     lede: "Last full day, and tomorrow starts around 5 AM. Keep today easy, pack tonight, and be in bed early.",
     events: [
       ["9:00 AM", "Slow breakfast", "No fixed plan. Decide the day from sleep and weather.", "Flexible"],
-      ["10:30 AM–12:30 PM", "One easy outing", "Pick the closest saved place, a department store or a warm indoor stop.", "One area"],
+      ["10:30 AM–12:30 PM", "One easy outing", "Pick a department store, a favourite from the Places list or a warm indoor stop. If shopping ran short yesterday, go back to Shinsaibashi-suji early.", "One area"],
       ["12:30–2:30 PM", "Lunch, prayer & baby reset", "Choose a confirmed halal-friendly meal and protect the full reset window.", "Reset"],
       ["3:00–5:00 PM", "Free afternoon", "Shopping, laundry or an early return to the Airbnb. Buy breakfast and snacks for tomorrow's train.", "Open plan"],
       ["6:00 PM", "Early dinner", "Eat early and keep it simple.", "Early night"],
@@ -497,7 +497,7 @@ const checklist = [
   "Choose priority streetwear stores and check release-day rules",
   "Reserve Gyumon Ginza and Yoshiya Kyoto",
   "Reserve rental car, infant seat and ETC card",
-  "Book Kawaguchiko → Mishima highway bus",
+  "Book Kawaguchiko → Mishima highway bus (sales open 2 Nov)",
   "Confirm Airbnb luggage storage, cot and Yamato acceptance",
   "Reserve the 7 December Shinkansen (6:30–7:00 AM) and Narita Express, and confirm the return flight terminal",
   "Pack carrier, compact stroller, rain cover, tissues and hand towel",

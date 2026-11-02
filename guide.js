@@ -81,7 +81,7 @@ const dayGuide = [
       ["Airbnb → Honcho Street → Arakura Shrine", "Drive (about 20–30 min, then 10 min)", "Both are in Fujiyoshida, so do them together. Check out of the Airbnb by 10:00 AM and keep the luggage in the car."],
       ["Arakura → Lake Yamanakako", "Drive (about 30–40 min)", "The farthest point of the day. Order is now closest first, then outward."],
       ["Yamanakako → Kawaguchiko", "Drive (about 35 min)", "Refuel before returning the car. Allow time for inspection and repacking."],
-      ["Kawaguchiko Station → Mishima", "Reserved highway bus (about 1.5 hr)", "Book the Fujikyu bus ahead. Keep a feed in the seat bag."],
+      ["Kawaguchiko Station → Mishima Station", "Fujikyu highway bus (about 1 hr 30 min)", "Board at the Kawaguchiko Station bus area and get off at Mishima Station, then walk to the Shinkansen entrance. Book now: sales open 1 month ahead (2 Nov), web fare ¥2,500, call 0555-73-8181 or use the Kawaguchiko Station counter. One bag per person under the floor. Reserve a seat for the baby."],
       ["Mishima → Kyoto", "Shinkansen (about 1 hr 45 min)", "Reserved seats with luggage space. Taxi from Kyoto Station to the Airbnb, which is on the east side of the city."]
     ],
     solat: [
@@ -117,7 +117,7 @@ const dayGuide = [
   { // Day 09 · Sat 5 Dec
     legs: [
       ["Airbnb → Osaka Castle Park", "JR Osaka Loop Line from Taisho", "About 25 min. Get off at Osakajokoen Station. Check the lift."],
-      ["Castle Park → Dotonbori / Namba (optional)", "Train (about 20–30 min, one transfer) or taxi", "Dotonbori is crowded and loud. Use the carrier, not the stroller."],
+      ["Castle Park → Shinsaibashi-suji → Dotonbori", "Train (about 20–30 min, one transfer) or taxi, then walk", "Get off at Shinsaibashi, walk the covered arcade south for about 10 minutes to Dotonbori. Crowded and loud: use the carrier, not the stroller."],
       ["Dotonbori → Airbnb", "Metro Nagahori Tsurumi-ryokuchi Line to Taisho (about 15 min)", "Go back before 7:00 PM."]
     ],
     solat: [
