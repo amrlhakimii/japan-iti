@@ -97,3 +97,5 @@
 .locate-btn:active { transform: scale(.95); }
 .locate-btn:disabled { opacity: .6; }
 .leaflet-bottom.leaflet-left { left: auto; right: 0; }
+
+.flip-row, .cat-row, .day-rail { overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }

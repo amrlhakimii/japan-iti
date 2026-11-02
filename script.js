@@ -694,13 +694,18 @@ document.addEventListener("keydown", event => {
 
 let touchX = null;
 let touchY = null;
-daysRoot.addEventListener("touchstart", event => { touchX = event.touches[0].clientX; touchY = event.touches[0].clientY; }, { passive: true });
+const NO_SWIPE = ".flip-row, .cat-row, .map-box, .day-rail, .leaflet-container, .leg, a, button, input, select, textarea";
+daysRoot.addEventListener("touchstart", event => {
+  if (event.touches.length !== 1 || event.target.closest(NO_SWIPE)) { touchX = touchY = null; return; }
+  touchX = event.touches[0].clientX;
+  touchY = event.touches[0].clientY;
+}, { passive: true });
 daysRoot.addEventListener("touchend", event => {
   if (touchX === null) return;
   const dx = event.changedTouches[0].clientX - touchX;
   const dy = event.changedTouches[0].clientY - touchY;
   touchX = touchY = null;
-  if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 1.5) stepDay(dx < 0 ? 1 : -1);
+  if (Math.abs(dx) > 90 && Math.abs(dx) > Math.abs(dy) * 2) stepDay(dx < 0 ? 1 : -1);
 }, { passive: true });
 
 (() => {
