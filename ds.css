@@ -241,3 +241,6 @@ footer { background: transparent; border-top: 0; }
 
 /* Hide the host's "Powered by Netlify" badge iframe; it overlaps the bottom nav. */
 #nl-badge-frame { display: none !important; }
+
+/* Checklist ticks are fully round, as pills/avatars are in the design system */
+.custom-check { border-radius: 50%; width: 26px; height: 26px; flex-basis: 26px; }
