@@ -1,10 +1,10 @@
-const VERSION = 'v15';
+const VERSION = 'v17';
 const SHELL_CACHE = `japan-shell-${VERSION}`;
 const RUNTIME_CACHE = `japan-runtime-${VERSION}`;
 const MAX_RUNTIME = 80;
 const SHELL = [
   './', 'index.html', 'script.js', 'guide.js', 'styles.css', 'today.js', 'today.css',
-  'cards.js', 'cards.css', 'expenses.js', 'expenses.css', 'pwa.js', 'pwa.css', 'router.js', 'nav.css', 'ds.css',
+  'cards.js', 'cards.css', 'expenses.js', 'expenses.css', 'pwa.js', 'pwa.css', 'router.js', 'nav.css', 'ds.css', 'map.css', 'geo.js', 'map.js',
   'manifest.webmanifest', 'icons/icon-180.png', 'icons/icon-192.png',
   'icons/icon-512.png', 'icons/icon-maskable-512.png'
 ];
@@ -72,7 +72,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  const runtimeHost = ['fonts.googleapis.com', 'fonts.gstatic.com', 'images.unsplash.com'].includes(url.hostname)
+  const runtimeHost = ['fonts.googleapis.com', 'fonts.gstatic.com', 'images.unsplash.com', 'unpkg.com'].includes(url.hostname)
     || req.destination === 'image';
   if (runtimeHost) event.respondWith(staleWhileRevalidate(req, RUNTIME_CACHE));
 });

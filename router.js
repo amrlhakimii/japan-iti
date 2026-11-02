@@ -19,6 +19,7 @@
     active.classList.remove("page-enter");
     void active.offsetWidth;
     active.classList.add("page-enter");
+    if (name === "plan" && window.refreshMaps) window.refreshMaps();
     var activeLink = document.querySelector('[data-nav="' + name + '"]');
     if (activeLink && activeLink.scrollIntoView) activeLink.scrollIntoView({ block: "nearest", inline: "center" });
   }

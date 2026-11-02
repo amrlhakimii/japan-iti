@@ -540,6 +540,7 @@ daysRoot.innerHTML = days.map((day, index) => `
           <figcaption><span>${dayImages[index].label}</span><a href="https://unsplash.com/photos/${dayImages[index].id}" target="_blank" rel="noreferrer">Photo source ↗</a></figcaption>
         </figure>` : ""}
         <p class="day-lede">${day.lede}</p>
+        ${typeof splitHtml === "function" ? splitHtml(index, day) : ""}
         ${guideHtml(index)}
         <h4 class="timeline-title">Hour by hour</h4>
         <div class="timeline">
@@ -667,12 +668,14 @@ const selectDay = (index, scroll = true) => {
     chip.setAttribute("aria-selected", String(on));
     if (on && scroll) chip.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
   });
+  if (typeof initDayMap === "function") requestAnimationFrame(() => initDayMap(currentDay));
   dayCount.textContent = `${days[currentDay].number} of ${days.length - 1}`;
   dayPrev.disabled = currentDay === 0;
   dayNext.disabled = currentDay === days.length - 1;
   try { localStorage.setItem("japan-family-day", String(currentDay)); } catch (e) {}
 };
 window.selectDay = selectDay;
+window.currentDayIndex = () => currentDay;
 
 dayRail.addEventListener("click", event => {
   const chip = event.target.closest("[data-day-chip]");
