@@ -72,7 +72,7 @@
 @media (prefers-reduced-motion: reduce) { .flip-inner { transition: none; } }
 @media print { .day-split { display: block; } .split-map { display: none; } .flip { height: auto; } .flip-inner { transform: none !important; } .flip-back { display: none; } .flip-face { position: static; } }
 
-.map-el .leaflet-tile-pane { filter: saturate(.7) contrast(.95) brightness(1.03); }
+.map-el .leaflet-tile-pane { filter: none; }
 
 /* getting between stops */
 .legs { display: grid; gap: 8px; }

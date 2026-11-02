@@ -93,7 +93,7 @@
     var vector = false;
     if (L.maplibreGL && typeof maplibregl !== "undefined") {
       try {
-        L.maplibreGL({ style: "https://tiles.openfreemap.org/styles/positron", attribution: '<a href="https://openfreemap.org" target="_blank" rel="noreferrer">OpenFreeMap</a> &copy; <a href="https://www.openmaptiles.org/" target="_blank" rel="noreferrer">OpenMapTiles</a> data from <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a>' }).addTo(map);
+        L.maplibreGL({ style: "https://tiles.openfreemap.org/styles/bright", attribution: '<a href="https://openfreemap.org" target="_blank" rel="noreferrer">OpenFreeMap</a> &copy; <a href="https://www.openmaptiles.org/" target="_blank" rel="noreferrer">OpenMapTiles</a> data from <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a>' }).addTo(map);
         vector = true;
       } catch (e) { vector = false; }
     }
