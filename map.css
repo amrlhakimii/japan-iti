@@ -73,3 +73,22 @@
 @media print { .day-split { display: block; } .split-map { display: none; } .flip { height: auto; } .flip-inner { transform: none !important; } .flip-back { display: none; } .flip-face { position: static; } }
 
 .map-el .leaflet-tile-pane { filter: saturate(.7) contrast(.95) brightness(1.03); }
+
+/* getting between stops */
+.legs { display: grid; gap: 8px; }
+.leg { border: 1px solid rgba(0, 0, 0, .05); border-radius: 16px; background: rgba(255, 255, 255, .92); box-shadow: 0 4px 24px rgba(0, 0, 0, .06); }
+.leg summary { display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 10px 14px; list-style: none; cursor: pointer; }
+.leg summary::-webkit-details-marker { display: none; }
+.leg summary::after { margin-left: auto; color: var(--gray-500); content: "+"; font-size: 20px; transition: transform .2s; }
+.leg[open] summary::after { transform: rotate(45deg); color: var(--brand-700); }
+.leg-ico { display: grid; flex: 0 0 36px; height: 36px; place-items: center; border-radius: 50%; background: var(--brand-50); font-size: 17px; }
+.leg-main { display: flex; flex-direction: column; min-width: 0; }
+.leg-main strong { font-size: 14px; font-weight: 700; line-height: 1.25; }
+.leg-main small { color: var(--gray-500); font-size: 12.5px; }
+.leg-steps { margin: 0; padding: 4px 14px 4px 54px; counter-reset: step; list-style: none; }
+.leg-steps li { position: relative; display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-top: 1px solid var(--line); counter-increment: step; font-size: 13.5px; }
+.leg-steps li::before { position: absolute; left: -30px; top: 9px; display: grid; width: 20px; height: 20px; place-items: center; color: var(--brand-700); border-radius: 50%; background: var(--brand-50); content: counter(step); font-size: 11px; font-weight: 700; }
+.leg-steps li em { flex: 0 0 auto; color: var(--gray-500); font-size: 12px; font-style: normal; }
+.leg-note { margin: 4px 14px 0 54px; color: var(--gray-500); font-size: 12.5px; }
+.leg-link { display: inline-flex; align-items: center; min-height: 44px; margin: 6px 14px 10px 54px; color: var(--brand-700); font-size: 13px; font-weight: 700; text-underline-offset: 3px; }
+@media print { .leg:not([open]) .leg-steps { display: none; } }

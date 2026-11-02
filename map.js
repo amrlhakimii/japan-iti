@@ -31,6 +31,10 @@
     return { text: Math.round(km) + " km · train", mode: "train" };
   }
 
+  function fmtDist(d) { return d >= 1000 ? (d / 1000).toFixed(1) + " km" : d + " m"; }
+  function routeFor(a, b) { return typeof ROUTES !== "undefined" ? ROUTES[a + ">" + b] : null; }
+  function gwalk(a, b) { return "https://www.google.com/maps/dir/?api=1&origin=" + a.lat + "," + a.lng + "&destination=" + b.lat + "," + b.lng + "&travelmode=walking"; }
+
   function esc(t) { return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;"); }
 
   function gmaps(p) { return "https://www.google.com/maps/dir/?api=1&destination=" + p.lat + "," + p.lng + "&travelmode=transit"; }
@@ -158,6 +162,16 @@
     });
   }
 
+  function drawRoute(state, key) {
+    var R = typeof ROUTES !== "undefined" ? ROUTES[key] : null;
+    if (!R) return;
+    if (state.routeLayer) state.map.removeLayer(state.routeLayer);
+    state.routeLayer = L.polyline(R.line, { color: "#111827", weight: 5, opacity: .85, lineCap: "round" }).addTo(state.map);
+    state.map.fitBounds(state.routeLayer.getBounds(), { padding: [50, 50], maxZoom: 17 });
+    var el = document.getElementById("map-" + state.index);
+    if (el && window.innerWidth < 960 && el.scrollIntoView) el.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
   function wire(index) {
     var root = document.getElementById("split-" + index);
     if (!root || root.dataset.wired) return;
@@ -192,6 +206,19 @@
           if (el && el.scrollIntoView && window.innerWidth < 900) el.scrollIntoView({ behavior: "smooth", block: "center" });
           if (go.dataset.flyto !== "stay" && state.stopMarkers[Number(go.dataset.flyto)]) state.stopMarkers[Number(go.dataset.flyto)].openPopup();
         }
+        return;
+      }
+      var wk = e.target.closest("[data-walk]");
+      if (wk) {
+        var det = root.querySelector('.leg[data-route="' + wk.dataset.walk + '"]');
+        if (det) { det.open = true; drawRoute(state, det.dataset.route); det.scrollIntoView({ behavior: "smooth", block: "center" }); }
+        return;
+      }
+      var sm = e.target.closest(".leg > summary");
+      if (sm) {
+        var d2 = sm.parentNode;
+        if (!d2.open && d2.dataset.route) drawRoute(state, d2.dataset.route);
+        else if (d2.open && state.routeLayer) { state.map.removeLayer(state.routeLayer); state.routeLayer = null; }
         return;
       }
       var flip = e.target.closest("[data-flip]");
@@ -236,21 +263,40 @@
     }
     var cards = stops.map(function (p, i) {
       var prev = i > 0 ? leg(stops[i - 1], p) : null;
+      var rt = i > 0 ? routeFor(g.stops[i - 1], g.stops[i]) : null;
+      if (rt) prev = { mode: "walk", text: Math.max(1, Math.round(rt.t / 60)) + " min walk · " + fmtDist(rt.d) };
       var note = (GEO.notes && GEO.notes[g.stops[i]]) || "";
       return '<div class="flip" data-stop="' + index + "-" + i + '">' +
         '<div class="flip-inner"><button type="button" class="flip-face flip-front" data-flip aria-pressed="false" aria-label="Flip card for ' + esc(p.label) + '">' +
         '<span class="flip-num">' + (i + 1) + '</span><span class="flip-icon" aria-hidden="true">' + (KIND_ICON[p.kind] || "📍") + '</span>' +
         '<strong>' + esc(p.label) + '</strong><span class="flip-leg">' + (prev ? (prev.mode === "walk" ? "🚶 " : "🚆 ") + esc(prev.text) : "Start of the day") + '</span><span class="flip-hint">Tap to flip ↻</span></button>' +
         '<div class="flip-face flip-back"><strong>' + esc(p.label) + '</strong><p>' + esc(note || "Tap Directions to open live transit directions.") + '</p>' +
-        '<div class="flip-actions"><button type="button" data-flyto="' + i + '">Show on map</button><a href="' + gmaps(p) + '" target="_blank" rel="noreferrer">Directions ↗</a><button type="button" data-flip aria-pressed="true">Back ↺</button></div></div>' +
+        '<div class="flip-actions"><button type="button" data-flyto="' + i + '">Show on map</button>' + (i > 0 && routeFor(g.stops[i - 1], g.stops[i]) ? '<button type="button" data-walk="' + g.stops[i - 1] + ">" + g.stops[i] + '">Walk here</button>' : '') + '<a href="' + gmaps(p) + '" target="_blank" rel="noreferrer">Directions ↗</a><button type="button" data-flip aria-pressed="true">Back ↺</button></div></div>' +
         '</div></div>';
     }).join("");
+    var legs = "";
+    for (var li = 1; li < stops.length; li++) {
+      var ka = g.stops[li - 1], kb = g.stops[li], A = stops[li - 1], B = stops[li], R = routeFor(ka, kb), est = leg(A, B);
+      var approx = A.approx || B.approx ? '<p class="leg-note">One of these pins is approximate, so use the street signs and the Google Maps link for the last few metres.</p>' : "";
+      if (R) {
+        legs += '<details class="leg" data-route="' + ka + ">" + kb + '" data-day="' + index + '"><summary><span class="leg-ico" aria-hidden="true">🚶</span><span class="leg-main"><strong>' + esc(A.label) + ' → ' + esc(B.label) + '</strong><small>' + Math.max(1, Math.round(R.t / 60)) + ' min on foot · ' + fmtDist(R.d) + '</small></span></summary>' +
+          '<ol class="leg-steps">' + R.steps.map(function (s) { return '<li><span>' + esc(s[0]) + '</span>' + (s[1] ? '<em>' + fmtDist(s[1]) + '</em>' : '') + '</li>'; }).join("") + '</ol>' + approx +
+          '<p class="leg-note">Street names are as they appear on signs, often in Japanese. Follow the route drawn on the map.</p>' +
+          '<a class="leg-link" href="' + gwalk(A, B) + '" target="_blank" rel="noreferrer">Open walking route in Google Maps ↗</a></details>';
+      } else {
+        var how = est.mode === "walk" ? "Walk" : (hav(A, B) * 1.3 > 25 ? "Take a train (Shinkansen or limited express if booked)" : "Take a train, or a taxi if the baby is tired");
+        legs += '<details class="leg" data-day="' + index + '"><summary><span class="leg-ico" aria-hidden="true">' + (est.mode === "walk" ? "🚶" : "🚆") + '</span><span class="leg-main"><strong>' + esc(A.label) + ' → ' + esc(B.label) + '</strong><small>' + esc(est.text) + '</small></span></summary>' +
+          '<p class="leg-note">' + how + '. Station names, platforms and the live timetable are in the day guide below and in Google Maps.</p>' + approx +
+          '<a class="leg-link" href="' + gmaps(B) + '" target="_blank" rel="noreferrer">Open live transit directions ↗</a></details>';
+      }
+    }
     var chips = CATEGORIES.map(function (c) {
       return '<button type="button" class="cat-chip" data-cat="' + c.id + '" data-day="' + index + '" aria-pressed="false"><span class="cat-icon" style="background:' + c.color + '">' + c.icon + '</span>' + c.label + '</button>';
     }).join("");
     return '<div class="day-split" id="split-' + index + '">' +
       '<div class="split-side">' + stayHtml +
-      (cards ? '<h4 class="side-title">Stops today</h4><div class="flip-row">' + cards + '</div>' : '') + '</div>' +
+      (cards ? '<h4 class="side-title">Stops today</h4><div class="flip-row">' + cards + '</div>' : '') +
+      (legs ? '<h4 class="side-title">Getting between stops</h4><div class="legs">' + legs + '</div>' : '') + '</div>' +
       '<div class="split-map"><div class="map-box"><div class="map-el" id="map-' + index + '" aria-label="Map for ' + esc(day.title) + '"></div>' +
       '<button type="button" class="search-area" data-search-area="' + index + '" hidden>Search this area</button></div>' +
       '<div class="cat-row" role="group" aria-label="Show nearby places">' + chips + '</div>' +
