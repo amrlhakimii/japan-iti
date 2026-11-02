@@ -6,8 +6,8 @@ const dayGuide = [
       ["Home → KLIA Terminal 1", "Private MPV / e-hailing", "6 adults and a baby will not fit one car. Book a 7-seater or two cars. KLIA Ekspres from KL Sentral (about 30 min) is the backup."]
     ],
     solat: [
-      "Maghrib and Isyak: pray at home before leaving, or jamak taqdim at the KLIA1 surau after check-in.",
-      "Subuh will fall in Shanghai on Day 01, so don't plan on sleeping through it."
+      "Maghrib + Isyak: pray them together (jamak taqdim) at home before leaving, or at the KLIA1 surau after check-in. KL Maghrib is about 7:10 PM and Isyak about 8:20 PM.",
+      "Subuh falls in Shanghai after landing, about 5:00 AM Shanghai time."
     ]
   },
   { // Day 01 · Fri 27 Nov
@@ -18,9 +18,9 @@ const dayGuide = [
       ["Kameari Station → Airbnb", "Walk / short taxi", "Check the route for lifts. The Airbnb is near the station, so a stroller is fine."]
     ],
     solat: [
-      "Subuh (about 5:00 AM Shanghai time): pray at the gate area in Shanghai on a travel prayer mat, before sunrise at about 6:30.",
-      "Zohor + Asar: jamak at the Narita prayer room before the train (Tokyo Zohor about 11:30, Asar about 14:10). Do it before leaving the airport, because Asar ends near sunset.",
-      "Maghrib is about 4:30 PM. Pray at the Airbnb on arrival."
+      "Subuh (about 5:00 AM Shanghai time): pray at the gate area on a travel prayer mat, before sunrise at about 6:30.",
+      "Zohor + Asar: jamak at the Narita prayer room before the train. Tokyo Zohor is about 11:30 AM; Asar runs until about 4:30 PM, so you have time.",
+      "Maghrib + Isyak: jamak at the Airbnb after about 6:00 PM, or Maghrib on arrival (about 4:30 PM) and Isyak later."
     ]
   },
   { // Day 02 · Sat 28 Nov
@@ -31,8 +31,8 @@ const dayGuide = [
     ],
     solat: [
       "Subuh: pray at the Airbnb before breakfast. Sunrise is about 6:30 AM.",
-      "Zohor + Asar: Matsuya Ginza rooftop prayer room at about 2:00 PM (Zohor about 11:30, Asar about 14:10).",
-      "Maghrib is about 4:30 PM. Use the unscheduled rest window at about 5:30 to go back to Matsuya, before it closes. Isyak is about 6:00 PM, so pray it at Gyumon or at home."
+      "Zohor + Asar: jamak at the Matsuya Ginza rooftop prayer room at about 2:00 PM (Zohor about 11:30, Asar about 14:10). Pray Zohor first, then Asar.",
+      "Maghrib + Isyak: jamak at the Airbnb after dinner, about 8:30 PM (jamak ta'khir). Maghrib is about 4:30 PM and Isyak about 6:00 PM."
     ]
   },
   { // Day 03 · Sun 29 Nov
@@ -44,10 +44,9 @@ const dayGuide = [
       ["Hase → Kamakura → Tokyo → Airbnb", "Enoden, Yokosuka Line, then the same route home", "Leave Hase by 3:30 PM. Expect about 2 hours home."]
     ],
     solat: [
-      "Subuh: before leaving, at about 5:00–6:30 AM.",
-      "Zohor: no confirmed prayer room in Kamakura. Use a quiet corner with a portable mat, or the baby/family room at Tokyo Station for a private space. Pray at about 12:15 PM.",
-      "Asar: about 2:10 PM, pray before heading back (Asar ends at sunset, about 4:30 PM).",
-      "Maghrib is about 4:30 PM, so pray on the train seat or on arrival at the Airbnb."
+      "Subuh: before leaving, about 5:00–6:30 AM.",
+      "Zohor + Asar: jamak taqdim at lunch, about 12:15 PM. There is no confirmed prayer room in Kamakura, so use a quiet corner with a portable mat, or the baby/family room at Tokyo Station for a private space.",
+      "Maghrib + Isyak: jamak at the Airbnb after the train home, about 6:30–7:00 PM (jamak ta'khir)."
     ]
   },
   { // Day 04 · Mon 30 Nov
@@ -59,8 +58,8 @@ const dayGuide = [
       ["Shibuya → Airbnb", "Train (about 55 min) or taxi", "Buy breakfast on the way."]
     ],
     solat: [
-      "Zohor + Asar: Tokyo Camii after lunch at about 2:10 PM (Asar starts at about 14:10). It is the one proper mosque on this trip, so plan to use it.",
-      "Maghrib is about 4:30 PM, while you are at Shibuya Sky. Pray at about 5:15 PM near Shibuya or at home, and Isyak (about 6:00 PM) together at the Airbnb."
+      "Zohor + Asar: jamak at Tokyo Camii after lunch, at about 2:10 PM. It is the one proper mosque on this trip, so plan to use it.",
+      "Maghrib + Isyak: jamak at the Airbnb after getting home, about 6:30–7:00 PM. Maghrib is about 4:30 PM, while you are at Shibuya Sky."
     ]
   },
   { // Day 05 · Tue 1 Dec
@@ -72,8 +71,8 @@ const dayGuide = [
     ],
     solat: [
       "Subuh: pray at the Airbnb in Tokyo before leaving. It is dark until about 6:30 AM.",
-      "Zohor + Asar: no mosque near Kawaguchiko. Pray at the Airbnb on arrival, or jamak at about 12:00 while having lunch. Michi-no-Eki rest stops on the road also have toilets.",
-      "Maghrib is about 4:30 PM, so be back at the Airbnb by then. Daylight ends early and it gets very cold."
+      "Zohor + Asar: jamak at lunch, about 12:00 PM. There is no mosque near Kawaguchiko, so pray at the Airbnb or in a quiet corner.",
+      "Maghrib + Isyak: jamak at the Airbnb after check-in, about 6:00 PM. Daylight ends early and it gets very cold."
     ]
   },
   { // Day 06 · Wed 2 Dec
@@ -85,9 +84,9 @@ const dayGuide = [
       ["Mishima → Kyoto", "Shinkansen (about 1 hr 45 min)", "Reserved seats with luggage space. Taxi from Kyoto Station to the Airbnb, which is on the east side of the city."]
     ],
     solat: [
-      "Subuh: before 6:45 AM departure, about 5:00–6:30.",
-      "Zohor + Asar: pray at lunch near Kawaguchiko at about 12:00 (Zohor about 11:30 in Fuji), or jamak taqdim before the bus.",
-      "Maghrib and Isyak: jamak on the Shinkansen or on arrival in Kyoto at about 6:15 PM. Maghrib in Kyoto is about 4:50 PM, so a Shinkansen seat is a fine place to pray."
+      "Subuh: before the 6:45 AM departure, about 5:00–6:30.",
+      "Zohor + Asar: jamak taqdim at lunch near Kawaguchiko, about 12:00, before the bus.",
+      "Maghrib + Isyak: jamak on arrival at the Kyoto Airbnb, about 6:15 PM (jamak ta'khir), or Maghrib on the Shinkansen and Isyak at the Airbnb."
     ]
   },
   { // Day 07 · Thu 3 Dec
@@ -98,8 +97,8 @@ const dayGuide = [
     ],
     solat: [
       "Subuh: before leaving at about 7:30 AM (Kyoto sunrise is about 6:50 AM).",
-      "Zohor + Asar: Yoshiya Arashiyama has a prayer room and wudu facilities. Pray at about 12:00–1:00 PM (Zohor about 11:50 and Asar about 14:25 in Kyoto).",
-      "Maghrib is about 4:50 PM, so be on the way back from Arashiyama by 4:00 PM."
+      "Zohor + Asar: jamak at Yoshiya Arashiyama, which has a prayer room and wudu facilities, at about 12:00–1:00 PM.",
+      "Maghrib + Isyak: jamak at the Airbnb after dinner (jamak ta'khir). Be on the way back from Arashiyama by 4:00 PM."
     ]
   },
   { // Day 08 · Fri 4 Dec
@@ -110,8 +109,8 @@ const dayGuide = [
     ],
     solat: [
       "Subuh: before leaving, about 5:30–6:50.",
-      "Zohor + Asar: at lunch in Osaka at about 12:00–1:00 PM. No mosque is confirmed on this route, so use a quiet corner or the station area.",
-      "Maghrib is about 4:50 PM, so pray at the Airbnb on check-in."
+      "Zohor + Asar: jamak at lunch in Osaka, about 12:00–1:00 PM. No mosque is confirmed on this route, so use a quiet corner or the station area.",
+      "Maghrib + Isyak: jamak at the Airbnb after check-in."
     ]
   },
   { // Day 09 · Sat 5 Dec
@@ -122,8 +121,8 @@ const dayGuide = [
     ],
     solat: [
       "Subuh: before breakfast.",
-      "Zohor + Asar: at a halal restaurant or a quiet corner at about 12:30–2:00 PM. Check the Halal Gourmet Japan app for prayer space near your lunch spot.",
-      "Maghrib is about 4:50 PM, so pray at Dotonbori at dusk or at the Airbnb."
+      "Zohor + Asar: jamak at a halal restaurant or a quiet corner, about 12:30–2:00 PM. Check the Halal Gourmet Japan app for prayer space near your lunch spot.",
+      "Maghrib + Isyak: jamak at the Airbnb when you get home, about 7:00 PM (jamak ta'khir), or Maghrib at Dotonbori at dusk."
     ]
   },
   { // Day 10 · Sun 6 Dec
@@ -131,7 +130,7 @@ const dayGuide = [
       ["Airbnb → your one outing", "Train or taxi", "Choose the closest saved place. Keep it under 30 minutes each way."]
     ],
     solat: [
-      "Normal five prayers. Pray Zohor + Asar before 2:25 PM if you are out, and be home for Maghrib at about 4:50 PM."
+      "Five prayers at the Airbnb, with the two jamak pairs: Zohor + Asar at lunch time, and Maghrib + Isyak after dinner."
     ]
   },
   { // Day 11 · Mon 7 Dec
@@ -143,8 +142,8 @@ const dayGuide = [
     ],
     solat: [
       "Subuh: at the Airbnb at about 5:25–5:45 AM, before the 6:00 AM taxi. Check the exact time in Muslim Pro.",
-      "Zohor: Narita prayer room at about 11:30 AM, after bag drop.",
-      "Asar: in the air or at the Shanghai gate. Maghrib and Isyak: jamak on the Shanghai → KLIA flight or at KLIA."
+      "Zohor + Asar: jamak at the Narita prayer room at about 11:30 AM, after bag drop.",
+      "Maghrib + Isyak: jamak on the Shanghai → KLIA flight or at the gate, before landing at 11:15 PM."
     ]
   }
 ];

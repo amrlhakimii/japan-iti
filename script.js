@@ -23,7 +23,7 @@ const days = [
       ["9:40 AM–12:50 PM", "Flight Shanghai → Narita", "Departs 9:40 AM per your ticket and lands at Narita at 12:50 PM (Tokyo is 1 hour ahead). Check the terminal on your booking; MU523 was listed at Terminal 2.", "Flight"],
       ["12:50–2:20 PM", "Immigration, luggage & Suica", "Open the Visit Japan Web QR code prepared before departure, then collect bags. Use digital Suica if your phone supports it; otherwise buy a physical IC card. Allow 90 minutes.", "Airport", [{ label: "Prepare arrival QR", url: "https://services.digital.go.jp/en/visit-japan-web/" }]],
       ["2:40–4:30 PM", "Narita T2 → Nippori → Kameari", "Keisei Skyliner to Nippori (about 40 min, reserved seats), then the JR Joban Line to Kameari. The Airbnb is on the east side of Tokyo, so do not go via Shinjuku. For a large group with luggage, a pre-booked van is easier; confirm a baby seat.", "Reserved seats"],
-      ["4:30–5:00 PM", "Kameari Station → Airbnb", "Short walk or taxi. Pray Maghrib on arrival (about 4:30 PM).", "Low walking"],
+      ["4:30–5:00 PM", "Kameari Station → Airbnb", "Short walk or taxi. Maghrib starts at about 4:30 PM: pray it on arrival, and jamak it with Isyak after 6:00 PM if you prefer.", "Low walking"],
       ["5:00–6:30 PM", "Check in, feed & rest", "Unpack only the first-night essentials and let the baby settle.", "Rest"],
       ["6:45–8:00 PM", "Dinner at Halal Karemen King", "The restaurant is in Kanda/Akihabara—not Ginza. If everyone is tired, switch to a closer halal dinner or delivery.", "Halal"],
       ["8:30 PM", "Convenience-store breakfast", "Pick up water, fruit, yoghurt, bread and easy snacks near the Airbnb.", "Flexible"]
@@ -62,12 +62,12 @@ const days = [
       ["9:45–10:00 AM", "Tokyo Station: lunch & baby reset", "Buy a seafood or vegetarian bento or onigiri for lunch. Use the station family room for a feed and nappy change.", "Reset"],
       ["10:00–10:55 AM", "JR Yokosuka Line to Kamakura", "Direct, about 55 minutes with no more changes. Sit by the door with the stroller.", "Direct train"],
       ["11:00 AM–12:15 PM", "Komachi-dori & Tsurugaoka Hachimangu", "From Kamakura Station walk the flat shopping street to the shrine, about 15 minutes. Use the carrier if it is crowded.", "Walk"],
-      ["12:15–1:15 PM", "Zohor prayer & lunch", "No confirmed prayer room here. Use a quiet corner with a portable prayer mat. Try shirasu-don (whitebait bowl) and ask the staff to check for mirin, sake and pork stock.", "Prayer + lunch"],
+      ["12:15–1:15 PM", "Zohor + Asar (jamak) & lunch", "No confirmed prayer room here. Use a quiet corner with a portable prayer mat and pray Zohor then Asar together (jamak taqdim). Try shirasu-don (whitebait bowl) and ask the staff to check for mirin, sake and pork stock.", "Prayer + lunch"],
       ["1:30–2:00 PM", "Enoden tram to Hase", "About 5 minutes from Kamakura Station. The tram is small, so fold the stroller.", "Short ride"],
       ["2:00–3:00 PM", "Great Buddha (Kotoku-in)", "A 10-minute walk from Hase Station on flat ground. Hase-dera is up steps: carrier only, and optional.", "Sight"],
-      ["3:00–3:30 PM", "Asar prayer & feed", "Do it before heading back, because sunset is about 4:30 PM.", "Prayer + reset"],
+      ["3:00–3:30 PM", "Feed, nappy & rest", "Asar is already done with the jamak at lunch, so use this time for the baby before heading back.", "Reset"],
       ["3:30–4:15 PM", "Back to Kamakura Station", "Enoden then the Yokosuka Line. Leave by 3:30 to avoid the weekend rush.", "Return"],
-      ["4:30–6:30 PM", "Train back to Kameari", "Maghrib falls at about 4:30 PM, so pray on arrival at the Airbnb or in the train seat.", "Home"],
+      ["4:30–6:30 PM", "Train back to Kameari", "Maghrib starts at about 4:30 PM. Pray Maghrib and Isyak together (jamak) at the Airbnb after getting home, or pray Maghrib on the train.", "Home"],
       ["7:00 PM", "Easy dinner near the Airbnb", "Keep it simple after a long day.", "Rest"]
     ],
     tip: "Kamakura is crowded on Sundays. Skip anything that needs a long queue, and keep the afternoon short since sunset is early. Asakusa and Sensoji are not on this plan; add them on another Tokyo day only if there is energy."
@@ -206,10 +206,10 @@ const days = [
       ["6:30–7:00 AM", "Shinkansen Shin-Osaka → Tokyo", "Board a Nozomi at about 6:30–7:00 AM. It takes about 2.5 hours and costs roughly ¥14,000 each. Reserve seats with luggage space. Feed the baby on the train.", "Reserved seats"],
       ["About 9:20–9:45 AM", "Tokyo Station → Narita Express", "Change to the Narita Express at Tokyo Station, about 1 hour to the terminal. Reserve a seat. Use lifts, and allow 20 minutes for the change.", "Transfer"],
       ["About 10:50–11:00 AM", "Narita check-in & bag drop", "Check your terminal on the booking (MU523 on the outbound flew into Terminal 2). Do the tax-free departure steps first if you bought tax-free goods.", "Check-in"],
-      ["11:15 AM–12:45 PM", "Zohor prayer, feed & nappy", "Use the airport prayer room. Tokyo Zohor is about 11:30 AM. Keep Asar for the flight.", "Prayer + reset"],
-      ["1:50–4:30 PM", "Flight Tokyo → Shanghai", "Lands at 4:30 PM Shanghai time. Pray Asar in the air or at the gate.", "Flight"],
+      ["11:15 AM–12:45 PM", "Zohor + Asar (jamak), feed & nappy", "Use the airport prayer room after bag drop. Tokyo Zohor is about 11:30 AM, so pray Zohor then Asar together (jamak taqdim) before boarding.", "Prayer + reset"],
+      ["1:50–4:30 PM", "Flight Tokyo → Shanghai", "Lands at 4:30 PM Shanghai time. Asar is already done with the jamak, so just rest and feed the baby.", "Flight"],
       ["4:30–5:15 PM", "Shanghai transit", "A 45-minute connection. Go straight to the gate and tell staff you have a baby.", "Tight"],
-      ["5:15–11:15 PM", "Flight Shanghai → KLIA", "Lands at KLIA at 11:15 PM. Maghrib and Isyak can be prayed on board.", "Flight"]
+      ["5:15–11:15 PM", "Flight Shanghai → KLIA", "Lands at KLIA at 11:15 PM. Pray Maghrib and Isyak together (jamak) on board or at the gate, before landing.", "Flight"]
     ],
     tip: "If the Shinkansen is delayed, the Narita Express is the next thing to slip, so don't take a Shinkansen later than 7:30 AM. Ask Tokyo check-in to tag bags through to KLIA."
   }
