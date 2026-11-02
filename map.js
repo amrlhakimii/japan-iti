@@ -108,7 +108,8 @@
     }
     stops.forEach(function (p, i) {
       var m = L.marker([p.lat, p.lng], { icon: numIcon(i + 1), title: p.label }).addTo(map);
-      m.bindPopup("<strong>" + esc(p.label) + "</strong><br><a href='" + gmaps(p) + "' target='_blank' rel='noreferrer'>Directions ↗</a>");
+      var pp = typeof PHOTOS !== "undefined" ? PHOTOS[day.stops[i]] : null;
+      m.bindPopup((pp ? "<img class='pop-img' src='" + esc(pp.src) + "' alt='' loading='lazy'>" : "") + "<strong>" + esc(p.label) + "</strong><br><a href='" + gmaps(p) + "' target='_blank' rel='noreferrer'>Directions ↗</a>", { minWidth: 200 });
       m.on("click", function () { highlightCard(index, i); });
       state.stopMarkers.push(m);
     });
@@ -318,12 +319,16 @@
       var rt = i > 0 ? routeFor(g.stops[i - 1], g.stops[i]) : null;
       if (rt) prev = { mode: "walk", text: Math.max(1, Math.round(rt.t / 60)) + " min walk · " + fmtDist(rt.d) };
       var note = (GEO.notes && GEO.notes[g.stops[i]]) || "";
+      var ph = typeof PHOTOS !== "undefined" ? PHOTOS[g.stops[i]] : null;
+      var photo = ph
+        ? '<span class="flip-photo"><img src="' + esc(ph.src) + '" alt="' + esc(p.label) + (ph.area ? ' area' : '') + '" loading="lazy" decoding="async" onerror="this.parentNode.classList.add(\'no-img\');this.remove()">' + (ph.area ? '<span class="area-tag">Area photo</span>' : '') + '</span>'
+        : '<span class="flip-photo no-img"></span>';
       return '<div class="flip" data-stop="' + index + "-" + i + '">' +
-        '<div class="flip-inner"><button type="button" class="flip-face flip-front" data-flip aria-pressed="false" aria-label="Flip card for ' + esc(p.label) + '">' +
+        '<div class="flip-inner"><button type="button" class="flip-face flip-front" data-flip aria-pressed="false" aria-label="Flip card for ' + esc(p.label) + '">' + photo +
         '<span class="flip-num">' + (i + 1) + '</span><span class="flip-icon" aria-hidden="true">' + (KIND_ICON[p.kind] || "📍") + '</span>' +
-        '<strong>' + esc(p.label) + '</strong><span class="flip-leg">' + (prev ? (prev.mode === "walk" ? "🚶 " : "🚆 ") + esc(prev.text) : "Start of the day") + '</span><span class="flip-hint">Tap to flip ↻</span></button>' +
+        '<span class="flip-body"><strong>' + esc(p.label) + '</strong><span class="flip-leg">' + (prev ? (prev.mode === "walk" ? "🚶 " : "🚆 ") + esc(prev.text) : "Start of the day") + '</span><span class="flip-hint">Tap to flip ↻</span></span></button>' +
         '<div class="flip-face flip-back"><strong>' + esc(p.label) + '</strong><p>' + esc(note || "Tap Directions to open live transit directions.") + '</p>' +
-        '<div class="flip-actions"><button type="button" data-flyto="' + i + '">Show on map</button>' + (i > 0 && routeFor(g.stops[i - 1], g.stops[i]) ? '<button type="button" data-walk="' + g.stops[i - 1] + ">" + g.stops[i] + '">Walk here</button>' : '') + '<a href="' + gmaps(p) + '" target="_blank" rel="noreferrer">Directions ↗</a><button type="button" data-flip aria-pressed="true">Back ↺</button></div></div>' +
+        '<div class="flip-actions"><button type="button" data-flyto="' + i + '">Show on map</button>' + (i > 0 && routeFor(g.stops[i - 1], g.stops[i]) ? '<button type="button" data-walk="' + g.stops[i - 1] + ">" + g.stops[i] + '">Walk here</button>' : '') + '<a href="' + gmaps(p) + '" target="_blank" rel="noreferrer">Directions ↗</a>' + (ph ? '<a href="' + esc(ph.page) + '" target="_blank" rel="noreferrer">Photo: Wikipedia ↗</a>' : '') + '<button type="button" data-flip aria-pressed="true">Back ↺</button></div></div>' +
         '</div></div>';
     }).join("");
     var legs = "";

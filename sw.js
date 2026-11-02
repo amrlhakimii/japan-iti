@@ -1,10 +1,10 @@
-const VERSION = 'v30';
+const VERSION = 'v31';
 const SHELL_CACHE = `japan-shell-${VERSION}`;
 const RUNTIME_CACHE = `japan-runtime-${VERSION}`;
 const MAX_RUNTIME = 80;
 const SHELL = [
   './', 'index.html', 'script.js', 'guide.js', 'styles.css', 'today.js', 'today.css',
-  'cards.js', 'cards.css', 'expenses.js', 'expenses.css', 'pwa.js', 'pwa.css', 'router.js', 'nav.css', 'ds.css', 'map.css', 'geo.js', 'routes.js', 'map.js',
+  'cards.js', 'cards.css', 'expenses.js', 'expenses.css', 'pwa.js', 'pwa.css', 'router.js', 'nav.css', 'ds.css', 'map.css', 'geo.js', 'photos.js', 'routes.js', 'map.js',
   'manifest.webmanifest', 'icons/icon-180.png', 'icons/icon-192.png',
   'icons/icon-512.png', 'icons/icon-maskable-512.png'
 ];
