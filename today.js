@@ -158,12 +158,8 @@
       jump.addEventListener("click", function (ev2) {
         ev2.preventDefault();
         if (window.showPage) window.showPage("plan");
-        var content = document.getElementById("day-" + st.index);
-        var dayCard = content && content.closest(".day-card");
-        if (!dayCard) return;
-        var btn = dayCard.querySelector(".day-summary");
-        if (btn && !dayCard.classList.contains("open")) btn.click();
-        dayCard.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (window.selectDay) window.selectDay(st.index);
+        window.scrollTo({ top: 0, behavior: "smooth" });
       });
       card.appendChild(jump);
     }

@@ -7,7 +7,7 @@
   <title>Japan, Slowly — Family Itinerary</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Gloock&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="today.css">
   <link rel="stylesheet" href="cards.css">
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="pwa.css">
   <link rel="stylesheet" href="nav.css">
   <link rel="manifest" href="manifest.webmanifest">
-  <meta name="theme-color" content="#143b31">
+  <meta name="theme-color" content="#ffffff">
   <link rel="apple-touch-icon" href="icons/icon-180.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Japan, Slowly">
@@ -40,11 +40,10 @@
         <p class="hero-intro">Twelve unhurried days through Tokyo, Fuji, Kyoto and Osaka—paced for feeds, naps, prayer breaks and plenty of breathing room.</p>
         <div class="hero-actions">
           <a class="primary-button" href="#plan">Explore the days <span aria-hidden="true">→</span></a>
-          <button class="text-button" type="button" data-expand-all>Expand all days</button>
         </div>
         <dl class="trip-stats">
-          <div><dt>11</dt><dd>days</dd></div>
-          <div><dt>3</dt><dd>places</dd></div>
+          <div><dt>12</dt><dd>days</dd></div>
+          <div><dt>4</dt><dd>cities</dd></div>
           <div><dt>Low</dt><dd>walking pace</dd></div>
         </dl>
       </div>
@@ -69,19 +68,20 @@
     <section class="itinerary-section" id="itinerary">
       <div class="section-heading">
         <div><p class="eyebrow"><span></span> Your day-by-day</p><h2>Room to wander.<br>Time to rest.</h2></div>
-        <p>Tap a day to see the full plan. Timings are intentionally generous, with one main area at a time and built-in reset windows.</p>
+        <p>Pick a day, or swipe left and right. Timings are intentionally generous, with one main area at a time and built-in reset windows.</p>
       </div>
 
-      <div class="filter-bar" role="group" aria-label="Filter itinerary by location">
-        <button class="filter active" type="button" data-filter="all">All days</button>
-        <button class="filter" type="button" data-filter="transit">Travel</button>
-        <button class="filter" type="button" data-filter="tokyo">Tokyo</button>
-        <button class="filter" type="button" data-filter="fuji">Fuji</button>
-        <button class="filter" type="button" data-filter="kyoto">Kyoto</button>
-        <button class="filter" type="button" data-filter="osaka">Osaka</button>
+      <div class="day-picker">
+        <div class="day-rail" data-day-rail role="tablist" aria-label="Choose a day"></div>
       </div>
 
       <div class="days-list" data-days></div>
+
+      <div class="day-pager">
+        <button type="button" class="pager-btn" data-day-prev>← Previous day</button>
+        <span class="pager-count" data-day-count aria-live="polite"></span>
+        <button type="button" class="pager-btn pager-next" data-day-next>Next day →</button>
+      </div>
     </section>
 
     </div>

@@ -44,9 +44,5 @@
   };
   window.addEventListener("hashchange", route);
 
-  // "Expand all days" lives on Home but acts on the Plan page.
-  var expand = document.querySelector("[data-expand-all]");
-  if (expand) expand.addEventListener("click", function () { location.hash = "plan"; });
-
   route();
 })();

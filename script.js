@@ -510,29 +510,30 @@ function guideHtml(index) {
   if (!g) return "";
   return `
         <div class="day-guide">
-          <h4>How to get around</h4>
-          <ol class="guide-legs">
-            ${g.legs.map(([route, mode, note]) => `<li><strong>${esc(route)}</strong><span class="guide-mode">${esc(mode)}</span><span>${esc(note)}</span></li>`).join("")}
-          </ol>
-          <h4>Solat plan</h4>
-          <ul class="guide-solat">
-            ${g.solat.map(item => `<li>${esc(item)}</li>`).join("")}
-          </ul>
+          <section class="guide-block">
+            <h4>How to get around</h4>
+            <ol class="guide-legs">
+              ${g.legs.map(([route, mode, note]) => `<li><strong>${esc(route)}</strong><span class="guide-mode">${esc(mode)}</span><span>${esc(note)}</span></li>`).join("")}
+            </ol>
+          </section>
+          <section class="guide-block">
+            <h4>Solat plan</h4>
+            <ul class="guide-solat">
+              ${g.solat.map(item => `<li>${esc(item)}</li>`).join("")}
+            </ul>
+          </section>
         </div>`;
 }
 
 const daysRoot = document.querySelector("[data-days]");
 
 daysRoot.innerHTML = days.map((day, index) => `
-  <article class="day-card${index === 0 ? " open" : ""}" data-category="${day.category}">
-    <button class="day-summary" type="button" aria-expanded="${index === 0}" aria-controls="day-${index}">
-      <span class="day-number">${day.number}</span>
+  <article class="day-card" id="day-card-${index}" data-category="${day.category}" hidden>
+    <header class="day-head">
+      <span class="day-number">${day.number} · ${day.date}</span>
       <h3 class="day-title">${day.title}</h3>
-      <span class="day-date">${day.date}</span>
-      <span class="day-toggle" aria-hidden="true">+</span>
-    </button>
+    </header>
     <div class="day-content" id="day-${index}">
-      <span aria-hidden="true"></span>
       <div class="day-content-inner">
         ${dayImages[index] ? `<figure class="day-photo">
           <img src="${photo(dayImages[index].id)}" alt="${dayImages[index].alt}" loading="lazy">
@@ -540,6 +541,7 @@ daysRoot.innerHTML = days.map((day, index) => `
         </figure>` : ""}
         <p class="day-lede">${day.lede}</p>
         ${guideHtml(index)}
+        <h4 class="timeline-title">Hour by hour</h4>
         <div class="timeline">
           ${day.events.map(([time, title, detail, tag, links = []]) => `
             <div class="event">
@@ -633,33 +635,84 @@ placesRoot.addEventListener("click", event => {
 
 applyPlaceFilters();
 
-daysRoot.addEventListener("click", event => {
-  const button = event.target.closest(".day-summary");
-  if (!button) return;
-  const card = button.closest(".day-card");
-  const open = card.classList.toggle("open");
-  button.setAttribute("aria-expanded", String(open));
+const dayShort = ["KLIA", "Tokyo", "Ginza", "Kamakura", "Shibuya", "Fuji", "To Kyoto", "Kyoto", "To Osaka", "Osaka", "Osaka", "Home"];
+const dayRail = document.querySelector("[data-day-rail]");
+const dayCount = document.querySelector("[data-day-count]");
+const dayPrev = document.querySelector("[data-day-prev]");
+const dayNext = document.querySelector("[data-day-next]");
+const dayCards = [...document.querySelectorAll(".day-card")];
+const MONTH_INDEX = { Nov: 10, Dec: 11 };
+let currentDay = 0;
+
+const dayDate = day => {
+  const match = /(\d{1,2})\s+(Nov|Dec)/.exec(day.date);
+  return match ? { d: match[1], m: match[2] } : { d: "", m: "" };
+};
+
+dayRail.innerHTML = days.map((day, index) => {
+  const { d, m } = dayDate(day);
+  return `<button class="day-chip" type="button" role="tab" data-day-chip="${index}" aria-selected="false">
+    <span class="chip-num">${day.number.replace("Day ", "Day ")}</span>
+    <strong>${d} ${m}</strong>
+    <span class="chip-place">${dayShort[index] || ""}</span>
+  </button>`;
+}).join("");
+
+const selectDay = (index, scroll = true) => {
+  currentDay = Math.max(0, Math.min(days.length - 1, index));
+  dayCards.forEach((card, i) => { card.hidden = i !== currentDay; });
+  dayRail.querySelectorAll(".day-chip").forEach((chip, i) => {
+    const on = i === currentDay;
+    chip.classList.toggle("active", on);
+    chip.setAttribute("aria-selected", String(on));
+    if (on && scroll) chip.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
+  });
+  dayCount.textContent = `${days[currentDay].number} of ${days.length - 1}`;
+  dayPrev.disabled = currentDay === 0;
+  dayNext.disabled = currentDay === days.length - 1;
+  try { localStorage.setItem("japan-family-day", String(currentDay)); } catch (e) {}
+};
+window.selectDay = selectDay;
+
+dayRail.addEventListener("click", event => {
+  const chip = event.target.closest("[data-day-chip]");
+  if (chip) { selectDay(Number(chip.dataset.dayChip)); window.scrollTo({ top: 0, behavior: "smooth" }); }
+});
+const stepDay = delta => { selectDay(currentDay + delta); window.scrollTo({ top: 0, behavior: "smooth" }); };
+dayPrev.addEventListener("click", () => stepDay(-1));
+dayNext.addEventListener("click", () => stepDay(1));
+
+document.addEventListener("keydown", event => {
+  if (document.body.dataset.page !== "plan") return;
+  if (/^(input|textarea|select)$/i.test(event.target.tagName)) return;
+  if (event.key === "ArrowLeft") stepDay(-1);
+  if (event.key === "ArrowRight") stepDay(1);
 });
 
-document.querySelectorAll("[data-filter]").forEach(button => {
-  button.addEventListener("click", () => {
-    document.querySelectorAll("[data-filter]").forEach(item => item.classList.remove("active"));
-    button.classList.add("active");
-    document.querySelectorAll(".day-card").forEach(card => {
-      card.hidden = button.dataset.filter !== "all" && card.dataset.category !== button.dataset.filter;
-    });
-  });
-});
+let touchX = null;
+let touchY = null;
+daysRoot.addEventListener("touchstart", event => { touchX = event.touches[0].clientX; touchY = event.touches[0].clientY; }, { passive: true });
+daysRoot.addEventListener("touchend", event => {
+  if (touchX === null) return;
+  const dx = event.changedTouches[0].clientX - touchX;
+  const dy = event.changedTouches[0].clientY - touchY;
+  touchX = touchY = null;
+  if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 1.5) stepDay(dx < 0 ? 1 : -1);
+}, { passive: true });
 
-document.querySelector("[data-expand-all]").addEventListener("click", event => {
-  const cards = [...document.querySelectorAll(".day-card:not([hidden])")];
-  const shouldOpen = cards.some(card => !card.classList.contains("open"));
-  cards.forEach(card => {
-    card.classList.toggle("open", shouldOpen);
-    card.querySelector(".day-summary").setAttribute("aria-expanded", String(shouldOpen));
+(() => {
+  const now = new Date();
+  let start = 0;
+  const todayIndex = days.findIndex(day => {
+    const { d, m } = dayDate(day);
+    return m && now.getFullYear() === 2026 && now.getMonth() === MONTH_INDEX[m] && now.getDate() === Number(d);
   });
-  event.currentTarget.textContent = shouldOpen ? "Collapse all days" : "Expand all days";
-});
+  if (todayIndex >= 0) start = todayIndex;
+  else {
+    try { start = Number(localStorage.getItem("japan-family-day")) || 0; } catch (e) { start = 0; }
+  }
+  selectDay(start, false);
+})();
 
 document.querySelectorAll("[data-print]").forEach(button => button.addEventListener("click", () => window.print()));
 

@@ -1,10 +1,10 @@
-.expenses-section { padding: clamp(56px, 8vw, 110px) clamp(20px, 5vw, 76px); }
+.expenses-section { padding: 36px clamp(16px, 4vw, 48px) 24px; }
 .exp-wrap { max-width: 1200px; margin: 0 auto; }
 .exp-grid { display: grid; gap: 20px; grid-template-columns: 1fr; align-items: start; }
 .exp-col { display: grid; gap: 20px; min-width: 0; }
 @media (min-width: 900px) { .exp-grid { grid-template-columns: minmax(300px, 400px) 1fr; } }
-.exp-card { padding: 20px; background: var(--card); border: 1px solid var(--line); border-radius: 6px; min-width: 0; }
-.exp-card h3 { margin: 0 0 14px; font-family: var(--serif); font-weight: 400; font-size: 24px; letter-spacing: -.02em; }
+.exp-card { padding: 20px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-sm); min-width: 0; }
+.exp-card h3 { margin: 0 0 14px; font-weight: 700; font-size: 20px; letter-spacing: -.02em; }
 .exp-field { display: grid; gap: 6px; margin-bottom: 14px; min-width: 0; }
 .exp-field > span { color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .exp-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -29,7 +29,7 @@
 .exp-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
 .exp-stat { display: grid; gap: 2px; padding: 14px; background: var(--sage); border-radius: 4px; min-width: 0; }
 .exp-stat-label { color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-.exp-stat-value { font-family: var(--serif); font-weight: 400; font-size: clamp(22px, 5vw, 30px); overflow-wrap: anywhere; }
+.exp-stat-value { font-weight: 700; font-size: clamp(22px, 5vw, 30px); overflow-wrap: anywhere; }
 .exp-stat-sub { color: var(--muted); font-size: 13px; }
 .exp-stat.is-over { background: var(--orange-soft); }
 .exp-stat.is-over .exp-stat-value { color: #a3281a; }
