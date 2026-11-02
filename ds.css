@@ -5,15 +5,15 @@
    One accent drives everything: change --brand-500 / --brand-700 / --brand-rgb to re-skin. */
 
 :root {
-  --brand-50: #ffebee;
-  --brand-100: #ffccd5;
-  --brand-200: #ff99ab;
-  --brand-300: #ff6682;
-  --brand-500: #ff385c;
-  --brand-600: #ff385c;
-  --brand-700: #eb002a;
-  --brand-800: #9e001d;
-  --brand-rgb: 255, 56, 92;
+  --brand-50: #ebfeff;
+  --brand-100: #ccfdff;
+  --brand-200: #99faff;
+  --brand-300: #66f8ff;
+  --brand-500: #00adb5;
+  --brand-600: #00adb5;
+  --brand-700: #006469;
+  --brand-800: #001b1c;
+  --brand-rgb: 0, 173, 181;
 
   --gray-50: #f9fafb;
   --gray-100: #f3f4f6;
@@ -70,7 +70,7 @@ h1, h2, h3, .brand, .day-title { font-family: var(--display); }
   letter-spacing: .08em;
   text-transform: uppercase;
 }
-.eyebrow, .day-number, .panel-kicker, .tips-grid article > span, .restaurant-grid span, .decision-strip span, .principles article > span, .today-eyebrow { color: var(--brand-600); }
+.eyebrow, .day-number, .panel-kicker, .tips-grid article > span, .restaurant-grid span, .decision-strip span, .principles article > span, .today-eyebrow { color: #00868d; }
 .control-group > span, .place-meta dt, .timeline-title, .day-guide h4, .pager-count, .saved-total { color: var(--gray-500); }
 .timeline-title { margin: 0 0 10px 4px; }
 .day-guide h4 { margin: 0 0 8px; font-family: var(--sans); }
@@ -111,7 +111,7 @@ h1, h2, h3, .brand, .day-title { font-family: var(--display); }
   backdrop-filter: blur(12px);
 }
 .brand { color: var(--gray-900); font-size: 1.125rem; font-weight: 800; letter-spacing: -.03em; }
-.brand-word b { color: var(--brand-600); font-weight: 800; }
+.brand-word b { color: #00868d; font-weight: 800; }
 .brand-mark { border-radius: 12px; background: linear-gradient(135deg, var(--brand-500), var(--brand-700)); box-shadow: var(--glow); }
 
 /* ---------- buttons ---------- */
@@ -228,7 +228,7 @@ footer { background: transparent; border-top: 0; }
 .ticket-grid { display: grid; gap: 14px; grid-template-columns: repeat(2, 1fr); }
 .ticket-card { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 20px; }
 .ticket-wide { grid-column: 1 / -1; }
-.ticket-date { color: var(--brand-600); font-size: .6875rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.ticket-date { color: #00868d; font-size: .6875rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
 .ticket-card h3 { margin: 0; font-size: 18px; font-weight: 700; letter-spacing: -.02em; }
 .ticket-card p { margin: 0; color: var(--gray-500); font-size: 14px; }
 .ticket-card p strong { color: var(--gray-900); }
