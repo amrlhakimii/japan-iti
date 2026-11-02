@@ -92,3 +92,8 @@
 .leg-note { margin: 4px 14px 0 54px; color: var(--gray-500); font-size: 12.5px; }
 .leg-link { display: inline-flex; align-items: center; min-height: 44px; margin: 6px 14px 10px 54px; color: var(--brand-700); font-size: 13px; font-weight: 700; text-underline-offset: 3px; }
 @media print { .leg:not([open]) .leg-steps { display: none; } }
+
+.locate-btn { position: absolute; z-index: 500; bottom: 12px; left: 12px; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 16px; color: var(--gray-900); border: 1px solid rgba(0, 0, 0, .06); border-radius: 100px; background: rgba(255, 255, 255, .95); box-shadow: 0 4px 16px rgba(0, 0, 0, .15); font-size: 13.5px; font-weight: 700; cursor: pointer; transition: transform .15s; }
+.locate-btn:active { transform: scale(.95); }
+.locate-btn:disabled { opacity: .6; }
+.leaflet-bottom.leaflet-left { left: auto; right: 0; }

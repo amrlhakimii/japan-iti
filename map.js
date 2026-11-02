@@ -162,6 +162,34 @@
     });
   }
 
+  function locate(state, btn) {
+    var status = document.querySelector('[data-map-status="' + state.index + '"]');
+    if (!navigator.geolocation) { if (status) status.textContent = "Your browser cannot share location."; return; }
+    btn.disabled = true;
+    if (status) status.textContent = "Finding you…";
+    navigator.geolocation.getCurrentPosition(function (pos) {
+      btn.disabled = false;
+      var me = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+      if (state.me) { state.map.removeLayer(state.me); state.map.removeLayer(state.meRing); }
+      state.meRing = L.circle([me.lat, me.lng], { radius: Math.min(pos.coords.accuracy || 30, 300), color: "#2563eb", weight: 1, fillColor: "#2563eb", fillOpacity: .12 }).addTo(state.map);
+      state.me = L.circleMarker([me.lat, me.lng], { radius: 8, color: "#fff", weight: 3, fillColor: "#2563eb", fillOpacity: 1 }).addTo(state.map).bindPopup("You are here");
+      var near = null, best = Infinity;
+      state.stops.forEach(function (p, i) { var d = hav(me, p); if (d < best) { best = d; near = { p: p, i: i }; } });
+      if (near && best < 40) {
+        state.map.fitBounds(L.latLngBounds([[me.lat, me.lng], [near.p.lat, near.p.lng]]), { padding: [60, 60], maxZoom: 16 });
+        if (status) status.textContent = "Nearest stop: " + near.p.label + ", about " + (best < 1 ? Math.round(best * 1000) + " m" : best.toFixed(1) + " km") + " away (straight line).";
+        highlightCard(state.index, near.i);
+      } else {
+        state.map.flyTo([me.lat, me.lng], 16, { duration: .8 });
+        if (status) status.textContent = near ? "You are far from today's stops (nearest: " + near.p.label + ", " + Math.round(best) + " km). Use the category chips to find places around you." : "Showing your location.";
+      }
+      state.map.once("moveend", function () { var b = document.querySelector('[data-search-area="' + state.index + '"]'); if (b && Object.keys(state.active).length) b.hidden = false; });
+    }, function (err) {
+      btn.disabled = false;
+      if (status) status.textContent = err && err.code === 1 ? "Location is blocked. Allow it in the browser settings for this site." : "Could not get your location. Try again outside or near a window.";
+    }, { enableHighAccuracy: true, timeout: 12000, maximumAge: 30000 });
+  }
+
   function drawRoute(state, key) {
     var R = typeof ROUTES !== "undefined" ? ROUTES[key] : null;
     if (!R) return;
@@ -208,6 +236,8 @@
         }
         return;
       }
+      var lc = e.target.closest("[data-locate]");
+      if (lc) { locate(state, lc); return; }
       var wk = e.target.closest("[data-walk]");
       if (wk) {
         var det = root.querySelector('.leg[data-route="' + wk.dataset.walk + '"]');
@@ -298,7 +328,8 @@
       (cards ? '<h4 class="side-title">Stops today</h4><div class="flip-row">' + cards + '</div>' : '') +
       (legs ? '<h4 class="side-title">Getting between stops</h4><div class="legs">' + legs + '</div>' : '') + '</div>' +
       '<div class="split-map"><div class="map-box"><div class="map-el" id="map-' + index + '" aria-label="Map for ' + esc(day.title) + '"></div>' +
-      '<button type="button" class="search-area" data-search-area="' + index + '" hidden>Search this area</button></div>' +
+      '<button type="button" class="search-area" data-search-area="' + index + '" hidden>Search this area</button>' +
+      '<button type="button" class="locate-btn" data-locate="' + index + '" aria-label="Show my location and nearest stop"><span aria-hidden="true">📍</span> Near me</button></div>' +
       '<div class="cat-row" role="group" aria-label="Show nearby places">' + chips + '</div>' +
       '<p class="map-status" data-map-status="' + index + '" aria-live="polite">Tap a category to see places around the map. Map data © OpenStreetMap.</p></div></div>';
   };
