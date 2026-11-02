@@ -6,8 +6,8 @@ const days = [
     category: "transit",
     lede: "Keep tonight simple: a calm airport arrival, an easy check-in and as much rest as possible before boarding.",
     events: [
-      ["10:30 PM", "Leave for KLIA Terminal 1", "Allow extra time for the baby, luggage and a feeding stop before check-in.", "Travel"],
-      ["11:30 PM", "Arrive at KLIA1", "Check in, clear security, refill water and change the baby before heading to the gate.", "Baby reset"]
+      ["7:30 PM", "Leave for KLIA Terminal 1", "Allow extra time for the baby, luggage and a feeding stop. Check-in closes at 11:15 PM, so do not cut it fine.", "Travel"],
+      ["9:00 PM", "Arrive at KLIA1 · check-in island A", "MU8584 departs 12:15 AM. Check in early, clear security, refill water and change the baby before heading to the gate.", "Baby reset"]
     ],
     tip: "Pack one complete baby change, milk/feed supplies and adult essentials in a small pouch that stays under the seat."
   },
@@ -18,17 +18,17 @@ const days = [
     category: "transit",
     lede: "Arrival day has only one goal: reach the Airbnb comfortably. Dinner stays flexible depending on everyone’s energy.",
     events: [
-      ["1:55–7:05 AM", "Flight KUL → Shanghai", "Keep a fresh nappy and one feed ready for descent.", "Flight"],
-      ["7:05–9:50 AM", "Shanghai transit", "Change, feed and let the baby stretch near the gate. Do not plan shopping during this connection.", "Reset"],
-      ["9:50 AM–12:50 PM", "Flight Shanghai → Narita", "Arrival at Narita Terminal 1.", "Flight"],
+      ["12:15–5:40 AM", "Flight MU8584 KUL → Shanghai Pudong", "Departs KLIA T1 at 12:15 AM and lands at PVG T1 at 5:40 AM. Keep a fresh nappy and one feed ready for descent. Recent arrivals average about 30 minutes late.", "Flight"],
+      ["5:40–9:40 AM", "Shanghai transit", "Change, feed and let the baby stretch near the gate. Do not plan shopping during this connection.", "Reset"],
+      ["9:40 AM–12:50 PM", "Flight Shanghai → Narita", "Departs 9:40 AM per your ticket and lands at Narita at 12:50 PM (Tokyo is 1 hour ahead). Check the terminal on your booking; MU523 was listed at Terminal 2.", "Flight"],
       ["12:50–2:20 PM", "Immigration, luggage & Suica", "Open the Visit Japan Web QR code prepared before departure, then collect bags. Use digital Suica if your phone supports it; otherwise buy a physical IC card. Allow 90 minutes.", "Airport", [{ label: "Prepare arrival QR", url: "https://services.digital.go.jp/en/visit-japan-web/" }]],
-      ["2:40–4:10 PM", "Transfer to Shinjuku", "Recommended: reserved-seat Narita Express. Door-to-door transfer is easiest if luggage is heavy; confirm a child seat with any private car.", "Reserved seats", [{ label: "Book on JR East", url: "https://www.eki-net.com/en/jreast-train-reservation/top/index" }]],
-      ["4:10–5:00 PM", "Shinjuku → Airbnb", "Use a taxi for the last leg rather than navigating a busy station with bags and stroller.", "Low walking"],
+      ["2:40–4:30 PM", "Narita T2 → Nippori → Kameari", "Keisei Skyliner to Nippori (about 40 min, reserved seats), then the JR Joban Line to Kameari. The Airbnb is on the east side of Tokyo, so do not go via Shinjuku. For a large group with luggage, a pre-booked van is easier; confirm a baby seat.", "Reserved seats"],
+      ["4:30–5:00 PM", "Kameari Station → Airbnb", "Short walk or taxi. Pray Maghrib on arrival (about 4:30 PM).", "Low walking"],
       ["5:00–6:30 PM", "Check in, feed & rest", "Unpack only the first-night essentials and let the baby settle.", "Rest"],
       ["6:45–8:00 PM", "Dinner at Halal Karemen King", "The restaurant is in Kanda/Akihabara—not Ginza. If everyone is tired, switch to a closer halal dinner or delivery.", "Halal"],
       ["8:30 PM", "Convenience-store breakfast", "Pick up water, fruit, yoghurt, bread and easy snacks near the Airbnb.", "Flexible"]
     ],
-    tip: "Best arrival choice: private door-to-door transfer for a larger group, but ask in writing whether an age-appropriate baby seat is provided."
+    tip: "Best arrival choice: private door-to-door transfer for a larger group, but ask in writing whether an age-appropriate baby seat is provided. Otherwise Skyliner plus Joban Line is much cheaper."
   },
   {
     number: "Day 02",
@@ -54,20 +54,23 @@ const days = [
   {
     number: "Day 03",
     date: "Sun · 29 Nov",
-    title: "Treasures & old Tokyo",
+    title: "Kamakura by train",
     category: "tokyo",
-    lede: "The flea market and Asakusa pair into a full day. Tokyo Tower is kept as an optional add-on, not a must-do.",
+    lede: "A full day out to the seaside temple town. It is far from Kameari, so the day is built around one direct train each way and a compact walk.",
     events: [
-      ["8:15 AM", "Leave for Oi Racecourse", "Bring cash, a compact rain cover and an empty foldable bag.", "Transit"],
-      ["9:00–11:00 AM", "Oi Racecourse flea market", "Browse before it becomes busiest. The market is weather-dependent—check the organiser’s update that morning.", "Market"],
-      ["11:00 AM–12:15 PM", "Travel to Asakusa", "This is the longest cross-city move today. Use a taxi if trains and transfers feel too much.", "Long transfer"],
-      ["12:30–1:30 PM", "Lunch at Honolu Asakusa", "Halal ramen near Sensoji. Arrive around opening/lunch time and expect limited space for a large stroller.", "Halal"],
-      ["1:30–2:15 PM", "Prayer & baby reset", "Ask the restaurant about prayer space, then feed and change before sightseeing.", "Reset"],
-      ["2:15–4:30 PM", "Sensoji & Nakamise", "Enter via quieter side streets if Nakamise is packed. Keep the stroller for flat temple grounds; use the carrier in dense crowds.", "Culture"],
-      ["4:30–5:15 PM", "Tea and warm-up break", "Let the biggest crowds thin and enjoy the temple lights at dusk.", "Rest"],
-      ["5:15 PM", "Choose: home or Tokyo Tower", "Recommended with baby: return home. If everyone still feels good, take a taxi to Tokyo Tower for a short exterior visit.", "Optional"]
+      ["8:00 AM", "Leave the Airbnb", "Kameari → Ayase → Otemachi → Tokyo Station. Carry lunch supplies and a full baby change.", "Long transfer"],
+      ["9:45–10:00 AM", "Tokyo Station: lunch & baby reset", "Buy a seafood or vegetarian bento or onigiri for lunch. Use the station family room for a feed and nappy change.", "Reset"],
+      ["10:00–10:55 AM", "JR Yokosuka Line to Kamakura", "Direct, about 55 minutes with no more changes. Sit by the door with the stroller.", "Direct train"],
+      ["11:00 AM–12:15 PM", "Komachi-dori & Tsurugaoka Hachimangu", "From Kamakura Station walk the flat shopping street to the shrine, about 15 minutes. Use the carrier if it is crowded.", "Walk"],
+      ["12:15–1:15 PM", "Zohor prayer & lunch", "No confirmed prayer room here. Use a quiet corner with a portable prayer mat. Try shirasu-don (whitebait bowl) and ask the staff to check for mirin, sake and pork stock.", "Prayer + lunch"],
+      ["1:30–2:00 PM", "Enoden tram to Hase", "About 5 minutes from Kamakura Station. The tram is small, so fold the stroller.", "Short ride"],
+      ["2:00–3:00 PM", "Great Buddha (Kotoku-in)", "A 10-minute walk from Hase Station on flat ground. Hase-dera is up steps: carrier only, and optional.", "Sight"],
+      ["3:00–3:30 PM", "Asar prayer & feed", "Do it before heading back, because sunset is about 4:30 PM.", "Prayer + reset"],
+      ["3:30–4:15 PM", "Back to Kamakura Station", "Enoden then the Yokosuka Line. Leave by 3:30 to avoid the weekend rush.", "Return"],
+      ["4:30–6:30 PM", "Train back to Kameari", "Maghrib falls at about 4:30 PM, so pray on arrival at the Airbnb or in the train seat.", "Home"],
+      ["7:00 PM", "Easy dinner near the Airbnb", "Keep it simple after a long day.", "Rest"]
     ],
-    tip: "Do not force Tokyo Tower. Sensoji at dusk is already a memorable finish, and preserving energy will make tomorrow much better."
+    tip: "Kamakura is crowded on Sundays. Skip anything that needs a long queue, and keep the afternoon short since sunset is early. Asakusa and Sensoji are not on this plan; add them on another Tokyo day only if there is energy."
   },
   {
     number: "Day 04",
@@ -112,9 +115,9 @@ const days = [
     category: "fuji",
     lede: "See Fuji before clouds build, then return the car and travel west. Driving all the way to Kyoto is not recommended with a baby.",
     events: [
-      ["7:15–8:00 AM", "Honcho Street", "Go early for lighter traffic and clearer Fuji views. Take photos only from the pavement and watch for vehicles.", "Early start"],
-      ["8:30–9:45 AM", "Lake Yamanakako", "Short lakeside stop. Keep the warm pram cover handy; this is likely the coldest part of the trip.", "Scenic"],
-      ["10:15–11:15 AM", "Arakura Shrine base", "Enjoy the lower shrine area. The famous pagoda viewpoint has roughly 400 steps—carrier only and optional.", "Optional climb"],
+      ["7:15–8:00 AM", "Honcho Street", "Go early for lighter traffic and clearer Fuji views. Take photos only from the pavement and watch for vehicles. Check out of the Airbnb first and keep the luggage in the car.", "Early start"],
+      ["8:15–9:15 AM", "Arakura Shrine base", "It is a few minutes from Honcho Street. Enjoy the lower shrine area. The famous pagoda viewpoint has roughly 400 steps—carrier only and optional.", "Optional climb"],
+      ["9:45–10:45 AM", "Lake Yamanakako", "The farthest stop, so it comes after the nearby ones. Short lakeside stop; keep the warm pram cover handy, as this is likely the coldest part of the trip.", "Scenic"],
       ["11:30 AM–12:15 PM", "Early lunch near Kawaguchiko", "Choose a confirmed halal or seafood/vegetarian option and avoid a tight connection.", "Lunch"],
       ["12:30 PM", "Fuel up & return rental car", "Allow time for inspection and luggage repacking.", "Car return"],
       ["1:20–2:50 PM", "Reserved bus to Mishima", "Book the Kawaguchiko–Mishima highway bus and keep one feed in the seat bag.", "Reserve", [{ label: "Book Fujikyu bus", url: "https://bus.fujikyu.co.jp/en/highway/mishima/" }]],
@@ -145,46 +148,70 @@ const days = [
   {
     number: "Day 08",
     date: "Fri · 4 Dec",
-    title: "A Kyoto buffer day",
-    category: "kyoto",
-    lede: "Keep this newly added day deliberately open for rest, laundry, shopping or one missed Kyoto priority—without turning it into a catch-up marathon.",
+    title: "Kyoto to Osaka",
+    category: "transit",
+    lede: "Kyoto checkout is 10:00 and the Osaka Airbnb opens at 16:00, so this is a light travel day with a luggage plan for the gap.",
     events: [
-      ["9:00 AM", "Slow breakfast", "Review everyone’s energy before choosing a plan. There is no need to leave early.", "Flexible"],
-      ["10:30 AM–12:30 PM", "Choose one Kyoto priority", "Pick one easy area or repeat a favourite. Avoid crossing the city for several attractions.", "One area"],
-      ["12:30–2:30 PM", "Lunch, prayer & baby reset", "Choose a confirmed halal-friendly meal near the selected area and protect the full reset window.", "Reset"],
-      ["2:30–4:30 PM", "Free afternoon", "Use this for shopping, a warm indoor stop, laundry or an early return to the accommodation.", "Open plan"],
-      ["6:00 PM", "Easy dinner", "Revisit a trusted restaurant or choose takeaway rather than queueing.", "Low pressure"]
+      ["8:00 AM", "Slow breakfast & final pack", "Repack feeds, nappies and one change of clothes in the day bag. Leave the Kyoto annex tidy and lock up via the smart lock.", "Easy start"],
+      ["By 10:00 AM", "Check out of Kyoto", "Checkout is before 10:00. Ask the host early if a later bag drop is possible.", "Checkout"],
+      ["10:30–11:30 AM", "Kyoto Station to Osaka", "Take a reserved Shinkansen to Shin-Osaka or the JR line to Osaka Station, with a taxi for any luggage-heavy leg.", "Short ride"],
+      ["12:00–2:00 PM", "Lunch, prayer & baby reset", "Eat near the station and confirm a halal-friendly option before arriving. Protect a full feed and nap window.", "Reset"],
+      ["2:00–4:00 PM", "Bridge the check-in gap", "Check-in is after 16:00. Use Airbnb luggage storage, station lockers or Yamato forwarding rather than carrying bags around.", "Luggage plan"],
+      ["4:00–5:00 PM", "Osaka check-in", "1-chōme-18-25 Izuo, Osaka 551-0031. The lockbox code comes from the host, so message Tatsu before arriving.", "Check-in"],
+      ["6:30 PM", "Simple dinner & early night", "Pick up easy food near the Airbnb and save sightseeing for tomorrow.", "Rest"]
     ],
-    tip: "Treat this as the trip’s recovery day. Decide the plan the night before based on weather, sleep and anything missed earlier."
+    tip: "Check-in and checkout are six hours apart, so the luggage plan is the whole day. Sort it before leaving Kyoto."
   },
   {
     number: "Day 09",
     date: "Sat · 5 Dec",
-    title: "One last unhurried day",
-    category: "kyoto",
-    lede: "The final full day can stay local or become one optional Kansai day trip. Choose Kyoto, Osaka or Nara—not more than one.",
+    title: "An easy Osaka day",
+    category: "osaka",
+    lede: "One main Osaka sight, a halal-checked lunch and a long reset. Pick the second stop only if everyone is still happy.",
     events: [
-      ["8:30 AM", "Decide: Kyoto, Osaka or Nara", "Stay in Kyoto for the gentlest option. Only take a day trip if the group is rested and the weather is kind.", "Choose one"],
-      ["10:00 AM–1:00 PM", "Single-area outing", "Keep the morning compact and close to reliable indoor facilities.", "Flexible"],
-      ["1:00–2:30 PM", "Lunch, prayer & reset", "No Osaka or Nara restaurant has been shortlisted yet, so confirm a suitable option before leaving Kyoto.", "Plan ahead"],
-      ["3:00–4:30 PM", "Return and pack", "Pack most luggage, separate airport essentials and weigh bags before dinner.", "Departure prep"],
-      ["6:00 PM", "Final dinner", "Choose a familiar, reservable option close to the accommodation.", "Easy finish"]
+      ["9:00 AM", "Slow breakfast at the Airbnb", "Review energy and weather before choosing the plan.", "Flexible"],
+      ["10:30 AM–12:30 PM", "Osaka Castle Park", "Park and exterior views are easier with a baby than queueing inside. Paths are long but stroller-friendly.", "Main sight"],
+      ["12:30–2:30 PM", "Lunch, prayer & baby reset", "No Osaka restaurant has been shortlisted yet, so confirm a halal-friendly option the night before.", "Plan ahead"],
+      ["3:00–5:00 PM", "Optional: Dotonbori & Namba", "Go around dusk before the evening crowd builds, and use the carrier. Skip it if anyone is tired.", "Optional"],
+      ["6:30 PM", "Easy dinner", "Choose takeaway or a reservable place near the Airbnb rather than queueing in a crowd.", "Low pressure"]
     ],
-    tip: "Do not combine Osaka and Nara. Keeping the final afternoon light protects tomorrow’s airport journey."
+    tip: "Do not add Nara or Kyoto on top of this. Osaka is the final base, so keep the trip's pace gentle."
   },
   {
     number: "Day 10",
     date: "Sun · 6 Dec",
-    title: "Journey home",
-    category: "transit",
-    lede: "The return date is confirmed; airport, flight and check-in times still need to be added before transport can be finalised.",
+    title: "A spare Osaka day",
+    category: "osaka",
+    lede: "Last full day, and tomorrow starts around 5 AM. Keep today easy, pack tonight, and be in bed early.",
     events: [
-      ["TBC", "Check out", "Set the time after the return flight is confirmed. Keep passports, feeds, nappies and one change of clothes in the cabin bag.", "Confirm time"],
-      ["TBC", "Transfer to departure airport", "If departing from KIX, compare the reserved Haruka airport express with a private transfer for the group and luggage.", "Book ahead"],
-      ["Before bag drop", "Complete tax-free departure steps", "For travel after 1 November 2026, eligible refunds require the new departure process. Keep purchased goods accessible and allow extra airport time.", "2026 rule"],
-      ["TBC", "Fly home", "Add the flight number, terminal and connection details once issued.", "Flight"]
+      ["9:00 AM", "Slow breakfast", "No fixed plan. Decide the day from sleep and weather.", "Flexible"],
+      ["10:30 AM–12:30 PM", "One easy outing", "Pick the closest saved place, a department store or a warm indoor stop.", "One area"],
+      ["12:30–2:30 PM", "Lunch, prayer & baby reset", "Choose a confirmed halal-friendly meal and protect the full reset window.", "Reset"],
+      ["3:00–5:00 PM", "Free afternoon", "Shopping, laundry or an early return to the Airbnb. Buy breakfast and snacks for tomorrow's train.", "Open plan"],
+      ["6:00 PM", "Early dinner", "Eat early and keep it simple.", "Early night"],
+      ["7:00–8:30 PM", "Pack & set out clothes", "Pack everything tonight. Keep passports, feeds, nappies and one change of clothes in the cabin bag, and charge phones. Be asleep by 9:00 PM.", "Departure prep"]
     ],
-    tip: "Aim to reach the airport at least three hours before an international departure, with additional buffer if completing tax-free refund procedures."
+    tip: "Book the two taxis for 6:00 AM the night before (use an app such as GO, or ask the host). Reserve the Shinkansen and Narita Express seats now, because early trains fill up."
+  },
+  {
+    number: "Day 11",
+    date: "Mon · 7 Dec",
+    title: "Osaka to Tokyo to home",
+    category: "transit",
+    lede: "Early Shinkansen to Tokyo, Narita Express to the airport, flight at 1:50 PM. Aim to reach Narita by about 10:50–11:00 AM.",
+    events: [
+      ["4:45 AM", "Wake up", "Feed the baby, dress and do a last check of the Airbnb. Checkout is before 10:00, so leaving early is fine; follow the host's key and lockbox instructions.", "Early start"],
+      ["5:25–5:45 AM", "Subuh prayer", "Osaka Subuh begins at about 5:25 AM. Pray at the Airbnb before leaving, or on the train if running late.", "Prayer"],
+      ["6:00 AM", "Taxis to Shin-Osaka", "Two pre-booked taxis, about 25 minutes. Take everything, since the next bag drop is at Narita.", "Travel"],
+      ["6:30–7:00 AM", "Shinkansen Shin-Osaka → Tokyo", "Board a Nozomi at about 6:30–7:00 AM. It takes about 2.5 hours and costs roughly ¥14,000 each. Reserve seats with luggage space. Feed the baby on the train.", "Reserved seats"],
+      ["About 9:20–9:45 AM", "Tokyo Station → Narita Express", "Change to the Narita Express at Tokyo Station, about 1 hour to the terminal. Reserve a seat. Use lifts, and allow 20 minutes for the change.", "Transfer"],
+      ["About 10:50–11:00 AM", "Narita check-in & bag drop", "Check your terminal on the booking (MU523 on the outbound flew into Terminal 2). Do the tax-free departure steps first if you bought tax-free goods.", "Check-in"],
+      ["11:15 AM–12:45 PM", "Zohor prayer, feed & nappy", "Use the airport prayer room. Tokyo Zohor is about 11:30 AM. Keep Asar for the flight.", "Prayer + reset"],
+      ["1:50–4:30 PM", "Flight Tokyo → Shanghai", "Lands at 4:30 PM Shanghai time. Pray Asar in the air or at the gate.", "Flight"],
+      ["4:30–5:15 PM", "Shanghai transit", "A 45-minute connection. Go straight to the gate and tell staff you have a baby.", "Tight"],
+      ["5:15–11:15 PM", "Flight Shanghai → KLIA", "Lands at KLIA at 11:15 PM. Maghrib and Isyak can be prayed on board.", "Flight"]
+    ],
+    tip: "If the Shinkansen is delayed, the Narita Express is the next thing to slip, so don't take a Shinkansen later than 7:30 AM. Ask Tokyo check-in to tag bags through to KLIA."
   }
 ];
 
@@ -194,13 +221,14 @@ const dayImages = [
   { id: "5tQvtADmmyg", alt: "Interior architecture at Kuala Lumpur International Airport", label: "KLIA · the journey begins" },
   { id: "8Tlrh8aPFw0", alt: "Shinjuku streets illuminated at night", label: "Shinjuku · first night" },
   { id: "DcklCt6hau8", alt: "Ginza avenue with pedestrians and city traffic", label: "Ginza · shopping day" },
-  { id: "Fy3OG2l2KwE", alt: "Visitors walking through the Sensoji temple grounds", label: "Asakusa · old Tokyo" },
+  null,
   { id: "keRAW9X0OlM", alt: "Shibuya Crossing illuminated by signs at night", label: "Shibuya · city lights" },
   { id: "J_7o0_1S-PM", alt: "Mount Fuji reflected in Lake Kawaguchi", label: "Kawaguchiko · Fuji arrival" },
   { id: "EylXr_kvBFU", alt: "Chureito Pagoda with Mount Fuji in the distance", label: "Fujiyoshida · early Fuji views" },
   { id: "HmNssAygTlw", alt: "Path beneath tall bamboo in Arashiyama", label: "Arashiyama · bamboo and river" },
-  { id: "Qiw63GpWN6w", alt: "Traditional wooden buildings along a quiet Kyoto street", label: "Kyoto · a slower day" },
-  { id: "HmqChFEBNXc", alt: "Path through orange torii gates at Fushimi Inari", label: "Kansai · choose one last outing" },
+  { id: "Qiw63GpWN6w", alt: "Traditional wooden buildings along a quiet Kyoto street", label: "Kyoto · last morning" },
+  { id: "hM6BYCsEFkA", alt: "White walls and ornate roofs of Osaka Castle", label: "Osaka · castle park" },
+  { id: "QXcQ99G1PSw", alt: "Neon signs reflected in the Dotonbori canal at night", label: "Osaka · a spare day" },
   { id: "7diobitpahY", alt: "Airport departure board displaying flight information", label: "Departure day · journey home" }
 ];
 
@@ -227,7 +255,7 @@ const places = [
     time: "2–3 hours",
     access: "Stroller; carrier in crowds",
     summary: "Temple courtyards, Nakamise shopping street and atmospheric side lanes offer the strongest old-Tokyo experience on the route.",
-    note: "Best match: Day 03 after lunch. Stay for dusk if everyone is comfortable."
+    note: "Not in the plan. Add it on a spare Tokyo day, after lunch, and stay for dusk if everyone is comfortable."
   },
   {
     id: "shibuya",
@@ -359,7 +387,7 @@ const places = [
     time: "1.5–3 hours",
     access: "Carrier beyond lower shrine",
     summary: "Walk only the lower torii-gate loop for the signature atmosphere; there is no need to climb the full mountain.",
-    note: "Strong Day 08 option before 8 AM or late afternoon. Avoid the midday crowd."
+    note: "Strong Day 07 option before 8 AM or late afternoon, or a quick early stop before leaving Kyoto on Day 08. Avoid the midday crowd."
   },
   {
     id: "gion",
@@ -407,7 +435,7 @@ const places = [
     time: "2–4 hours",
     access: "Excellent with stroller",
     summary: "A spacious indoor backup near Kyoto Station with full-size trains, lifts and family-friendly facilities.",
-    note: "Best rainy-day choice for Day 08. Check closure days and last admission before going."
+    note: "Best rainy-day choice for Day 07. Check closure days and last admission before going."
   },
   {
     id: "osaka-castle",
@@ -419,7 +447,7 @@ const places = [
     time: "2–3 hours",
     access: "Long but stroller-friendly paths",
     summary: "The park and exterior views are easier with a baby than queueing for the castle museum and observation floor.",
-    note: "Use this as the main sight on an Osaka day trip, then choose one second neighbourhood only."
+    note: "Best match: Day 09 as the main Osaka sight, then choose one second neighbourhood only."
   },
   {
     id: "dotonbori",
@@ -431,7 +459,7 @@ const places = [
     time: "2–3 hours",
     access: "Flat but very crowded",
     summary: "The canal, signs and surrounding streets deliver classic Osaka energy, best seen before the late-evening crowds build.",
-    note: "Visit around dusk, use the carrier and confirm a halal meal before leaving Kyoto."
+    note: "Best match: Day 09 or 10 around dusk. Use the carrier and confirm a halal meal beforehand."
   },
   {
     id: "nara-park",
@@ -471,10 +499,27 @@ const checklist = [
   "Reserve rental car, infant seat and ETC card",
   "Book Kawaguchiko → Mishima highway bus",
   "Confirm Airbnb luggage storage, cot and Yamato acceptance",
-  "Confirm the 6 December flight, airport and transfer",
+  "Reserve the 7 December Shinkansen (6:30–7:00 AM) and Narita Express, and confirm the return flight terminal",
   "Pack carrier, compact stroller, rain cover, tissues and hand towel",
   "Check prayer times, weather, market status and restaurant hours"
 ];
+
+const esc = t => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;");
+function guideHtml(index) {
+  const g = typeof dayGuide !== "undefined" ? dayGuide[index] : null;
+  if (!g) return "";
+  return `
+        <div class="day-guide">
+          <h4>How to get around</h4>
+          <ol class="guide-legs">
+            ${g.legs.map(([route, mode, note]) => `<li><strong>${esc(route)}</strong><span class="guide-mode">${esc(mode)}</span><span>${esc(note)}</span></li>`).join("")}
+          </ol>
+          <h4>Solat plan</h4>
+          <ul class="guide-solat">
+            ${g.solat.map(item => `<li>${esc(item)}</li>`).join("")}
+          </ul>
+        </div>`;
+}
 
 const daysRoot = document.querySelector("[data-days]");
 
@@ -489,11 +534,12 @@ daysRoot.innerHTML = days.map((day, index) => `
     <div class="day-content" id="day-${index}">
       <span aria-hidden="true"></span>
       <div class="day-content-inner">
-        <figure class="day-photo">
+        ${dayImages[index] ? `<figure class="day-photo">
           <img src="${photo(dayImages[index].id)}" alt="${dayImages[index].alt}" loading="lazy">
           <figcaption><span>${dayImages[index].label}</span><a href="https://unsplash.com/photos/${dayImages[index].id}" target="_blank" rel="noreferrer">Photo source ↗</a></figcaption>
-        </figure>
+        </figure>` : ""}
         <p class="day-lede">${day.lede}</p>
+        ${guideHtml(index)}
         <div class="timeline">
           ${day.events.map(([time, title, detail, tag, links = []]) => `
             <div class="event">

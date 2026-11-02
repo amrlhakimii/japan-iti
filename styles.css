@@ -322,3 +322,11 @@ footer button { color: white; border: 0; border-bottom: 1px solid rgba(255,255,2
   .event { break-inside: avoid; }
   @page { margin: 14mm; }
 }
+
+.day-guide { margin-top: 22px; padding: 16px 17px; background: var(--sage); border-radius: 4px; }
+.day-guide h4 { margin: 0 0 8px; color: var(--green); font-family: var(--sans); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.day-guide h4:not(:first-child) { margin-top: 16px; }
+.guide-legs, .guide-solat { margin: 0; padding-left: 18px; font-size: 13px; }
+.guide-legs li, .guide-solat li { margin: 0 0 9px; }
+.guide-legs li > span { display: block; color: var(--muted); }
+.guide-legs .guide-mode { color: var(--orange); font-weight: 600; font-size: 12px; }

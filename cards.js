@@ -5,12 +5,12 @@
   var ALLERGY_KEY = "japan-family-allergies";
   var HOTEL_KEY = "japan-family-hotels";
 
-  // Default hotel slots. script.js `days` only mentions "the Airbnb" with no address,
-  // so entries start empty and the user fills them in.
+  // Default stays, from the Airbnb bookings. Edits saved in localStorage override these.
   var DEFAULT_HOTELS = [
-    { label: "Tokyo stay", name: "", address: "" },
-    { label: "Kawaguchiko stay", name: "", address: "" },
-    { label: "Kyoto stay", name: "", address: "" }
+    { label: "Tokyo stay (27 Nov–1 Dec)", name: "Home in Katsushika City", address: "3-chōme-20-4 Kameari, Katsushika City, Tokyo 125-0061, Japan" },
+    { label: "Kawaguchiko stay (1–2 Dec)", name: "Private HOUSE Beautiful Mt.Fuji View", address: "2625-2 Kodachi, Fujikawaguchiko-machi, Minamitsuru-gun, Yamanashi 401-0302, Japan" },
+    { label: "Kyoto stay (2–4 Dec)", name: "Kyoto annex (別館)", address: "79-4 Kitakazanyamadachō, Yamashina Ward, Kyoto 607-8472, Japan" },
+    { label: "Osaka stay (4–7 Dec)", name: "Home in Osaka", address: "1-chōme-18-25 Izuo, Osaka 551-0031, Japan" }
   ];
 
   var PHRASES = {
@@ -42,14 +42,14 @@
   /* ---------- pure helpers (tested in node) ---------- */
 
   function normalizeHotels(raw) {
-    var out = DEFAULT_HOTELS.map(function (h) { return { label: h.label, name: "", address: "" }; });
+    var out = DEFAULT_HOTELS.map(function (h) { return { label: h.label, name: h.name, address: h.address }; });
     if (!Array.isArray(raw)) return out;
     raw.slice(0, 20).forEach(function (item, i) {
       if (!item || typeof item !== "object") return;
       if (!out[i]) out[i] = { label: "Stay " + (i + 1), name: "", address: "" };
       if (typeof item.label === "string" && item.label.trim()) out[i].label = item.label.slice(0, 60);
-      if (typeof item.name === "string") out[i].name = item.name.slice(0, 200);
-      if (typeof item.address === "string") out[i].address = item.address.slice(0, 400);
+      if (typeof item.name === "string" && item.name.trim()) out[i].name = item.name.slice(0, 200);
+      if (typeof item.address === "string" && item.address.trim()) out[i].address = item.address.slice(0, 400);
     });
     return out;
   }
