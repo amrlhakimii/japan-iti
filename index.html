@@ -76,7 +76,12 @@
       </div>
 
       <div class="day-picker">
-        <div class="day-rail" data-day-rail role="tablist" aria-label="Choose a day"></div>
+        <div class="rail-wrap">
+          <button type="button" class="rail-arrow rail-prev" data-rail-prev aria-label="Show earlier days" hidden>‹</button>
+          <div class="day-rail" data-day-rail role="tablist" aria-label="Choose a day"></div>
+          <button type="button" class="rail-arrow rail-next" data-rail-next aria-label="Show later days">›</button>
+        </div>
+        <p class="rail-hint" data-rail-hint><span class="hint-hand" aria-hidden="true">👆</span> Swipe sideways or tap the arrows to see all 12 days</p>
       </div>
 
       <div class="days-list" data-days></div>

@@ -20,6 +20,7 @@
     void active.offsetWidth;
     active.classList.add("page-enter");
     if (name === "plan" && window.refreshMaps) window.refreshMaps();
+    if (name === "plan" && window.nudgeRail) window.nudgeRail();
     var activeLink = document.querySelector('[data-nav="' + name + '"]');
     if (activeLink && activeLink.scrollIntoView) activeLink.scrollIntoView({ block: "nearest", inline: "center" });
   }

@@ -659,6 +659,54 @@ dayRail.innerHTML = days.map((day, index) => {
   </button>`;
 }).join("");
 
+// Scroll affordances: fade the edge that has more content, and keep arrow buttons in step.
+const watchScroll = el => {
+  if (!el || el.dataset.watched) return;
+  el.dataset.watched = "1";
+  const update = () => {
+    const max = el.scrollWidth - el.clientWidth;
+    el.classList.toggle("can-left", el.scrollLeft > 4);
+    el.classList.toggle("can-right", el.scrollLeft < max - 4);
+    el.dispatchEvent(new CustomEvent("scrollstate"));
+  };
+  el.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  requestAnimationFrame(update);
+  setTimeout(update, 400);
+};
+const railPrev = document.querySelector("[data-rail-prev]");
+const railNext = document.querySelector("[data-rail-next]");
+const railHint = document.querySelector("[data-rail-hint]");
+watchScroll(dayRail);
+const syncArrows = () => {
+  railPrev.hidden = !dayRail.classList.contains("can-left");
+  railNext.hidden = !dayRail.classList.contains("can-right");
+};
+dayRail.addEventListener("scrollstate", syncArrows);
+const hideHint = () => {
+  if (!railHint || railHint.hidden) return;
+  railHint.hidden = true;
+  try { localStorage.setItem("japan-rail-hint", "1"); } catch (e) {}
+};
+railPrev.addEventListener("click", () => { dayRail.scrollBy({ left: -dayRail.clientWidth * 0.7, behavior: "smooth" }); hideHint(); });
+railNext.addEventListener("click", () => { dayRail.scrollBy({ left: dayRail.clientWidth * 0.7, behavior: "smooth" }); hideHint(); });
+dayRail.addEventListener("touchstart", hideHint, { passive: true });
+dayRail.addEventListener("wheel", hideHint, { passive: true });
+try { if (localStorage.getItem("japan-rail-hint")) railHint.hidden = true; } catch (e) {}
+// A short sideways nudge the first time the Plan page is shown, so the strip is seen to move.
+window.nudgeRail = () => {
+  if (window.__railNudged) return;
+  window.__railNudged = true;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  setTimeout(() => {
+    if (dayRail.scrollWidth <= dayRail.clientWidth + 8) return;
+    const back = dayRail.scrollLeft;
+    dayRail.scrollTo({ left: back + 72, behavior: "smooth" });
+    setTimeout(() => dayRail.scrollTo({ left: back, behavior: "smooth" }), 650);
+  }, 700);
+};
+document.querySelectorAll(".flip-row, .cat-row").forEach(watchScroll);
+
 const selectDay = (index, scroll = true) => {
   currentDay = Math.max(0, Math.min(days.length - 1, index));
   dayCards.forEach((card, i) => { card.hidden = i !== currentDay; });
@@ -669,6 +717,7 @@ const selectDay = (index, scroll = true) => {
     if (on && scroll) chip.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
   });
   if (typeof initDayMap === "function") requestAnimationFrame(() => initDayMap(currentDay));
+  requestAnimationFrame(() => window.dispatchEvent(new Event("resize")));
   dayCount.textContent = `${days[currentDay].number} of ${days.length - 1}`;
   dayPrev.disabled = currentDay === 0;
   dayNext.disabled = currentDay === days.length - 1;
