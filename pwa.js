@@ -17,19 +17,23 @@
 
   // Service worker + update toast
   if ('serviceWorker' in navigator) {
-    const toast = el('pwa-toast', '<span>Update available</span><button type="button">Reload</button>');
-    toast.setAttribute('role', 'status');
+    // Updates apply on their own: right away if the page has only just opened, otherwise the moment the
+    // app goes to the background, so the next open is already the new version. No "Reload" prompt.
     let waiting = null, reloading = false;
-    toast.querySelector('button').addEventListener('click', () => {
-      if (waiting) waiting.postMessage('SKIP_WAITING'); else location.reload();
-    });
+    const born = Date.now();
+    const apply = () => { if (waiting) waiting.postMessage('SKIP_WAITING'); };
     navigator.serviceWorker.addEventListener('controllerchange', () => {
       if (reloading || !waiting) return;
       reloading = true; location.reload();
     });
+    document.addEventListener('visibilitychange', () => { if (document.hidden) apply(); });
+    window.addEventListener('pagehide', apply);
     const watch = (reg) => {
       const check = () => {
-        if (reg.waiting && navigator.serviceWorker.controller) { waiting = reg.waiting; toast.hidden = false; }
+        if (reg.waiting && navigator.serviceWorker.controller) {
+          waiting = reg.waiting;
+          if (Date.now() - born < 8000) apply();
+        }
       };
       check();
       reg.addEventListener('updatefound', () => {
