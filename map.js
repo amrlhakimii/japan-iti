@@ -196,6 +196,26 @@
     }, { enableHighAccuracy: true, timeout: 12000, maximumAge: 30000 });
   }
 
+  // One face is shown at a time (no 3D backface tricks, which misbehave on iOS); the turn is a short Web Animations flip.
+  function turnCard(card) {
+    if (!card || card.dataset.turning) return;
+    var inner = card.querySelector(".flip-inner");
+    var toBack = !card.classList.contains("flipped");
+    var done = function () {
+      card.classList.toggle("flipped", toBack);
+      card.querySelectorAll("[data-flip]").forEach(function (b) { b.setAttribute("aria-pressed", String(toBack)); });
+      var next = card.querySelector(toBack ? ".flip-back [data-flip]" : ".flip-front");
+      if (next && next.focus) { try { next.focus({ preventScroll: true }); } catch (e) {} }
+    };
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!inner || !inner.animate || reduce) { done(); return; }
+    card.dataset.turning = "1";
+    inner.animate([{ transform: "perspective(700px) rotateY(0deg)" }, { transform: "perspective(700px) rotateY(90deg)" }], { duration: 160, easing: "ease-in" }).onfinish = function () {
+      done();
+      inner.animate([{ transform: "perspective(700px) rotateY(-90deg)" }, { transform: "perspective(700px) rotateY(0deg)" }], { duration: 200, easing: "ease-out" }).onfinish = function () { delete card.dataset.turning; };
+    };
+  }
+
   function drawRoute(state, key) {
     var R = typeof ROUTES !== "undefined" ? ROUTES[key] : null;
     if (!R) return;
@@ -258,11 +278,7 @@
         return;
       }
       var flip = e.target.closest("[data-flip]");
-      if (flip && !e.target.closest("a")) {
-        var card = flip.closest(".flip");
-        var on2 = card.classList.toggle("flipped");
-        flip.setAttribute("aria-pressed", String(on2));
-      }
+      if (flip && !e.target.closest("a")) { turnCard(flip.closest(".flip")); }
     });
     setTimeout(function () { state.map.invalidateSize(); if (!state.fitted) { state.fitted = true; state.fit(); } }, 200);
   }
