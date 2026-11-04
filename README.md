@@ -1,6 +1,6 @@
 # Japan, Slowly
 
-A personal, single-page family trip itinerary for a 12-day Japan trip (26 Nov to 7 Dec 2026) covering Tokyo, Mount Fuji, Kyoto and Osaka, paced for travelling with a baby. It was built for private use by the author's family rather than as a general-purpose product.
+A personal, single-page family trip itinerary for a 12-day Japan trip covering Tokyo, Mount Fuji, Kyoto and Osaka, paced for travelling with a baby. It was built for private use by the author's family rather than as a general-purpose product.
 
 ## Features
 
