@@ -113,11 +113,11 @@
 
   var CARDS = [
     {
-      id: "halal", icon: "🌙", title: "Halal food", sub: "No pork, no alcohol",
+      id: "halal", icon: "moon", title: "Halal food", sub: "No pork, no alcohol",
       body: function () { return PHRASES.halal.map(phraseBlock); }
     },
     {
-      id: "allergy", icon: "⚠️", title: "Allergies", sub: "Fill in once, show anytime",
+      id: "allergy", icon: "alert", title: "Allergies", sub: "Fill in once, show anytime",
       editor: function () {
         var wrap = el("div", "sc-edit");
         var label = el("label", null, "My allergies (write in Japanese or English)");
@@ -147,15 +147,15 @@
       }
     },
     {
-      id: "baby", icon: "🍼", title: "Baby needs", sub: "Hot water, nappy, stroller, microwave",
+      id: "baby", icon: "baby", title: "Baby needs", sub: "Hot water, nappy, stroller, microwave",
       body: function () { return PHRASES.baby.map(phraseBlock); }
     },
     {
-      id: "prayer", icon: "🕌", title: "Prayer space", sub: "Ask for a quiet room",
+      id: "prayer", icon: "landmark", title: "Prayer space", sub: "Ask for a quiet room",
       body: function () { return PHRASES.prayer.map(phraseBlock); }
     },
     {
-      id: "taxi", icon: "🚕", title: "Taxi helper", sub: "Show the address to the driver",
+      id: "taxi", icon: "car", title: "Taxi helper", sub: "Show the address to the driver",
       editor: function () {
         var wrap = el("div", "sc-edit");
         var sel = el("div", "sc-seg");
@@ -208,7 +208,7 @@
       }
     },
     {
-      id: "emergency", icon: "🚨", title: "Emergency", sub: "Police 110 · Ambulance/Fire 119",
+      id: "emergency", icon: "siren", title: "Emergency", sub: "Police 110 · Ambulance/Fire 119",
       body: function () {
         var out = [];
         var nums = el("ul", "sc-nums");
@@ -238,7 +238,7 @@
   var hl = el("div");
   var eb = el("p", "eyebrow"); eb.appendChild(el("span")); eb.appendChild(doc.createTextNode(" Show this to staff"));
   hl.appendChild(eb);
-  var h2 = el("h2"); h2.appendChild(doc.createTextNode("Say it in ")); h2.appendChild(doc.createElement("br")); h2.appendChild(doc.createTextNode("Japanese."));
+  var h2 = el("h2"); h2.appendChild(doc.createTextNode("Say it in ")); h2.appendChild(doc.createElement("br")); h2.appendChild(doc.createTextNode("Japanese"));
   hl.appendChild(h2);
   head.appendChild(hl);
   head.appendChild(el("p", null, "Tap a card for full-screen text you can hold up to restaurant, hotel or station staff. Works offline."));
@@ -252,7 +252,7 @@
   dlg.setAttribute("aria-labelledby", "sc-dlg-title");
   var dlgHead = el("div", "sc-dlg-head");
   var dlgTitle = el("h3", "sc-dlg-title"); dlgTitle.id = "sc-dlg-title";
-  var closeBtn = el("button", "sc-close", "Close ✕"); closeBtn.type = "button";
+  var closeBtn = el("button", "sc-close", "Close"); closeBtn.type = "button";
   closeBtn.setAttribute("aria-label", "Close full-screen card");
   dlgHead.appendChild(dlgTitle); dlgHead.appendChild(closeBtn);
   var dlgBody = el("div", "sc-dlg-body");
@@ -287,7 +287,10 @@
     var art = el("article", "sc-card");
     art.setAttribute("data-card", card.id);
     var top = el("div", "sc-top");
-    top.appendChild(el("span", "sc-icon", card.icon)).setAttribute("aria-hidden", "true");
+    var iconBox = el("span", "sc-icon");
+    iconBox.innerHTML = root.JI ? root.JI.icon(card.icon, 20) : "";
+    iconBox.setAttribute("aria-hidden", "true");
+    top.appendChild(iconBox);
     var t = el("div");
     t.appendChild(el("h3", null, card.title));
     t.appendChild(el("p", "sc-sub", card.sub));

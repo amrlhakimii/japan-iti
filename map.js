@@ -3,16 +3,17 @@
 (function () {
   "use strict";
 
+  var ico = function (name, size) { return window.JI ? window.JI.icon(name, size) : ""; };
   var CATEGORIES = [
-    { id: "food", search: "restaurant", label: "Restaurants", color: "#f59e0b", icon: "🍴", q: '["amenity"~"^(restaurant|cafe|fast_food)$"]' },
-    { id: "halal", search: "halal restaurant", label: "Halal", color: "#10b981", icon: "☪", q: '["diet:halal"~"^(yes|only)$"]' },
-    { id: "prayer", search: "mosque", label: "Prayer", color: "#6366f1", icon: "🕌", q: '["amenity"="place_of_worship"]["religion"="muslim"]' },
-    { id: "grocery", search: "supermarket", label: "Groceries", color: "#3b82f6", icon: "🛒", q: '["shop"~"^(supermarket|convenience|greengrocer)$"]' },
-    { id: "shop", search: "shopping mall", label: "Shopping", color: "#ec4899", icon: "🛍", q: '["shop"~"^(mall|department_store|clothes|shoes|variety_store)$"]' },
-    { id: "transport", search: "train station", label: "Transport", color: "#64748b", icon: "🚆", q: '["railway"="station"]' },
-    { id: "sight", search: "tourist attraction", label: "Attractions", color: "#8b5cf6", icon: "📸", q: '["tourism"~"^(attraction|museum|gallery|viewpoint)$"]' }
+    { id: "food", search: "restaurant", label: "Restaurants", color: "#b7791f", icon: ico("utensils", 16), q: '["amenity"~"^(restaurant|cafe|fast_food)$"]' },
+    { id: "halal", search: "halal restaurant", label: "Halal", color: "#2f855a", icon: ico("moon", 16), q: '["diet:halal"~"^(yes|only)$"]' },
+    { id: "prayer", search: "mosque", label: "Prayer", color: "#4c51bf", icon: ico("landmark", 16), q: '["amenity"="place_of_worship"]["religion"="muslim"]' },
+    { id: "grocery", search: "supermarket", label: "Groceries", color: "#2b6cb0", icon: ico("cart", 16), q: '["shop"~"^(supermarket|convenience|greengrocer)$"]' },
+    { id: "shop", search: "shopping mall", label: "Shopping", color: "#b83280", icon: ico("bag", 16), q: '["shop"~"^(mall|department_store|clothes|shoes|variety_store)$"]' },
+    { id: "transport", search: "train station", label: "Transport", color: "#4a5568", icon: ico("train", 16), q: '["railway"="station"]' },
+    { id: "sight", search: "tourist attraction", label: "Attractions", color: "#6b46c1", icon: ico("camera", 16), q: '["tourism"~"^(attraction|museum|gallery|viewpoint)$"]' }
   ];
-  var KIND_ICON = { transport: "🚆", food: "🍴", shop: "🛍", sight: "📸", prayer: "🕌", stay: "🏠" };
+  var KIND_ICON = { transport: ico("train", 16), food: ico("utensils", 16), shop: ico("bag", 16), sight: ico("camera", 16), prayer: ico("landmark", 16), stay: ico("home", 16) };
   var OVERPASS = ["https://overpass-api.de/api/interpreter"];
   var maps = {};
 
@@ -93,7 +94,7 @@
     var vector = false;
     if (L.maplibreGL && typeof maplibregl !== "undefined") {
       try {
-        L.maplibreGL({ style: "https://tiles.openfreemap.org/styles/bright", attribution: '<a href="https://openfreemap.org" target="_blank" rel="noreferrer">OpenFreeMap</a> &copy; <a href="https://www.openmaptiles.org/" target="_blank" rel="noreferrer">OpenMapTiles</a> data from <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a>' }).addTo(map);
+        L.maplibreGL({ style: "https://tiles.openfreemap.org/styles/positron", attribution: '<a href="https://openfreemap.org" target="_blank" rel="noreferrer">OpenFreeMap</a> &copy; <a href="https://www.openmaptiles.org/" target="_blank" rel="noreferrer">OpenMapTiles</a> data from <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a>' }).addTo(map);
         vector = true;
       } catch (e) { vector = false; }
     }
@@ -104,7 +105,7 @@
     var state = { map: map, stopMarkers: [], layers: {}, active: {}, stops: stops, stay: stay, index: index };
 
     if (stops.length > 1) {
-      L.polyline(stops.map(function (p) { return [p.lat, p.lng]; }), { color: "#00adb5", weight: 3, opacity: .55, dashArray: "6 8" }).addTo(map);
+      L.polyline(stops.map(function (p) { return [p.lat, p.lng]; }), { color: "#2c6db4", weight: 3, opacity: .55, dashArray: "6 8" }).addTo(map);
     }
     stops.forEach(function (p, i) {
       var m = L.marker([p.lat, p.lng], { icon: numIcon(i + 1), title: p.label }).addTo(map);
@@ -114,7 +115,7 @@
       state.stopMarkers.push(m);
     });
     if (stay) {
-      L.marker([stay.lat, stay.lng], { icon: L.divIcon({ className: "pin pin-stay", html: "<span>🏠</span>", iconSize: [38, 38], iconAnchor: [19, 19] }), zIndexOffset: 800 })
+      L.marker([stay.lat, stay.lng], { icon: L.divIcon({ className: "pin pin-stay", html: "<span>" + ico("home", 18) + "</span>", iconSize: [38, 38], iconAnchor: [19, 19] }), zIndexOffset: 800 })
         .addTo(map).bindPopup("<strong>Your stay</strong><br>" + esc(STAYS[day.stay].name));
     }
     state.fit = function () {
@@ -309,7 +310,7 @@
     var stayHtml = "";
     if (stay) {
       stayHtml = '<article class="stay-card">' +
-        '<div class="stay-top"><div class="stay-art" aria-hidden="true">🏠</div><div class="stay-info"><h4>Your stay</h4><p>Hosted by ' + esc(stay.host) + '</p><p class="stay-dates">' + esc(stay.dates) + '</p></div></div>' +
+        '<div class="stay-top"><div class="stay-art" aria-hidden="true">' + ico("home", 32) + '</div><div class="stay-info"><h4>Your stay</h4><p>Hosted by ' + esc(stay.host) + '</p><p class="stay-dates">' + esc(stay.dates) + '</p></div></div>' +
         '<div class="stay-actions"><span class="stay-city">' + esc(stay.city) + '</span><button type="button" class="stay-btn" data-flyto="stay">View on map</button></div>' +
         '</article>' +
         '<div class="stay-times"><div class="time-card"><span>Check-in</span><strong>' + esc(stay.checkIn) + '</strong></div><div class="time-card"><span>Checkout</span><strong>' + esc(stay.checkOut) + '</strong></div></div>';
@@ -325,8 +326,8 @@
         : '<span class="flip-photo no-img"></span>';
       return '<div class="flip" data-stop="' + index + "-" + i + '">' +
         '<div class="flip-inner"><button type="button" class="flip-face flip-front" data-flip aria-pressed="false" aria-label="Flip card for ' + esc(p.label) + '">' + photo +
-        '<span class="flip-num">' + (i + 1) + '</span><span class="flip-icon" aria-hidden="true">' + (KIND_ICON[p.kind] || "📍") + '</span>' +
-        '<span class="flip-body"><strong>' + esc(p.label) + '</strong><span class="flip-leg">' + (prev ? (prev.mode === "walk" ? "🚶 " : "🚆 ") + esc(prev.text) : "Start of the day") + '</span><span class="flip-hint">Tap to flip ↻</span></span></button>' +
+        '<span class="flip-num">' + (i + 1) + '</span><span class="flip-icon" aria-hidden="true">' + (KIND_ICON[p.kind] || ico("pin", 16)) + '</span>' +
+        '<span class="flip-body"><strong>' + esc(p.label) + '</strong><span class="flip-leg">' + (prev ? (prev.mode === "walk" ? ico("walk", 14) : ico("train", 14)) + " " + esc(prev.text) : "Start of the day") + '</span><span class="flip-hint">Tap to flip ↻</span></span></button>' +
         '<div class="flip-face flip-back"><strong>' + esc(p.label) + '</strong><p>' + esc(note || "Tap Directions to open live transit directions.") + '</p>' +
         '<div class="flip-actions"><button type="button" data-flyto="' + i + '">Show on map</button>' + (i > 0 && routeFor(g.stops[i - 1], g.stops[i]) ? '<button type="button" data-walk="' + g.stops[i - 1] + ">" + g.stops[i] + '">Walk here</button>' : '') + '<a href="' + gmaps(p) + '" target="_blank" rel="noreferrer">Directions ↗</a>' + (ph ? '<a href="' + esc(ph.page) + '" target="_blank" rel="noreferrer">Photo: Wikipedia ↗</a>' : '') + '<button type="button" data-flip aria-pressed="true">Back ↺</button></div></div>' +
         '</div></div>';
@@ -336,13 +337,13 @@
       var ka = g.stops[li - 1], kb = g.stops[li], A = stops[li - 1], B = stops[li], R = routeFor(ka, kb), est = leg(A, B);
       var approx = A.approx || B.approx ? '<p class="leg-note">One of these pins is approximate, so use the street signs and the Google Maps link for the last few metres.</p>' : "";
       if (R) {
-        legs += '<details class="leg" data-route="' + ka + ">" + kb + '" data-day="' + index + '"><summary><span class="leg-ico" aria-hidden="true">🚶</span><span class="leg-main"><strong>' + esc(A.label) + ' → ' + esc(B.label) + '</strong><small>' + Math.max(1, Math.round(R.t / 60)) + ' min on foot · ' + fmtDist(R.d) + '</small></span></summary>' +
+        legs += '<details class="leg" data-route="' + ka + ">" + kb + '" data-day="' + index + '"><summary><span class="leg-ico" aria-hidden="true">' + ico("walk", 16) + '</span><span class="leg-main"><strong>' + esc(A.label) + ' → ' + esc(B.label) + '</strong><small>' + Math.max(1, Math.round(R.t / 60)) + ' min on foot · ' + fmtDist(R.d) + '</small></span></summary>' +
           '<ol class="leg-steps">' + R.steps.map(function (s) { return '<li><span>' + esc(s[0]) + '</span>' + (s[1] ? '<em>' + fmtDist(s[1]) + '</em>' : '') + '</li>'; }).join("") + '</ol>' + approx +
           '<p class="leg-note">Street names are as they appear on signs, often in Japanese. Follow the route drawn on the map.</p>' +
           '<a class="leg-link" href="' + gwalk(A, B) + '" target="_blank" rel="noreferrer">Open walking route in Google Maps ↗</a></details>';
       } else {
         var how = est.mode === "walk" ? "Walk" : (hav(A, B) * 1.3 > 25 ? "Take a train (Shinkansen or limited express if booked)" : "Take a train, or a taxi if the baby is tired");
-        legs += '<details class="leg" data-day="' + index + '"><summary><span class="leg-ico" aria-hidden="true">' + (est.mode === "walk" ? "🚶" : "🚆") + '</span><span class="leg-main"><strong>' + esc(A.label) + ' → ' + esc(B.label) + '</strong><small>' + esc(est.text) + '</small></span></summary>' +
+        legs += '<details class="leg" data-day="' + index + '"><summary><span class="leg-ico" aria-hidden="true">' + (est.mode === "walk" ? ico("walk", 16) : ico("train", 16)) + '</span><span class="leg-main"><strong>' + esc(A.label) + ' → ' + esc(B.label) + '</strong><small>' + esc(est.text) + '</small></span></summary>' +
           '<p class="leg-note">' + how + '. Station names, platforms and the live timetable are in the day guide below and in Google Maps.</p>' + approx +
           '<a class="leg-link" href="' + gmaps(B) + '" target="_blank" rel="noreferrer">Open live transit directions ↗</a></details>';
       }
@@ -356,7 +357,7 @@
       (legs ? '<h4 class="side-title">Getting between stops</h4><div class="legs">' + legs + '</div>' : '') + '</div>' +
       '<div class="split-map"><div class="map-box"><div class="map-el" id="map-' + index + '" aria-label="Map for ' + esc(day.title) + '"></div>' +
       '<button type="button" class="search-area" data-search-area="' + index + '" hidden>Search this area</button>' +
-      '<button type="button" class="locate-btn" data-locate="' + index + '" aria-label="Show my location and nearest stop"><span aria-hidden="true">📍</span> Near me</button></div>' +
+      '<button type="button" class="locate-btn" data-locate="' + index + '" aria-label="Show my location and nearest stop"><span aria-hidden="true">' + ico("pin", 14) + '</span> Near me</button></div>' +
       '<div class="cat-row" role="group" aria-label="Show nearby places">' + chips + '</div>' +
       '<p class="map-status" data-map-status="' + index + '" aria-live="polite">Tap a category to see places around the map. Map data © OpenStreetMap.</p></div></div>';
   };

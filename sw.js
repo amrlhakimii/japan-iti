@@ -1,9 +1,9 @@
-const VERSION = 'v36';
+const VERSION = 'v40';
 const SHELL_CACHE = `japan-shell-${VERSION}`;
 const RUNTIME_CACHE = `japan-runtime-${VERSION}`;
 const MAX_RUNTIME = 80;
 const SHELL = [
-  './', 'index.html', 'script.js', 'guide.js', 'styles.css', 'today.js', 'today.css',
+  './', 'index.html', 'icons.js', 'script.js', 'guide.js', 'styles.css', 'today.js', 'today.css',
   'cards.js', 'cards.css', 'expenses.js', 'expenses.css', 'pwa.js', 'pwa.css', 'router.js', 'nav.css', 'ds.css', 'map.css', 'geo.js', 'photos.js', 'routes.js', 'map.js',
   'manifest.webmanifest', 'icons/icon-180.png', 'icons/icon-192.png',
   'icons/icon-512.png', 'icons/icon-maskable-512.png'
@@ -47,6 +47,19 @@ async function staleWhileRevalidate(request, cacheName, opts) {
   return cached || (await network) || Response.error();
 }
 
+// App files: always try the network first so updates show up on the next load,
+// and fall back to the cached copy when offline.
+async function networkFirst(request, cacheName) {
+  const cache = await caches.open(cacheName);
+  try {
+    const res = await fetch(request, { cache: 'no-cache' });
+    if (res && res.ok) cache.put(request, res.clone()).catch(() => {});
+    return res;
+  } catch (err) {
+    return (await cache.match(request)) || Response.error();
+  }
+}
+
 self.addEventListener('fetch', (event) => {
   const req = event.request;
   if (req.method !== 'GET') return;
@@ -54,7 +67,7 @@ self.addEventListener('fetch', (event) => {
 
   if (req.mode === 'navigate') {
     event.respondWith(
-      fetch(req).then((res) => {
+      fetch(req, { cache: 'no-cache' }).then((res) => {
         const copy = res.clone();
         if (res.ok) caches.open(SHELL_CACHE).then((c) => c.put(req, copy)).catch(() => {});
         return res;
@@ -68,7 +81,7 @@ self.addEventListener('fetch', (event) => {
   }
 
   if (url.origin === self.location.origin) {
-    event.respondWith(staleWhileRevalidate(req, SHELL_CACHE));
+    event.respondWith(networkFirst(req, SHELL_CACHE));
     return;
   }
 

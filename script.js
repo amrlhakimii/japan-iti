@@ -1,6 +1,6 @@
 const days = [
   {
-    number: "Day 00",
+    number: "Departure",
     date: "Thu · 26 Nov",
     title: "The journey begins",
     category: "transit",
@@ -544,13 +544,13 @@ daysRoot.innerHTML = days.map((day, index) => `
     </header>
     <div class="day-content" id="day-${index}">
       <div class="day-content-inner">
-        ${dayImages[index] ? `<figure class="day-photo">
-          <img src="${photo(dayImages[index].id)}" alt="${dayImages[index].alt}" loading="lazy">
-          <figcaption><span>${dayImages[index].label}</span><a href="https://unsplash.com/photos/${dayImages[index].id}" target="_blank" rel="noreferrer">Photo source ↗</a></figcaption>
-        </figure>` : ""}
         <p class="day-lede">${day.lede}</p>
-        ${typeof splitHtml === "function" ? splitHtml(index, day) : ""}
-        ${guideHtml(index)}
+        <nav class="day-jump" aria-label="Sections of this day">
+          <button type="button" data-jump="sched-${index}">Schedule</button>
+          <button type="button" data-jump="daymap-${index}">Map and stops</button>
+          <button type="button" data-jump="guide-${index}">Getting around</button>
+        </nav>
+        <section class="day-sec day-sched" id="sched-${index}">
         <h4 class="timeline-title">Hour by hour</h4>
         <div class="timeline">
           ${day.events.map(([time, title, detail, tag, links = []]) => `
@@ -568,10 +568,28 @@ daysRoot.innerHTML = days.map((day, index) => `
           `).join("")}
         </div>
         <div class="day-tip"><strong>Family note</strong><span>${day.tip}</span></div>
+        </section>
+        <section class="day-sec day-mapsec" id="daymap-${index}">
+        ${dayImages[index] ? `<figure class="day-photo">
+          <img src="${photo(dayImages[index].id)}" alt="${dayImages[index].alt}" loading="lazy">
+          <figcaption><span>${dayImages[index].label}</span><a href="https://unsplash.com/photos/${dayImages[index].id}" target="_blank" rel="noreferrer">Photo source ↗</a></figcaption>
+        </figure>` : ""}
+        ${typeof splitHtml === "function" ? splitHtml(index, day) : ""}
+        </section>
+        <section class="day-sec day-guidesec" id="guide-${index}">
+        ${guideHtml(index)}
+        </section>
       </div>
     </div>
   </article>
 `).join("");
+
+document.addEventListener("click", event => {
+  const jump = event.target.closest("[data-jump]");
+  if (!jump) return;
+  const target = document.getElementById(jump.dataset.jump);
+  if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+});
 
 const regionLabels = { tokyo: "Tokyo", fuji: "Fuji", kyoto: "Kyoto", osaka: "Osaka", nara: "Nara" };
 const kindLabels = { planned: "In the plan", spare: "If there’s time", rain: "Rainy-day option" };

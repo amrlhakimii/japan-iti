@@ -7,7 +7,7 @@
   <title>Japan, Slowly — Family Itinerary</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Instrument+Serif&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="today.css">
   <link rel="stylesheet" href="cards.css">
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="ds.css">
   <link rel="stylesheet" href="map.css">
   <link rel="manifest" href="manifest.webmanifest">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#f4f6f9">
   <link rel="apple-touch-icon" href="icons/icon-180.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Japan, Slowly">
@@ -40,7 +40,7 @@
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow"><span></span> 26 Nov — 7 Dec 2026</p>
-        <h1>Big Japan dreams,<br><em>tiny footsteps.</em></h1>
+        <h1>Big Japan dreams,<br><em>tiny footsteps</em></h1>
         <p class="hero-intro">Twelve unhurried days through Tokyo, Fuji, Kyoto and Osaka—paced for feeds, naps, prayer breaks and plenty of breathing room.</p>
         <div class="hero-actions">
           <a class="primary-button" href="#plan">Explore the days <span aria-hidden="true">→</span></a>
@@ -58,20 +58,31 @@
       </div>
     </section>
 
-    <section class="notice" aria-label="Important route correction">
-      <span class="notice-icon" aria-hidden="true">i</span>
-      <div><strong>A smoother Fuji route</strong><p>There is no direct Shinkansen to Kawaguchiko. For the fewest transfers with a baby, take the direct highway bus from Tokyo Station (about 2 hours, reserved seats) and carry only overnight bags.</p></div>
-      <span class="notice-meta">1h 58m · no change</span>
+    <section class="today-section" id="today" data-today-root></section>
+
+    <section class="route" aria-labelledby="route-title">
+      <h2 class="route-title" id="route-title">Where you sleep · 10 nights</h2>
+      <ol class="route-list">
+        <li class="route-stop"><span class="route-city">Tokyo</span><span class="route-dates">27 Nov – 1 Dec</span><span class="route-nights">4 nights</span></li>
+        <li class="route-stop"><span class="route-city">Mount Fuji</span><span class="route-dates">1 – 2 Dec</span><span class="route-nights">1 night</span></li>
+        <li class="route-stop"><span class="route-city">Kyoto</span><span class="route-dates">2 – 4 Dec</span><span class="route-nights">2 nights</span></li>
+        <li class="route-stop"><span class="route-city">Osaka</span><span class="route-dates">4 – 7 Dec</span><span class="route-nights">3 nights</span></li>
+      </ol>
+      <p class="route-flights">Flights: Kuala Lumpur → Narita on 27 Nov, Narita → Kuala Lumpur on 7 Dec, both via Shanghai</p>
     </section>
 
-    <section class="today-section" id="today" data-today-root></section>
+    <section class="notice" aria-label="Fuji route tip">
+      <span class="notice-icon" aria-hidden="true">i</span>
+      <div><strong>A smoother Fuji route</strong><p>There is no direct Shinkansen to Kawaguchiko. For the fewest transfers with a baby, take the direct highway bus from Tokyo Station (about 2 hours, reserved seats) and carry only overnight bags.</p></div>
+      <span class="notice-meta">About 2 h · direct</span>
+    </section>
 
     </div>
 
     <div class="page" id="page-plan" data-page="plan" tabindex="-1" hidden>
     <section class="itinerary-section" id="itinerary">
       <div class="section-heading">
-        <div><p class="eyebrow"><span></span> Your day-by-day</p><h2>Room to wander.<br>Time to rest.</h2></div>
+        <div><p class="eyebrow"><span></span> Your day-by-day</p><h2>Room to wander,<br>time to rest</h2></div>
         <p>Pick a day, or swipe left and right. Timings are intentionally generous, with one main area at a time and built-in reset windows.</p>
       </div>
 
@@ -81,7 +92,7 @@
           <div class="day-rail" data-day-rail role="tablist" aria-label="Choose a day"></div>
           <button type="button" class="rail-arrow rail-next" data-rail-next aria-label="Show later days">›</button>
         </div>
-        <p class="rail-hint" data-rail-hint><span class="hint-hand" aria-hidden="true">👆</span> Swipe sideways or tap the arrows to see all 12 days</p>
+        <p class="rail-hint" data-rail-hint><span class="hint-icon" aria-hidden="true" data-icon="swipe"></span> Swipe sideways or tap the arrows to see all 12 days</p>
       </div>
 
       <div class="days-list" data-days></div>
@@ -98,7 +109,7 @@
     <div class="page" id="page-places" data-page="places" tabindex="-1" hidden>
     <section class="places-section" id="places">
       <div class="section-heading">
-        <div><p class="eyebrow"><span></span> Choose your own adventure</p><h2>Save now.<br>Decide later.</h2></div>
+        <div><p class="eyebrow"><span></span> Choose your own adventure</p><h2>Save now,<br>decide later</h2></div>
         <p>Browse every main stop plus optional ideas for free time. Save favourites on this device, then choose only what suits the weather, energy and baby’s rhythm that day.</p>
       </div>
 
@@ -138,7 +149,7 @@
     <div class="page" id="page-guide" data-page="guide" tabindex="-1" hidden>
     <section class="tickets-section" id="tickets">
       <div class="section-heading">
-        <div><p class="eyebrow"><span></span> Tickets to book</p><h2>Book early.<br>Board easily.</h2></div>
+        <div><p class="eyebrow"><span></span> Tickets to book</p><h2>Book early,<br>board easily</h2></div>
         <p>Every reserved-seat ride on your trip, with what to book, where, and roughly when sales open. Sales windows are usually one month ahead; confirm each on the booking site.</p>
       </div>
       <div class="ticket-grid">
@@ -161,7 +172,7 @@
       </div>
       <div class="slow-copy">
         <p class="eyebrow light"><span></span> The family rhythm</p>
-        <h2>Slow is the<br>secret ingredient.</h2>
+        <h2>Slow is the<br>secret ingredient</h2>
         <p>A comfortable day with a baby is a successful day. These are the guardrails built into your plan.</p>
         <div class="principles">
           <article><span>01</span><div><h3>One neighbourhood</h3><p>Keep each half-day in one area. Use a taxi for the last kilometre when everyone is tired.</p></div></article>
@@ -174,7 +185,7 @@
 
     <section class="guide-section" id="travel-guide">
       <div class="section-heading">
-        <div><p class="eyebrow"><span></span> Pocket travel guide</p><h2>Useful before.<br>Easy while there.</h2></div>
+        <div><p class="eyebrow"><span></span> Pocket travel guide</p><h2>Useful before,<br>easy while there</h2></div>
         <p>Keep these apps, phrases and practical notes close. Opening hours, prices and service availability can change, so reconfirm the time-sensitive details shortly before the trip.</p>
       </div>
 
@@ -263,7 +274,7 @@
 
     <section class="checklist-section">
       <div class="section-heading compact">
-        <div><p class="eyebrow"><span></span> Before you fly</p><h2>The small things<br>that save the day.</h2></div>
+        <div><p class="eyebrow"><span></span> Before you fly</p><h2>The small things<br>that save the day</h2></div>
         <p>Your progress is saved on this device. Tick things off as bookings and packing come together.</p>
       </div>
       <div class="checklist" data-checklist></div>
@@ -314,6 +325,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
   <script src="https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.0.22/leaflet-maplibre-gl.js"></script>
+  <script src="icons.js"></script>
   <script src="geo.js"></script>
   <script src="photos.js"></script>
   <script src="routes.js"></script>
