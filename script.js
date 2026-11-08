@@ -19,8 +19,8 @@ const days = [
     lede: "Arrival day has only one goal: reach the Airbnb comfortably. Dinner stays flexible depending on everyone’s energy.",
     events: [
       ["12:15–5:40 AM", "Flight MU8584 KUL → Shanghai Pudong", "Departs KLIA T1 at 12:15 AM and lands at PVG T1 at 5:40 AM. Keep a fresh nappy and one feed ready for descent. Recent arrivals average about 30 minutes late.", "Flight"],
-      ["5:40–9:40 AM", "Shanghai transit", "Change, feed and let the baby stretch near the gate. Do not plan shopping during this connection.", "Reset"],
-      ["9:40 AM–12:50 PM", "Flight Shanghai → Narita", "Departs 9:40 AM per your ticket and lands at Narita at 12:50 PM (Tokyo is 1 hour ahead). Check the terminal on your booking; MU523 was listed at Terminal 2.", "Flight"],
+      ["5:40–9:10 AM", "Shanghai transit", "A 3 h 30 min connection at PVG Terminal 1, with bags checked through to Narita (no need to collect and re-check). Change, feed and let the baby stretch near the gate. Do not plan shopping during this connection.", "Reset"],
+      ["9:10 AM–12:50 PM", "Flight Shanghai → Narita", "MU523 departs PVG T1 at 9:10 AM and lands at Narita T2 at 12:50 PM (Tokyo is 1 hour ahead), per your booking.", "Flight"],
       ["12:50–2:20 PM", "Immigration, luggage & Suica", "Open the Visit Japan Web QR code prepared before departure, then collect bags. Use digital Suica if your phone supports it; otherwise buy a physical IC card. Allow 90 minutes.", "Airport", [{ label: "Prepare arrival QR", url: "https://services.digital.go.jp/en/visit-japan-web/" }]],
       ["2:40–4:30 PM", "Narita T2 → Nippori → Kameari", "Keisei Skyliner to Nippori (about 40 min, reserved seats), then the JR Joban Line to Kameari. The Airbnb is on the east side of Tokyo, so do not go via Shinjuku. For a large group with luggage, a pre-booked van is easier; confirm a baby seat.", "Reserved seats"],
       ["4:30–5:00 PM", "Kameari Station → Airbnb", "Short walk or taxi. Maghrib starts at about 4:30 PM: pray it on arrival, and jamak it with Isyak after 6:00 PM if you prefer.", "Low walking"],
@@ -152,7 +152,7 @@ const days = [
     category: "transit",
     lede: "Kyoto checkout is 10:00 and the Osaka Airbnb opens at 16:00, so this is a light travel day with a luggage plan for the gap.",
     events: [
-      ["8:00 AM", "Slow breakfast & final pack", "Repack feeds, nappies and one change of clothes in the day bag. Leave the Kyoto annex tidy and lock up via the smart lock.", "Easy start"],
+      ["8:00 AM", "Slow breakfast & final pack", "Repack feeds, nappies and one change of clothes in the day bag. Leave the Kyoto annex tidy and follow the host's check-out instructions for the key.", "Easy start"],
       ["By 10:00 AM", "Check out of Kyoto", "Checkout is before 10:00. Ask the host early if a later bag drop is possible.", "Checkout"],
       ["10:30–11:30 AM", "Kyoto Station to Osaka", "Take a reserved Shinkansen to Shin-Osaka or the JR line to Osaka Station, with a taxi for any luggage-heavy leg.", "Short ride"],
       ["12:00–2:00 PM", "Lunch, prayer & baby reset", "Eat near the station and confirm a halal-friendly option before arriving. Protect a full feed and nap window.", "Reset"],
@@ -205,7 +205,7 @@ const days = [
       ["6:00 AM", "Taxis to Shin-Osaka", "Two pre-booked taxis, about 25 minutes. Take everything, since the next bag drop is at Narita.", "Travel"],
       ["6:30–7:00 AM", "Shinkansen Shin-Osaka → Tokyo", "Board a Nozomi at about 6:30–7:00 AM. It takes about 2.5 hours and costs roughly ¥14,000 each. Reserve seats with luggage space. Feed the baby on the train.", "Reserved seats"],
       ["About 9:20–9:45 AM", "Tokyo Station → Narita Express", "Change to the Narita Express at Tokyo Station, about 1 hour to the terminal. Reserve a seat. Use lifts, and allow 20 minutes for the change.", "Transfer"],
-      ["About 10:50–11:00 AM", "Narita check-in & bag drop", "Check your terminal on the booking (MU523 on the outbound flew into Terminal 2). Do the tax-free departure steps first if you bought tax-free goods.", "Check-in"],
+      ["About 10:50–11:00 AM", "Narita check-in & bag drop", "MU524 departs Narita Terminal 2 at 1:50 PM per your booking. Do the tax-free departure steps first if you bought tax-free goods.", "Check-in"],
       ["11:15 AM–12:45 PM", "Zohor + Asar (jamak), feed & nappy", "Use the airport prayer room after bag drop. Tokyo Zohor is about 11:30 AM, so pray Zohor then Asar together (jamak taqdim) before boarding.", "Prayer + reset"],
       ["1:50–4:30 PM", "Flight Tokyo → Shanghai", "Lands at 4:30 PM Shanghai time. Asar is already done with the jamak, so just rest and feed the baby.", "Flight"],
       ["4:30–5:15 PM", "Shanghai transit", "A 45-minute connection. Go straight to the gate and tell staff you have a baby.", "Tight"],
@@ -501,7 +501,13 @@ const checklist = [
   "Confirm Airbnb luggage storage, cot and Yamato acceptance",
   "Reserve the 7 December Shinkansen (6:30–7:00 AM) and Narita Express, and confirm the return flight terminal",
   "Pack carrier, compact stroller, rain cover, tissues and hand towel",
-  "Check prayer times, weather, market status and restaurant hours"
+  "Check prayer times, weather, market status and restaurant hours",
+  "Fix the 7 Dec return: the 45-minute Shanghai connection (MU524 → MU8583) is too tight, so ask Trip.com or China Eastern for a safer flight",
+  "Confirm the infant's ticket name matches her passport (the name-change request was cancelled)",
+  "Confirm the infant does not count towards the 6-guest limit at the Tokyo and Kyoto Airbnbs",
+  "Decide on any Airbnb changes before the cancellation deadlines: Tokyo 20 Nov, Fuji 24 Nov, Kyoto 25 Nov, Osaka 27 Nov",
+  "Save all 7 Visit Japan Web QR codes offline (one per traveller) on two devices",
+  "Check the Shanghai arrival-card rule for airside transit on the China NIA site"
 ];
 
 const esc = t => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;");
