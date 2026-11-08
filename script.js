@@ -95,12 +95,13 @@ const days = [
     date: "Tue · 1 Dec",
     title: "Tokyo to Fuji",
     category: "fuji",
-    lede: "Move to Kawaguchiko without changing trains, collect the car after lunch, then keep the first afternoon light and local.",
+    lede: "Take the highway bus from Tokyo Station to Kawaguchiko, collect the van after lunch, then keep the first afternoon light and local.",
     events: [
-      ["7:45 AM", "Check out & taxi to Shinjuku", "Leave enough time for lifts, the correct platform and breakfast supplies.", "Travel"],
-      ["9:30–11:28 AM", "Fuji Excursion to Kawaguchiko", "Recommended direct reserved-seat train. Current 2026 timetable shows this service; reconfirm before booking.", "Reserve 1 month ahead", [{ label: "Book on JR East", url: "https://www.eki-net.com/en/jreast-train-reservation/top/index" }, { label: "Check train details", url: "https://www.fujikyu-railway.jp/en/fujikaiyuu/" }]],
-      ["11:30 AM–12:15 PM", "Luggage drop & early lunch", "Ask the accommodation about bag storage before check-in.", "Reset"],
-      ["12:30–1:15 PM", "Collect rental car", "Toyota is the clearest direct-booking option. Reserve an infant seat, ETC card and winter tyres if conditions require them.", "Child seat required", [{ label: "Reserve Toyota car", url: "https://rent.toyota.co.jp/eng/reservation/index01.aspx" }, { label: "First-time rental guide", url: "https://rent.toyota.co.jp/eng/guide/" }]],
+      ["7:30 AM", "Check out & travel to Tokyo Station", "Joban Line to Ayase, Chiyoda Line to Otemachi, then walk to Tokyo Station. About 50 minutes, so use the lifts. Carry only overnight bags, because the big suitcases are forwarded to Kyoto by Yamato.", "Travel"],
+      ["9:20–9:50 AM", "Find the highway bus terminal", "The JR Bus Expressway Bus Terminal is on the Yaesu south side. Reviewers say it is hard to find, so arrive 30 minutes early with the Klook voucher on your phone.", "Early arrival"],
+      ["9:50–11:50 AM", "Highway bus to Kawaguchiko", "Klook Tokyo to Mt. Fuji highway bus, about 2 hours, reserved seats, 6 adults. Suitcases go in the lower hold. Check the voucher for seat numbers. Traffic can add time, so keep the baby feed ready. If Klook caps an order at 5, book two orders.", "Book on Klook"],
+      ["11:50 AM–12:30 PM", "Lunch near the station", "The Lawson is right outside Kawaguchiko Station. Eat nearby, and ask the Airbnb host about early bag drop before check-in.", "Reset"],
+      ["12:30–1:15 PM", "Collect rental car", "Toyota Fujikawaguchiko Shop, a 7-minute walk from the station, open 8:00 AM to 8:00 PM. One-way plan: return it at the Toyota Mishima Shinkansen Ext. shop at 12:30 PM tomorrow. Take the brother's passport with a Narita landing stamp, International Driving Permit and Malaysian licence. W2 class, infant seat, protection, winter tyres.", "Child seat required", [{ label: "Reserve Toyota car", url: "https://rent.toyota.co.jp/eng/reservation/index01.aspx" }, { label: "First-time rental guide", url: "https://rent.toyota.co.jp/eng/guide/" }]],
       ["1:30–2:15 PM", "Lawson Kawaguchiko photo stop", "Use the official viewing area and respect barriers. If crowded, skip it—there are better lake views ahead.", "Quick stop"],
       ["2:30–4:00 PM", "Lake Kawaguchi & Oishi Park", "Flat lakeside paths, café, toilets and an easy Fuji view make this ideal for the first afternoon.", "Stroller-friendly"],
       ["4:00–4:45 PM", "The Park Café / warm drink", "Feed the baby and warm up before sunset temperatures drop.", "Warm-up"],
@@ -113,19 +114,19 @@ const days = [
     date: "Wed · 2 Dec",
     title: "Fuji morning, Kyoto evening",
     category: "fuji",
-    lede: "See Fuji before clouds build, then return the car and travel west. Driving all the way to Kyoto is not recommended with a baby.",
+    lede: "See Fuji early, check out by 10:00, drive the van to Mishima, return it by 12:30 and take Hikari 713 at 1:46 PM to Kyoto.",
     events: [
       ["7:15–8:00 AM", "Honcho Street", "Go early for lighter traffic and clearer Fuji views. Take photos only from the pavement and watch for vehicles. Check out of the Airbnb first and keep the luggage in the car.", "Early start"],
       ["8:15–9:15 AM", "Arakura Shrine base", "It is a few minutes from Honcho Street. Enjoy the lower shrine area. The famous pagoda viewpoint has roughly 400 steps—carrier only and optional.", "Optional climb"],
-      ["9:45–10:45 AM", "Lake Yamanakako", "The farthest stop, so it comes after the nearby ones. Short lakeside stop; keep the warm pram cover handy, as this is likely the coldest part of the trip.", "Scenic"],
-      ["11:30 AM–12:15 PM", "Early lunch near Kawaguchiko", "Choose a confirmed halal or seafood/vegetarian option and avoid a tight connection.", "Lunch"],
-      ["12:30 PM", "Fuel up & return rental car", "Allow time for inspection and luggage repacking.", "Car return"],
-      ["1:20–2:50 PM", "Reserved bus to Mishima", "Fujikyu highway bus from Kawaguchiko Station, about 1 hr 30 min, ¥2,500 on the web. All seats are reserved and sales open one month ahead (2 Nov). Check the timetable when booking. One bag per person goes under the floor, so keep the feed bag with you and reserve a seat for the baby.", "Book now", [{ label: "Fujikyu bus page", url: "https://bus.fujikyu.co.jp/en/highway/mishima/" }]],
-      ["3:45–5:45 PM", "Shinkansen Mishima → Kyoto", "Target a Hikari/Kodama connection with reserved seats; exact December times must be confirmed.", "Reserved seats", [{ label: "Book with SmartEX", url: "https://smart-ex.jp/en/" }]],
-      ["6:15 PM", "Kyoto check-in", "Taxi from Kyoto Station to avoid another luggage-heavy transfer.", "Low walking"],
+      ["9:30–10:00 AM", "Back to the Airbnb & check out", "Checkout is 10:00 AM. Load the van with the overnight bags and check that nothing is left behind.", "Checkout"],
+      ["10:15 AM–12:00 PM", "Drive to Mishima", "About 1.5 hours. Leave by 10:30 AM at the latest. Your brother drives, so check the weather and road conditions first and use winter tyres. Refuel near Mishima before returning the van.", "Drive"],
+      ["12:30 PM", "Return the van at Mishima", "Toyota Mishima Shinkansen Ext. shop, due back at 12:30 PM. Allow time for inspection and repacking.", "Car return"],
+      ["12:45–1:30 PM", "Lunch & buffer near Mishima Station", "Eat near the station and keep this slack for traffic. If the drive runs late, the next Hikari 717 leaves at 3:46 PM.", "Buffer"],
+      ["1:46–3:37 PM", "Hikari 713 Mishima → Kyoto", "About 1 h 51 min. Reserved ordinary car, 6 adults, about RM 293 each on Klook, QR boarding and a changeable ticket. Add the large-luggage option if any bag is oversized.", "Book after the van", [{ label: "Check trains", url: "https://smart-ex.jp/en/" }]],
+      ["4:15 PM", "Kyoto check-in", "Check-in opens at 3:00 PM. Take two taxis from Kyoto Station to avoid another luggage-heavy transfer.", "Low walking"],
       ["7:00 PM", "Simple dinner & early night", "Use a nearby halal restaurant or takeaway. Save Kyoto sightseeing for tomorrow.", "Rest"]
     ],
-    tip: "Better than driving: return the car at Kawaguchiko, bus to Mishima, then Shinkansen. It avoids a 5–6 hour drive, tolls and a large one-way drop fee."
+    tip: "Plan: one-way van to Mishima, then Hikari 713 at 1:46 PM. If the drive runs late, the next Hikari 717 leaves at 3:46 PM, and the Klook ticket is changeable. Fall back to the Fujikyu highway bus if the weather or roads look bad."
   },
   {
     number: "Day 07",
@@ -198,20 +199,20 @@ const days = [
     date: "Mon · 7 Dec",
     title: "Osaka to Tokyo to home",
     category: "transit",
-    lede: "Early Shinkansen to Tokyo, Narita Express to the airport, flight at 1:50 PM. Aim to reach Narita by about 10:50–11:00 AM.",
+    lede: "Taxi to Shin-Osaka, the 6:33 AM Nozomi to Tokyo, the 10:03 Narita Express, then a 1:50 PM flight. Both trains are booked on Klook, and you reach Narita at about 10:54 AM.",
     events: [
       ["4:45 AM", "Wake up", "Feed the baby, dress and do a last check of the Airbnb. Checkout is before 10:00, so leaving early is fine; follow the host's key and lockbox instructions.", "Early start"],
-      ["5:25–5:45 AM", "Subuh prayer", "Osaka Subuh begins at about 5:25 AM. Pray at the Airbnb before leaving, or on the train if running late.", "Prayer"],
-      ["6:00 AM", "Taxis to Shin-Osaka", "Two pre-booked taxis, about 25 minutes. Take everything, since the next bag drop is at Narita.", "Travel"],
-      ["6:30–7:00 AM", "Shinkansen Shin-Osaka → Tokyo", "Board a Nozomi at about 6:30–7:00 AM. It takes about 2.5 hours and costs roughly ¥14,000 each. Reserve seats with luggage space. Feed the baby on the train.", "Reserved seats"],
-      ["About 9:20–9:45 AM", "Tokyo Station → Narita Express", "Change to the Narita Express at Tokyo Station, about 1 hour to the terminal. Reserve a seat. Use lifts, and allow 20 minutes for the change.", "Transfer"],
-      ["About 10:50–11:00 AM", "Narita check-in & bag drop", "MU524 departs Narita Terminal 2 at 1:50 PM per your booking. Do the tax-free departure steps first if you bought tax-free goods.", "Check-in"],
+      ["5:25–5:40 AM", "Subuh prayer", "Osaka Subuh begins at about 5:25 AM. Pray at the Airbnb just before the taxi, or on the Shinkansen if running late.", "Prayer"],
+      ["5:40 AM", "Taxis to Shin-Osaka", "Two taxis, about 25 minutes, so you reach the station by about 6:10. Book them on 5 or 6 Dec through the host or the GO app, and confirm the night before. Take everything, since the next bag drop is at Narita.", "Travel"],
+      ["6:33–8:57 AM", "Shinkansen Nozomi 68 Shin-Osaka → Tokyo", "Booked on Klook: reserved ordinary car, 6 adults, QR-code boarding. About 2 h 24 min. Feed the baby on the train.", "Booked"],
+      ["9:00–10:03 AM", "Tokyo Station → Narita Express 15", "You have about 66 minutes. Use the lifts to the Narita Express platform. Your Klook slips may need a QR scan at a JR East machine for the basic fare ticket, so follow the voucher's how-to-use notes and allow 10 minutes. Board car 10 at 10:03: seats 1-A to 1-D, 2-C and 2-D.", "Booked"],
+      ["10:54–11:15 AM", "Narita check-in & bag drop", "The train reaches Narita Terminal 2-3 at 10:54. MU524 departs Narita Terminal 2 at 1:50 PM per your booking. Do the tax-free departure steps first if you bought tax-free goods.", "Check-in"],
       ["11:15 AM–12:45 PM", "Zohor + Asar (jamak), feed & nappy", "Use the airport prayer room after bag drop. Tokyo Zohor is about 11:30 AM, so pray Zohor then Asar together (jamak taqdim) before boarding.", "Prayer + reset"],
       ["1:50–4:30 PM", "Flight Tokyo → Shanghai", "Lands at 4:30 PM Shanghai time. Asar is already done with the jamak, so just rest and feed the baby.", "Flight"],
       ["4:30–5:15 PM", "Shanghai transit", "A 45-minute connection. Go straight to the gate and tell staff you have a baby.", "Tight"],
       ["5:15–11:15 PM", "Flight Shanghai → KLIA", "Lands at KLIA at 11:15 PM. Pray Maghrib and Isyak together (jamak) on board or at the gate, before landing.", "Flight"]
     ],
-    tip: "If the Shinkansen is delayed, the Narita Express is the next thing to slip, so don't take a Shinkansen later than 7:30 AM. Ask Tokyo check-in to tag bags through to KLIA."
+    tip: "If the Shinkansen runs late, the Narita Express is the next thing to slip. A later Narita Express usually leaves about 30 minutes after, and would still get you to Narita by about 11:30. Ask Narita check-in to tag bags through to KLIA."
   }
 ];
 
@@ -492,14 +493,14 @@ const checklist = [
   "Set up the eSIM, offline maps and digital Suica",
   "Prepare an arrival cash buffer and coin pouch",
   "Book Narita transfer and confirm child-seat policy",
-  "Reserve Fuji Excursion seats when sales open",
+  "Book the Tokyo Station to Kawaguchiko highway bus on Klook for 1 Dec (about 9:50 AM, 6 adults)",
   "Book Shibuya Sky timed entry",
   "Choose priority streetwear stores and check release-day rules",
   "Reserve Gyumon Ginza and Yoshiya Kyoto",
-  "Reserve rental car, infant seat and ETC card",
-  "Book Kawaguchiko → Mishima highway bus (sales open 2 Nov)",
+  "Reserve the Toyota van: Fujikawaguchiko 1 Dec 12:30 to Mishima Shinkansen Ext. 2 Dec 12:30, with infant seat, protection and winter tyres",
+  "Book Hikari 713, Mishima 1:46 PM to Kyoto 3:37 PM on 2 Dec, for 6 adults",
   "Confirm Airbnb luggage storage, cot and Yamato acceptance",
-  "Reserve the 7 December Shinkansen (6:30–7:00 AM) and Narita Express, and confirm the return flight terminal",
+  "Check the Klook emails for the 7 Dec Nozomi 68 and Narita Express 15 vouchers, and save every QR code offline",
   "Pack carrier, compact stroller, rain cover, tissues and hand towel",
   "Check prayer times, weather, market status and restaurant hours",
   "Fix the 7 Dec return: the 45-minute Shanghai connection (MU524 → MU8583) is too tight, so ask Trip.com or China Eastern for a safer flight",
@@ -507,7 +508,9 @@ const checklist = [
   "Confirm the infant does not count towards the 6-guest limit at the Tokyo and Kyoto Airbnbs",
   "Decide on any Airbnb changes before the cancellation deadlines: Tokyo 20 Nov, Fuji 24 Nov, Kyoto 25 Nov, Osaka 27 Nov",
   "Save all 7 Visit Japan Web QR codes offline (one per traveller) on two devices",
-  "Check the Shanghai arrival-card rule for airside transit on the China NIA site"
+  "Check the Shanghai arrival-card rule for airside transit on the China NIA site",
+  "Book the Osaka taxis for about 5:40 AM on 7 Dec through the host or the GO app, on 5 or 6 Dec, and confirm the night before",
+  "Message the Fuji, Tokyo and Kyoto hosts about van parking and Yamato forwarding of the big suitcases"
 ];
 
 const esc = t => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;");

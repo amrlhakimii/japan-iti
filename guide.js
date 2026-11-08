@@ -64,9 +64,9 @@ const dayGuide = [
   },
   { // Day 05 · Tue 1 Dec
     legs: [
-      ["Airbnb → Shinjuku", "Two taxis or a van (best with luggage)", "About 45–60 min and ¥8,000–12,000 per car. By train: Joban Line to Ayase, Chiyoda Line to Otemachi, Marunouchi Line to Shinjuku. Leave by 7:45 AM for the 9:30 AM Fuji Excursion."],
-      ["Shinjuku → Kawaguchiko", "Fuji Excursion (about 2 hr)", "Reserved seats. Carry only an overnight bag on the train. Yamato can forward your main suitcases to Kyoto, so ask the Airbnb host."],
-      ["Kawaguchiko Station → rental car", "Walk or short taxi", "Pick up the car after lunch. Fit the infant seat before leaving the lot."],
+      ["Airbnb → Tokyo Station", "Joban Line, Chiyoda Line, then walk (about 50 min)", "Joban Line to Ayase, Chiyoda Line to Otemachi, then walk to the Yaesu south side. Use lifts. Leave by 7:30 AM for the 9:50 AM bus. Two taxis cost roughly ¥8,000–10,000 per car if you prefer."],
+      ["Tokyo Station → Kawaguchiko", "Klook highway bus (about 2 hr)", "JR Bus Expressway Bus Terminal, Yaesu south side. Arrive 30 minutes early with the Klook voucher. Suitcases go in the lower hold, so carry only overnight bags. Yamato can forward your main suitcases to Kyoto, so ask the Airbnb host."],
+      ["Kawaguchiko Station → rental car", "Walk or short taxi", "The Toyota Fujikawaguchiko Shop is a 7-minute walk from the station. Fit the infant seat before leaving the lot."],
       ["Lawson → Lake Kawaguchi / Oishi Park → Airbnb", "Drive (about 10–20 min each)", "All close together. Oishi Park is about 15 minutes by car from the station."]
     ],
     solat: [
@@ -78,14 +78,14 @@ const dayGuide = [
   { // Day 06 · Wed 2 Dec
     legs: [
       ["Airbnb → Honcho Street → Arakura Shrine", "Drive (about 20–30 min, then 10 min)", "Both are in Fujiyoshida, so do them together. Check out of the Airbnb by 10:00 AM and keep the luggage in the car."],
-      ["Arakura → Lake Yamanakako", "Drive (about 30–40 min)", "The farthest point of the day. Order is now closest first, then outward."],
-      ["Yamanakako → Kawaguchiko", "Drive (about 35 min)", "Refuel before returning the car. Allow time for inspection and repacking."],
-      ["Kawaguchiko Station → Mishima Station", "Fujikyu highway bus (about 1 hr 30 min)", "Board at the Kawaguchiko Station bus area and get off at Mishima Station, then walk to the Shinkansen entrance. Book now: sales open 1 month ahead (2 Nov), web fare ¥2,500, call 0555-73-8181 or use the Kawaguchiko Station counter. One bag per person under the floor. Reserve a seat for the baby."],
-      ["Mishima → Kyoto", "Shinkansen (about 1 hr 45 min)", "Reserved seats with luggage space. Taxi from Kyoto Station to the Airbnb, which is on the east side of the city."]
+      ["Arakura → Airbnb", "Drive (about 20–30 min)", "Back to the Airbnb to check out by 10:00 AM and load the overnight bags into the van."],
+      ["Airbnb → Mishima", "Drive one-way (about 1 hr 30 min)", "Leave by 10:30 AM. Refuel near Mishima, then return the van at the Toyota Mishima Shinkansen Ext. shop by 12:30 PM. Your brother drives with his passport, International Driving Permit and Malaysian licence."],
+      ["Toyota shop → Mishima Station", "Walk or short taxi", "Walk to the Shinkansen entrance with the overnight bags. Eat lunch near the station and keep a buffer for traffic."],
+      ["Mishima → Kyoto", "Hikari 713 (about 1 hr 51 min)", "Leaves Mishima at 1:46 PM, reaches Kyoto at 3:37 PM. Reserved seats. Two taxis from Kyoto Station to the Airbnb, which is on the east side of the city."]
     ],
     solat: [
       "Subuh: before the 6:45 AM departure, about 5:00–6:30.",
-      "Zohor + Asar: jamak taqdim at lunch near Kawaguchiko, about 12:00, before the bus.",
+      "Zohor + Asar: jamak taqdim at lunch near Mishima Station, about 12:30, before the train.",
       "Maghrib + Isyak: jamak on arrival at the Kyoto Airbnb, about 6:15 PM (jamak ta'khir), or Maghrib on the Shinkansen and Isyak at the Airbnb."
     ]
   },
@@ -135,13 +135,13 @@ const dayGuide = [
   },
   { // Day 11 · Mon 7 Dec
     legs: [
-      ["Airbnb → Shin-Osaka", "Two pre-booked taxis (about 25 min)", "Leave at about 6:00 AM. Book them the night before with an app such as GO, or ask the host."],
-      ["Shin-Osaka → Tokyo", "Shinkansen Nozomi (about 2.5 hr)", "Take a 6:30–7:00 AM train, roughly ¥14,000 per adult. Reserved seats with luggage space. Not later than 7:30 AM."],
-      ["Tokyo Station → Narita", "Narita Express (about 1 hr)", "Reserved seats. Allow 20 minutes to change trains and find the platform, using lifts."],
+      ["Airbnb → Shin-Osaka", "Two pre-booked taxis (about 25 min)", "Leave at about 5:40 AM so you reach the station by about 6:10. Book them on 5 or 6 Dec through the host or the GO app, and confirm the night before."],
+      ["Shin-Osaka → Tokyo", "Shinkansen Nozomi (about 2.5 hr)", "Nozomi 68, 6:33 AM to 8:57 AM. Booked on Klook with reserved ordinary-car seats and QR-code boarding."],
+      ["Tokyo Station → Narita", "Narita Express (about 1 hr)", "Narita Express 15, 10:03 AM to 10:54 AM, car 10. Booked on Klook. You have about 66 minutes after the Shinkansen lands, so use lifts, and exchange the QR slips at a JR East machine if your voucher says so."],
       ["Narita → Shanghai → KLIA", "Two flights", "The Shanghai connection is only 45 min, so ask for bags to be tagged through to KLIA."]
     ],
     solat: [
-      "Subuh: at the Airbnb at about 5:25–5:45 AM, before the 6:00 AM taxi. Check the exact time in Muslim Pro.",
+      "Subuh: begins at about 5:25 AM, so pray at the Airbnb just before the 5:40 AM taxi, or on the Shinkansen. Check the exact time in Muslim Pro.",
       "Zohor + Asar: jamak at the Narita prayer room at about 11:30 AM, after bag drop.",
       "Maghrib + Isyak: jamak on the Shanghai → KLIA flight or at the gate, before landing at 11:15 PM."
     ]
