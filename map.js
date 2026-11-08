@@ -110,7 +110,7 @@
     stops.forEach(function (p, i) {
       var m = L.marker([p.lat, p.lng], { icon: numIcon(i + 1), title: p.label }).addTo(map);
       var pp = typeof PHOTOS !== "undefined" ? PHOTOS[day.stops[i]] : null;
-      m.bindPopup((pp ? "<img class='pop-img' src='" + esc(pp.src) + "' alt='' loading='lazy'>" : "") + "<strong>" + esc(p.label) + "</strong><br><a href='" + gmaps(p) + "' target='_blank' rel='noreferrer'>Directions ↗</a>", { minWidth: 200 });
+      m.bindPopup((pp ? "<img class='pop-img' src='" + esc(pp.src) + "' alt='' loading='lazy'>" : "") + "<strong>" + esc(p.label) + "</strong><br><a href='" + gmaps(p) + "' target='_blank' rel='noreferrer'>Google Maps ↗</a>", { minWidth: 200 });
       m.on("click", function () { highlightCard(index, i); });
       state.stopMarkers.push(m);
     });
@@ -155,7 +155,7 @@
       var group = L.layerGroup();
       items.forEach(function (it) {
         var m = L.marker([it.lat, it.lng], { icon: L.divIcon({ className: "dot", html: "<span style='background:" + cat.color + "'>" + cat.icon + "</span>", iconSize: [26, 26], iconAnchor: [13, 13] }) });
-        m.bindPopup("<strong>" + esc(it.name) + "</strong>" + (it.jp ? "<br>" + esc(it.jp) : "") + (it.halal === "yes" || it.halal === "only" ? "<br>☪ Halal tagged" : "") + "<br><a target='_blank' rel='noreferrer' href='" + gmaps(it) + "'>Directions ↗</a>");
+        m.bindPopup("<strong>" + esc(it.name) + "</strong>" + (it.jp ? "<br>" + esc(it.jp) : "") + (it.halal === "yes" || it.halal === "only" ? "<br>☪ Halal tagged" : "") + "<br><a target='_blank' rel='noreferrer' href='" + gmaps(it) + "'>Google Maps ↗</a>");
         group.addLayer(m);
       });
       group.addTo(state.map);
@@ -311,7 +311,7 @@
     if (stay) {
       stayHtml = '<article class="stay-card">' +
         '<div class="stay-top"><div class="stay-art" aria-hidden="true">' + ico("home", 32) + '</div><div class="stay-info"><h4>Your stay</h4><p>Hosted by ' + esc(stay.host) + '</p><p class="stay-dates">' + esc(stay.dates) + '</p></div></div>' +
-        '<div class="stay-actions"><span class="stay-city">' + esc(stay.city) + '</span><button type="button" class="stay-btn" data-flyto="stay">View on map</button></div>' +
+        '<div class="stay-actions"><span class="stay-city">' + esc(stay.city) + '</span><button type="button" class="stay-btn" data-flyto="stay">View on map</button><a class="stay-btn" href="' + gmaps(stay) + '" target="_blank" rel="noreferrer">Google Maps ↗</a></div>' +
         '</article>' +
         '<div class="stay-times"><div class="time-card"><span>Check-in</span><strong>' + esc(stay.checkIn) + '</strong></div><div class="time-card"><span>Checkout</span><strong>' + esc(stay.checkOut) + '</strong></div></div>';
     }
@@ -329,7 +329,7 @@
         '<span class="flip-num">' + (i + 1) + '</span><span class="flip-icon" aria-hidden="true">' + (KIND_ICON[p.kind] || ico("pin", 16)) + '</span>' +
         '<span class="flip-body"><strong>' + esc(p.label) + '</strong><span class="flip-leg">' + (prev ? (prev.mode === "walk" ? ico("walk", 14) : ico("train", 14)) + " " + esc(prev.text) : "Start of the day") + '</span><span class="flip-hint">Tap to flip ↻</span></span></button>' +
         '<div class="flip-face flip-back"><strong>' + esc(p.label) + '</strong><p>' + esc(note || "Tap Directions to open live transit directions.") + '</p>' +
-        '<div class="flip-actions"><button type="button" data-flyto="' + i + '">Show on map</button>' + (i > 0 && routeFor(g.stops[i - 1], g.stops[i]) ? '<button type="button" data-walk="' + g.stops[i - 1] + ">" + g.stops[i] + '">Walk here</button>' : '') + '<a href="' + gmaps(p) + '" target="_blank" rel="noreferrer">Directions ↗</a>' + (ph ? '<a href="' + esc(ph.page) + '" target="_blank" rel="noreferrer">Photo: Wikipedia ↗</a>' : '') + '<button type="button" data-flip aria-pressed="true">Back ↺</button></div></div>' +
+        '<div class="flip-actions"><button type="button" data-flyto="' + i + '">Show on map</button>' + (i > 0 && routeFor(g.stops[i - 1], g.stops[i]) ? '<button type="button" data-walk="' + g.stops[i - 1] + ">" + g.stops[i] + '">Walk here</button>' : '') + '<a href="' + gmaps(p) + '" target="_blank" rel="noreferrer">Google Maps ↗</a>' + (ph ? '<a href="' + esc(ph.page) + '" target="_blank" rel="noreferrer">Photo: Wikipedia ↗</a>' : '') + '<button type="button" data-flip aria-pressed="true">Back ↺</button></div></div>' +
         '</div></div>';
     }).join("");
     var legs = "";
