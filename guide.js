@@ -14,7 +14,7 @@ const dayGuide = [
     legs: [
       ["KLIA → Shanghai Pudong", "Flight MU8584", "At check-in ask for bags to be tagged all the way to Narita. Confirm the transfer rules for the connection."],
       ["Shanghai T1 → Narita T2", "Flight MU523", "Stay in Terminal 1 for the whole connection. Keep a feed, nappies and a change of clothes in the cabin bag."],
-      ["Narita T2 → Kameari (Airbnb)", "Keisei Skyliner + JR Joban Line", "Skyliner to Nippori (about 40 min, reserved seats), then JR Joban Line to Kameari (about 25 min). Kameari is on the EAST side of Tokyo, so do not go via Shinjuku. Easier with luggage: one pre-booked van (about 1 hour), but confirm a baby seat."],
+      ["Narita T2 → Kameari (Airbnb)", "Pre-booked private van (about 1 hour)", "Klook booking UYX696452 with Deren International, pickup after MU523 lands at 12:50. The driver waits 90 minutes free. Confirm a rear-facing baby seat and the meeting point with the operator."],
       ["Kameari Station → Airbnb", "Walk / short taxi", "Check the route for lifts. The Airbnb is near the station, so a stroller is fine."]
     ],
     solat: [
