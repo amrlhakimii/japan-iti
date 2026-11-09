@@ -79,7 +79,7 @@ const dayGuide = [
     legs: [
       ["Airbnb → Honcho Street → Arakura Shrine", "Drive (about 20–30 min, then 10 min)", "Both are in Fujiyoshida, so do them together. Check out of the Airbnb by 10:00 AM and keep the luggage in the car."],
       ["Arakura → Airbnb", "Drive (about 20–30 min)", "Back to the Airbnb to check out by 10:00 AM and load the overnight bags into the van."],
-      ["Airbnb → Mishima", "Drive one-way (about 1 hr 30 min)", "Leave by 10:30 AM. Refuel near Mishima, then return the van at the Toyota Mishima Shinkansen Ext. shop by 12:30 PM. Your brother drives with his passport, International Driving Permit and Malaysian licence."],
+      ["Airbnb → Mishima", "Drive one-way (about 1 hr 30 min)", "Leave by 10:30 AM. Refuel near Mishima, then return the van at the Toyota Mishima Shinkansen Ext. shop by 12:30 PM. Reservation 99951151400. Your brother drives, and must be registered as driver at pickup. He needs his passport, International Driving Permit and Malaysian licence."],
       ["Toyota shop → Mishima Station", "Walk or short taxi", "Walk to the Shinkansen entrance with the overnight bags. Eat lunch near the station and keep a buffer for traffic."],
       ["Mishima → Kyoto", "Hikari 713 (about 1 hr 51 min)", "Leaves Mishima at 1:46 PM, reaches Kyoto at 3:37 PM. Reserved seats. Two taxis from Kyoto Station to the Airbnb, which is on the east side of the city."]
     ],
@@ -136,7 +136,7 @@ const dayGuide = [
   { // Day 11 · Mon 7 Dec
     legs: [
       ["Airbnb → Shin-Osaka", "Two pre-booked taxis (about 25 min)", "Leave at about 5:40 AM so you reach the station by about 6:10. Book them on 5 or 6 Dec through the host or the GO app, and confirm the night before."],
-      ["Shin-Osaka → Tokyo", "Shinkansen Nozomi (about 2.5 hr)", "Nozomi 68, 6:33 AM to 8:57 AM. Booked on Klook with reserved ordinary-car seats and QR-code boarding."],
+      ["Shin-Osaka → Tokyo", "Shinkansen Nozomi (about 2.5 hr)", "Nozomi 68, 6:33 AM to 8:57 AM. Booked on Klook with reserved ordinary-car seats (Car 4, seats 5A–C and 6A–C) and QR-code boarding."],
       ["Tokyo Station → Narita", "Narita Express (about 1 hr)", "Narita Express 15, 10:03 AM to 10:54 AM, car 10. Booked on Klook. You have about 66 minutes after the Shinkansen lands, so use lifts, and exchange the QR slips at a JR East machine if your voucher says so."],
       ["Narita → Shanghai → KLIA", "Two flights", "The Shanghai connection is only 45 min, so ask for bags to be tagged through to KLIA."]
     ],
