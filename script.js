@@ -120,9 +120,9 @@ const days = [
       ["8:15–9:15 AM", "Arakura Shrine base", "It is a few minutes from Honcho Street. Enjoy the lower shrine area. The famous pagoda viewpoint has roughly 400 steps—carrier only and optional.", "Optional climb"],
       ["9:30–10:00 AM", "Back to the Airbnb & check out", "Checkout is 10:00 AM. Load the van with the overnight bags and check that nothing is left behind.", "Checkout"],
       ["10:15 AM–12:00 PM", "Drive to Mishima", "About 1.5 hours. Leave by 10:30 AM at the latest. Your brother drives, so check the weather and road conditions first and use winter tyres. Refuel near Mishima before returning the van.", "Drive"],
-      ["12:30 PM", "Return the van at Mishima", "Toyota Mishima Shinkansen Ext. shop, due back at 12:30 PM. Allow time for inspection and repacking.", "Car return"],
+      ["12:30 PM", "Return the van at Mishima", "Toyota Mishima Shinkansen Ext. shop, due back at 12:30 PM. Aim to return it by about 12:00 to keep a buffer for the 1:46 PM train. Allow time for inspection and repacking.", "Car return"],
       ["12:45–1:30 PM", "Lunch & buffer near Mishima Station", "Eat near the station and keep this slack for traffic. If the drive runs late, the next Hikari 717 leaves at 3:46 PM.", "Buffer"],
-      ["1:46–3:37 PM", "Hikari 713 Mishima → Kyoto", "About 1 h 51 min. Reserved ordinary car, 6 adults, about RM 293 each on Klook, QR boarding and a changeable ticket. Add the large-luggage option if any bag is oversized.", "Book after the van", [{ label: "Check trains", url: "https://smart-ex.jp/en/" }]],
+      ["1:46–3:37 PM", "Hikari 713 Mishima → Kyoto", "About 1 h 51 min. Reserved ordinary car, 6 adults, Klook order 5603694494 (RM 1,767.49), QR boarding. Seat numbers come by email after 10 Nov. Platform 5.", "Ordered", [{ label: "Check trains", url: "https://smart-ex.jp/en/" }]],
       ["4:15 PM", "Kyoto check-in", "Check-in opens at 3:00 PM. Take two taxis from Kyoto Station to avoid another luggage-heavy transfer.", "Low walking"],
       ["7:00 PM", "Simple dinner & early night", "Use a nearby halal restaurant or takeaway. Save Kyoto sightseeing for tomorrow.", "Rest"]
     ],
