@@ -1,4 +1,4 @@
-const VERSION = 'v40';
+const VERSION = 'v41';
 const SHELL_CACHE = `japan-shell-${VERSION}`;
 const RUNTIME_CACHE = `japan-runtime-${VERSION}`;
 const MAX_RUNTIME = 80;

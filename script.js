@@ -54,23 +54,21 @@ const days = [
   {
     number: "Day 03",
     date: "Sun · 29 Nov",
-    title: "Kamakura by train",
+    title: "Akihabara & Asakusa",
     category: "tokyo",
-    lede: "A full day out to the seaside temple town. It is far from Kameari, so the day is built around one direct train each way and a compact walk.",
+    lede: "A slower Sunday close to home: a late start, a few hours in Akihabara's big stores with lifts and baby rooms, then Sensoji at golden hour before an early night.",
     events: [
-      ["8:00 AM", "Leave the Airbnb", "Kameari → Ayase → Otemachi → Tokyo Station. Carry lunch supplies and a full baby change.", "Long transfer"],
-      ["9:45–10:00 AM", "Tokyo Station: lunch & baby reset", "Buy a seafood or vegetarian bento or onigiri for lunch. Use the station family room for a feed and nappy change.", "Reset"],
-      ["10:00–10:55 AM", "JR Yokosuka Line to Kamakura", "Direct, about 55 minutes with no more changes. Sit by the door with the stroller.", "Direct train"],
-      ["11:00 AM–12:15 PM", "Komachi-dori & Tsurugaoka Hachimangu", "From Kamakura Station walk the flat shopping street to the shrine, about 15 minutes. Use the carrier if it is crowded.", "Walk"],
-      ["12:15–1:15 PM", "Zohor + Asar (jamak) & lunch", "No confirmed prayer room here. Use a quiet corner with a portable prayer mat and pray Zohor then Asar together (jamak taqdim). Try shirasu-don (whitebait bowl) and ask the staff to check for mirin, sake and pork stock.", "Prayer + lunch"],
-      ["1:30–2:00 PM", "Enoden tram to Hase", "About 5 minutes from Kamakura Station. The tram is small, so fold the stroller.", "Short ride"],
-      ["2:00–3:00 PM", "Great Buddha (Kotoku-in)", "A 10-minute walk from Hase Station on flat ground. Hase-dera is up steps: carrier only, and optional.", "Sight"],
-      ["3:00–3:30 PM", "Feed, nappy & rest", "Asar is already done with the jamak at lunch, so use this time for the baby before heading back.", "Reset"],
-      ["3:30–4:15 PM", "Back to Kamakura Station", "Enoden then the Yokosuka Line. Leave by 3:30 to avoid the weekend rush.", "Return"],
-      ["4:30–6:30 PM", "Train back to Kameari", "Maghrib starts at about 4:30 PM. Pray Maghrib and Isyak together (jamak) at the Airbnb after getting home, or pray Maghrib on the train.", "Home"],
-      ["7:00 PM", "Easy dinner near the Airbnb", "Keep it simple after a long day.", "Rest"]
+      ["9:00 AM", "Slow breakfast at the Airbnb", "No rush after Saturday. Feed the baby and pack a full change and a feed.", "Easy start"],
+      ["10:15–11:00 AM", "Train to Akihabara", "Check the route in your maps app, ideally one with lifts at both ends. Akihabara Electric Town exit is the closest to the shops. A taxi is an option if the baby is fussy.", "Transit"],
+      ["11:00 AM–12:30 PM", "Akihabara Electric Town", "Walk Chuo-dori. Browse Gashapon Kaikan, Radio Kaikan and Super Potato (retro games). Many shops are narrow and multi-storey, so use the carrier where the stroller will not fit.", "Shopping"],
+      ["12:30–1:30 PM", "Lunch, then Zohor + Asar (jamak)", "Halal Karemen King is in Kanda/Akihabara; go today if you skip it on arrival night, and reconfirm hours. Pray Zohor then Asar together (jamak taqdim). No prayer room is confirmed here, so use a portable mat in a quiet corner.", "Halal · Prayer"],
+      ["1:30–2:30 PM", "Yodobashi Akiba & arcades", "A big department-style store with lifts. Check for a nursing/baby room on arrival, and use it for a feed and nappy change. Leave arcades for anyone not carrying the baby.", "Indoor"],
+      ["2:30–3:15 PM", "Train to Asakusa", "About 20–25 minutes. Take a taxi if everyone is tired.", "Transit"],
+      ["3:15–4:30 PM", "Sensoji & Nakamise-dori", "Kaminarimon, the shopping street and the main hall. Crowded on Sundays; use the carrier and skip long queues. Sunset is about 4:30 PM, so catch the temple in warm light.", "Sight"],
+      ["4:30–5:00 PM", "Maghrib near Asakusa", "Pray Maghrib on time in a quiet corner or wherever you find a room. No prayer room is confirmed; reconfirm before you go.", "Prayer"],
+      ["5:00–6:00 PM", "Easy dinner or head home", "Pick the shortest queue, or buy dinner near the Airbnb on the way back. Isyak can wait until home (jamak).", "Flexible"]
     ],
-    tip: "Kamakura is crowded on Sundays. Skip anything that needs a long queue, and keep the afternoon short since sunset is early. Asakusa and Sensoji are not on this plan; add them on another Tokyo day only if there is energy."
+    tip: "Sunday is the busiest day for Akihabara and Asakusa. If the baby is struggling, drop Asakusa and finish after Yodobashi. Kamakura has been removed from the plan; if you want it back, a weekday morning in Tokyo is the best fit."
   },
   {
     number: "Day 04",
@@ -661,7 +659,7 @@ placesRoot.addEventListener("click", event => {
 
 applyPlaceFilters();
 
-const dayShort = ["KLIA", "Tokyo", "Ginza", "Kamakura", "Shibuya", "Fuji", "To Kyoto", "Kyoto", "To Osaka", "Osaka", "Osaka", "Home"];
+const dayShort = ["KLIA", "Tokyo", "Ginza", "Akiba", "Shibuya", "Fuji", "To Kyoto", "Kyoto", "To Osaka", "Osaka", "Osaka", "Home"];
 const dayRail = document.querySelector("[data-day-rail]");
 const dayCount = document.querySelector("[data-day-count]");
 const dayPrev = document.querySelector("[data-day-prev]");

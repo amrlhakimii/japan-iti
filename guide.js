@@ -37,16 +37,15 @@ const dayGuide = [
   },
   { // Day 03 · Sun 29 Nov
     legs: [
-      ["Airbnb → Tokyo Station", "JR Joban Line to Ayase, Chiyoda Line to Otemachi", "About 50 min with one transfer. Use station lifts. A taxi is about 40 min but costs ¥8,000–10,000 per car (two cars), so only use it if needed."],
-      ["Tokyo Station → Kamakura", "JR Yokosuka Line (direct)", "About 55 min, roughly ¥940 per adult. No more changes. Board at the Yokosuka / Sobu Rapid platforms. Allow extra time to find them in the big station."],
-      ["Kamakura Station → Komachi-dori → Tsurugaoka Hachimangu", "Walk (about 15 min)", "Flat. Use the carrier on weekends."],
-      ["Kamakura → Hase (Great Buddha)", "Enoden tram (about 5 min)", "Fold the stroller on board. Great Buddha is a 10 min flat walk from Hase Station."],
-      ["Hase → Kamakura → Tokyo → Airbnb", "Enoden, Yokosuka Line, then the same route home", "Leave Hase by 3:30 PM. Expect about 2 hours home."]
+      ["Airbnb → Akihabara", "JR Joban Line (check route in your maps app)", "About 30-40 min. Use station lifts. A taxi costs roughly ¥6,000-8,000 per car (two cars), so only use it if needed."],
+      ["Akihabara shops and lunch", "Walk", "Electric Town, Chuo-dori and Yodobashi are all within about 10 minutes of each other."],
+      ["Akihabara → Asakusa", "Train (about 20-25 min) or taxi", "Check the route for lifts. Taxi is about ¥2,000 per car."],
+      ["Asakusa → Airbnb", "Train or taxi", "Leave by about 5:00-6:00 PM. Buy dinner near the Airbnb on the way."]
     ],
     solat: [
-      "Subuh: before leaving, about 5:00–6:30 AM.",
-      "Zohor + Asar: jamak taqdim at lunch, about 12:15 PM. There is no confirmed prayer room in Kamakura, so use a quiet corner with a portable mat, or the baby/family room at Tokyo Station for a private space.",
-      "Maghrib + Isyak: jamak at the Airbnb after the train home, about 6:30–7:00 PM (jamak ta'khir)."
+      "Subuh: before leaving, about 5:00-6:30 AM.",
+      "Zohor + Asar: jamak taqdim at lunch, about 12:30 PM. No prayer room is confirmed in Akihabara, so use a quiet corner with a portable mat. Reconfirm before you go.",
+      "Maghrib: about 4:30 PM near Sensoji, or on the way home. Isyak at the Airbnb (jamak ta'khir) after dinner."
     ]
   },
   { // Day 04 · Mon 30 Nov

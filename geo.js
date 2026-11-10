@@ -90,40 +90,34 @@ const GEO = {
    "label": "Tokyo Station",
    "kind": "transport"
   },
-  "kamakura_stn": {
-   "lat": 35.319,
-   "lng": 139.55068,
-   "label": "Kamakura Station",
+  "akihabara_stn": {
+   "lat": 35.69803,
+   "lng": 139.77307,
+   "label": "Akihabara Electric Town",
    "kind": "transport"
   },
-  "komachi": {
-   "lat": 35.32078,
-   "lng": 139.55196,
-   "label": "Komachi-dori",
+  "gashapon": {
+   "lat": 35.6983,
+   "lng": 139.7716,
+   "label": "Gashapon Kaikan & Radio Kaikan (approx)",
    "kind": "shop"
   },
-  "tsurugaoka": {
-   "lat": 35.32518,
-   "lng": 139.55618,
-   "label": "Tsurugaoka Hachimangu",
-   "kind": "sight"
+  "yodobashi_akiba": {
+   "lat": 35.6988,
+   "lng": 139.7745,
+   "label": "Yodobashi Akiba (approx)",
+   "kind": "shop"
   },
-  "hase_stn": {
-   "lat": 35.31141,
-   "lng": 139.53603,
-   "label": "Hase Station",
+  "asakusa_stn": {
+   "lat": 35.7106,
+   "lng": 139.7967,
+   "label": "Asakusa Station",
    "kind": "transport"
   },
-  "daibutsu": {
-   "lat": 35.3165,
-   "lng": 139.53573,
-   "label": "Great Buddha (Kotoku-in)",
-   "kind": "sight"
-  },
-  "hasedera": {
-   "lat": 35.31227,
-   "lng": 139.53331,
-   "label": "Hase-dera",
+  "sensoji": {
+   "lat": 35.71476,
+   "lng": 139.79669,
+   "label": "Sensoji & Nakamise-dori",
    "kind": "sight"
   },
   "donki_shibuya": {
@@ -322,13 +316,11 @@ const GEO = {
   "uniqlo_ginza": "Explore a few floors, then take a coffee break. Do not try to cover the whole building.",
   "polene": "Allow queue time. One adult browses while the other takes a quiet stroller loop. Pin is approximate.",
   "gyumon": "6-12-1 Ginza, B1F. Reserve ahead and check the basement entrance for lifts. Pin is approximate.",
-  "tokyo_stn": "Big station: allow 20 minutes to find the Yokosuka Line platform. Buy a seafood bento and use the family room.",
-  "kamakura_stn": "Arrive about 11:00 AM. Walk Komachi-dori to the shrine, about 15 minutes, flat.",
-  "komachi": "Crowded on Sundays. Use the carrier and skip long queues.",
-  "tsurugaoka": "Kamakura's main shrine. Flat approach, a few steps at the main hall. Pray Zohor + Asar (jamak) in a quiet corner nearby.",
-  "hase_stn": "Take the small Enoden tram from Kamakura Station. Fold the stroller.",
-  "daibutsu": "A 10-minute flat walk from Hase Station. Leave for Tokyo by 3:30 PM, as sunset is about 4:30.",
-  "hasedera": "Up steps: carrier only, optional.",
+  "akihabara_stn": "Use the Electric Town exit. Check lifts on your route and carry the baby where the stroller will not fit.",
+  "gashapon": "Narrow, multi-storey shops: use the carrier. Pin is approximate.",
+  "yodobashi_akiba": "Large store with lifts. Check for a baby room for a feed and nappy change. Pin is approximate.",
+  "asakusa_stn": "About 20-25 minutes from Akihabara. Taxi if everyone is tired.",
+  "sensoji": "Crowded on Sundays. Use the carrier and skip queues. Sunset is about 4:30 PM. Pray Maghrib here if you can find a quiet corner.",
   "donki_shibuya": "Tight aisles: use a carrier and park or fold the stroller if asked.",
   "kith": "Start of the streetwear loop. Pick two or three must-visits. Pin is approximate.",
   "master_chicken": "Halal-certified lunch at 33-10 Udagawacho, B1F. Stroller access may be awkward. Pin is approximate.",
@@ -387,13 +379,11 @@ const GEO = {
   {
    "stay": "tokyo",
    "stops": [
-    "tokyo_stn",
-    "kamakura_stn",
-    "komachi",
-    "tsurugaoka",
-    "hase_stn",
-    "daibutsu",
-    "hasedera"
+    "akihabara_stn",
+    "gashapon",
+    "yodobashi_akiba",
+    "asakusa_stn",
+    "sensoji"
    ]
   },
   {
