@@ -122,7 +122,7 @@ const days = [
       ["10:15 AM–12:00 PM", "Drive to Mishima", "About 1.5 hours. Leave by 10:30 AM at the latest. Your brother drives, so check the weather and road conditions first and use winter tyres. Refuel near Mishima before returning the van.", "Drive"],
       ["12:30 PM", "Return the van at Mishima", "Toyota Mishima Shinkansen Ext. shop, due back at 12:30 PM. Aim to return it by about 12:00 to keep a buffer for the 1:46 PM train. Allow time for inspection and repacking.", "Car return"],
       ["12:45–1:30 PM", "Lunch & buffer near Mishima Station", "Eat near the station and keep this slack for traffic. If the drive runs late, the next Hikari 717 leaves at 3:46 PM.", "Buffer"],
-      ["1:46–3:37 PM", "Hikari 713 Mishima → Kyoto", "About 1 h 51 min. Reserved ordinary car, 6 adults, Klook order 5603694494 (RM 1,767.49), QR boarding. Seat numbers come by email after 10 Nov. Platform 5.", "Ordered", [{ label: "Check trains", url: "https://smart-ex.jp/en/" }]],
+      ["1:46–3:37 PM", "Hikari 713 Mishima → Kyoto", "About 1 h 51 min. Reserved ordinary car, 6 adults, Klook order 5603694494 (RM 1,767.49), QR boarding. Car 13, seats 3A–3C and 4A–4C, reservation 2931. Platform 5.", "Booked", [{ label: "Check trains", url: "https://smart-ex.jp/en/" }]],
       ["4:15 PM", "Kyoto check-in", "Check-in opens at 3:00 PM. Take two taxis from Kyoto Station to avoid another luggage-heavy transfer.", "Low walking"],
       ["7:00 PM", "Simple dinner & early night", "Use a nearby halal restaurant or takeaway. Save Kyoto sightseeing for tomorrow.", "Rest"]
     ],
@@ -497,8 +497,6 @@ const checklist = [
   "Book Shibuya Sky timed entry",
   "Choose priority streetwear stores and check release-day rules",
   "Reserve Gyumon Ginza and Yoshiya Kyoto",
-  "Reserve the Toyota van: Fujikawaguchiko 1 Dec 12:30 to Mishima Shinkansen Ext. 2 Dec 12:30, with infant seat, protection and winter tyres",
-  "Book Hikari 713, Mishima 1:46 PM to Kyoto 3:37 PM on 2 Dec, for 6 adults",
   "Confirm Airbnb luggage storage, cot and Yamato acceptance",
   "Check the Klook emails for the 7 Dec Nozomi 68 and Narita Express 15 vouchers, and save every QR code offline",
   "Pack carrier, compact stroller, rain cover, tissues and hand towel",

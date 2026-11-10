@@ -81,7 +81,7 @@ const dayGuide = [
       ["Arakura → Airbnb", "Drive (about 20–30 min)", "Back to the Airbnb to check out by 10:00 AM and load the overnight bags into the van."],
       ["Airbnb → Mishima", "Drive one-way (about 1 hr 30 min)", "Leave by 10:30 AM. Refuel near Mishima, then return the van at the Toyota Mishima Shinkansen Ext. shop by 12:30 PM. Reservation 99951151400. Your brother drives, and must be registered as driver at pickup. He needs his passport, International Driving Permit and Malaysian licence."],
       ["Toyota shop → Mishima Station", "Walk or short taxi", "Walk to the Shinkansen entrance with the overnight bags. Eat lunch near the station and keep a buffer for traffic."],
-      ["Mishima → Kyoto", "Hikari 713 (about 1 hr 51 min)", "Leaves Mishima at 1:46 PM, reaches Kyoto at 3:37 PM. Reserved seats. Two taxis from Kyoto Station to the Airbnb, which is on the east side of the city."]
+      ["Mishima → Kyoto", "Hikari 713 (about 1 hr 51 min)", "Leaves Mishima at 1:46 PM, reaches Kyoto at 3:37 PM. Car 13, seats 3A–3C and 4A–4C. Two taxis from Kyoto Station to the Airbnb, which is on the east side of the city."]
     ],
     solat: [
       "Subuh: before the 6:45 AM departure, about 5:00–6:30.",
